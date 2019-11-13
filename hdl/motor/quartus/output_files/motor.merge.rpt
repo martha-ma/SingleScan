@@ -1,0 +1,996 @@
+Partition Merge report for motor
+Thu Oct 25 16:01:15 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Connections to In-System Debugging Instance "auto_signaltap_0"
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Partition Pin Processing
+  7. Partition Merge Resource Usage Summary
+  8. Partition Merge RAM Summary
+  9. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                              ;
++------------------------------------+-------------------------------------------------+
+; Partition Merge Status             ; Successful - Thu Oct 25 16:01:15 2018           ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
+; Revision Name                      ; motor                                           ;
+; Top-level Entity Name              ; motor_test                                      ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 3,618                                           ;
+;     Total combinational functions  ; 1,655                                           ;
+;     Dedicated logic registers      ; 2,858                                           ;
+; Total registers                    ; 2858                                            ;
+; Total pins                         ; 4                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 737,280                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                           ;
++---------------------------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------------------------+---------+
+; Name                                                          ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                             ; Details ;
++---------------------------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------------------------+---------+
+; motor_top:motor_topEx01|feed:feedEx01|timeout_flag            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|timeout_flag            ; N/A     ;
+; motor_top:motor_topEx01|feed:feedEx01|timeout_flag            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|timeout_flag            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|enable        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; VCC                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|enable        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; VCC                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[0]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[0]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[10]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[10]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[10]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[10]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[11]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[11]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[11]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[11]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[12]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[12]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[12]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[12]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[13]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[13]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[13]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[13]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[14]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[14]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[14]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[14]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[15]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[15]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[15]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[15]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[16]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[16]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[16]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[16]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[17]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[17]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[17]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[17]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[18]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[18]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[18]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[18]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[19]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[19]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[19]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[19]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[1]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[1]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[20]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[20]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[20]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[20]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[21]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[21]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[21]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[21]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[22]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[22]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[22]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[22]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[23]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[23]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[23]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[23]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[24]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[24]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[24]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[24]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[25]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[25]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[25]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[25]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[26]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[26]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[26]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[26]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[27]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[27]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[27]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[27]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[28]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[28]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[28]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[28]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[29]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[29]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[29]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[29]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[2]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[2]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[2]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[2]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[30]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[30]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[30]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[30]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[31]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[31]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[31]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[31]            ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[3]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[3]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[3]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[3]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[4]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[4]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[4]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[4]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[5]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[5]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[5]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[5]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[6]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[6]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[6]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[6]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[7]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[7]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[7]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[7]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[8]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[8]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[8]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[8]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[9]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[9]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|high_cnt[9]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[9]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[0]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~16                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[10]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~16                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~18                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[11]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~18                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~20                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[12]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~20                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~22                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[13]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~22                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~24                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[14]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~24                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~26                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[15]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~26                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[16]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~28                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[16]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~28                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[17]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~30                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[17]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~30                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[18]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~32                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[18]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~32                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[19]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~34                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[19]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~34                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[1]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; GND                                                           ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[20]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~36                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[20]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~36                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[21]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~38                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[21]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~38                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[22]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~40                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[22]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~40                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[23]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~42                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[23]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~42                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[24]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~44                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[24]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~44                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[25]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~46                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[25]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~46                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[26]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~48                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[26]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~48                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[27]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~50                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[27]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~50                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[28]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~52                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[28]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~52                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[29]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~54                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[29]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~54                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[2]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[2]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|high_cnt[2]             ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[30]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~56                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[30]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~56                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[31]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~58                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[31]   ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~58                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~2                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[3]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~2                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~4                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[4]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~4                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~6                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[5]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~6                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~8                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[6]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~8                  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~10                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[7]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~10                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~12                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[8]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~12                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~14                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|low_cnt[9]    ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|feed:feedEx01|Add3~14                 ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[0]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[0]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[0]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[0]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[10] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[10] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[10] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[10] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[11] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[11] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[11] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[11] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[12] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[12] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[12] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[12] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[13] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[13] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[13] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[13] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[14] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[14] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[14] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[14] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[15] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[15] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[15] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[15] ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[1]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[1]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[1]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[1]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[2]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[2]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[2]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[2]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[3]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[3]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[3]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[3]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[4]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[4]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[4]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[4]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[5]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[5]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[5]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[5]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[6]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[6]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[6]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[6]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[7]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[7]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[7]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[7]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[8]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[8]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[8]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[8]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[9]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[9]  ; N/A     ;
+; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[9]  ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|state_cnt[9]  ; N/A     ;
+; motor_top:motor_topEx01|readhead_sig                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; readhead_sig                                                  ; N/A     ;
+; motor_top:motor_topEx01|readhead_sig                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; readhead_sig                                                  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[0]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[0]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[0]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[0]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[10]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[10] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[10]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[10] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[11]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[11] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[11]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[11] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[12]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[12] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[12]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[12] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[13]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[13] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[13]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[13] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[14]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[14] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[14]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[14] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[15]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[15] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[15]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[15] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[16]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[16] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[16]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[16] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[17]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[17] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[17]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[17] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[18]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[18] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[18]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[18] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[19]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[19] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[19]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[19] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[1]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[1]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[1]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[1]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[20]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[20] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[20]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[20] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[21]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[21] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[21]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[21] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[22]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[22] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[22]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[22] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[23]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[23] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[23]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[23] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[24]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[24] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[24]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[24] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[25]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[25] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[25]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[25] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[26]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[26] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[26]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[26] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[27]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[27] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[27]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[27] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[28]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[28] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[28]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[28] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[29]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[29] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[29]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[29] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[2]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[2]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[2]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[2]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[30]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[30] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[30]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[30] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[31]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[31] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[31]                         ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[31] ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[3]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[3]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[3]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[3]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[4]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[4]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[4]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[4]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[5]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[5]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[5]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[5]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[6]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[6]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[6]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[6]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[7]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[7]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[7]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[7]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[8]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[8]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[8]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[8]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[9]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[9]  ; N/A     ;
+; motor_top:motor_topEx01|speed_cnt[9]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|speed_cnt[9]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[0]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[0]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[0]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[0]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[10]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[10]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[10]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[10]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[11]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[11]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[11]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[11]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[12]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[12]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[12]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[12]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[13]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[13]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[13]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[13]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[14]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[14]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[14]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[14]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[15]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[15]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[15]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[15]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[16]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[16]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[16]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[16]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[17]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[17]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[17]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[17]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[18]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[18]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[18]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[18]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[19]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[19]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[19]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[19]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[1]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[1]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[1]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[1]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[20]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[20]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[20]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[20]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[21]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[21]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[21]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[21]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[22]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[22]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[22]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[22]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[23]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[23]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[23]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[23]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[24]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[24]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[24]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[24]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[25]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[25]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[25]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[25]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[26]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[26]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[26]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[26]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[27]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[27]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[27]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[27]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[28]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[28]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[28]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[28]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[29]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[29]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[29]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[29]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[2]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[2]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[2]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[2]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[30]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[30]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[30]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[30]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[31]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[31]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[31]                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[31]  ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[3]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[3]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[3]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[3]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[4]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[4]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[4]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[4]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[5]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[5]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[5]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[5]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[6]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[6]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[6]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[6]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[7]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[7]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[7]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[7]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[8]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[8]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[8]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[8]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[9]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[9]   ; N/A     ;
+; motor_top:motor_topEx01|step_cnt[9]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|step_cnt[9]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[0]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[0]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[0]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[0]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[10]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[10]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[10]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[10]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[11]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[11]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[11]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[11]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[12]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[12]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[12]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[12]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[13]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[13]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[13]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[13]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[14]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[14]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[14]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[14]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[15]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[15]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[15]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[15]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[16]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[16]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[16]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[16]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[17]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[17]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[17]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[17]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[18]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[18]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[18]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[18]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[19]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[19]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[19]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[19]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[1]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[1]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[1]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[1]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[20]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[20]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[20]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[20]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[21]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[21]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[21]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[21]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[22]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[22]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[22]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[22]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[23]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[23]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[23]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[23]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[24]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[24]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[24]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[24]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[25]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[25]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[25]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[25]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[26]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[26]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[26]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[26]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[27]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[27]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[27]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[27]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[28]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[28]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[28]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[28]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[29]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[29]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[29]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[29]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[2]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[2]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[2]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[2]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[30]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[30]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[30]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[30]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[31]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[31]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[31]                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[31]   ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[3]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[3]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[3]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[3]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[4]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[4]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[4]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[4]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[5]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[5]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[5]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[5]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[6]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[6]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[6]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[6]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[7]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[7]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[7]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[7]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[8]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[8]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[8]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[8]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[9]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[9]    ; N/A     ;
+; motor_top:motor_topEx01|sub_cnt[9]                            ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|angle_cal:angle_calEx01|sub_cnt[9]    ; N/A     ;
+; pwm                                                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|cs[1]         ; N/A     ;
+; pwm                                                           ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_top:motor_topEx01|pwm_drive:pwm_driveEx01|cs[1]         ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|gnd                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; auto_signaltap_0|vcc                                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                           ; N/A     ;
+; clk                                                           ; post-fitting  ; connected ; Top                            ; post-synthesis    ; clk                                                           ; N/A     ;
++---------------------------------------------------------------+---------------+-----------+--------------------------------+-------------------+---------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                    ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Statistic                                   ; Top  ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 595  ; 156              ; 2899                           ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total combinational functions               ; 561  ; 129              ; 965                            ; 0                              ;
+; Logic element usage by number of LUT inputs ;      ;                  ;                                ;                                ;
+;     -- 4 input functions                    ; 198  ; 57               ; 538                            ; 0                              ;
+;     -- 3 input functions                    ; 18   ; 35               ; 292                            ; 0                              ;
+;     -- <=2 input functions                  ; 345  ; 37               ; 135                            ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Logic elements by mode                      ;      ;                  ;                                ;                                ;
+;     -- normal mode                          ; 262  ; 121              ; 875                            ; 0                              ;
+;     -- arithmetic mode                      ; 299  ; 8                ; 90                             ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total registers                             ; 236  ; 91               ; 2531                           ; 0                              ;
+;     -- Dedicated logic registers            ; 236  ; 91               ; 2531                           ; 0                              ;
+;     -- I/O registers                        ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Virtual pins                                ; 0    ; 0                ; 0                              ; 0                              ;
+; I/O pins                                    ; 4    ; 0                ; 0                              ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0    ; 0                ; 0                              ; 0                              ;
+; Total memory bits                           ; 0    ; 0                ; 737280                         ; 0                              ;
+; Total RAM block bits                        ; 0    ; 0                ; 0                              ; 0                              ;
+; JTAG                                        ; 1    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Connections                                 ;      ;                  ;                                ;                                ;
+;     -- Input Connections                    ; 1    ; 134              ; 3609                           ; 0                              ;
+;     -- Registered Input Connections         ; 0    ; 102              ; 2925                           ; 0                              ;
+;     -- Output Connections                   ; 3379 ; 331              ; 34                             ; 0                              ;
+;     -- Registered Output Connections        ; 288  ; 331              ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Internal Connections                        ;      ;                  ;                                ;                                ;
+;     -- Total Connections                    ; 5588 ; 1031             ; 15568                          ; 0                              ;
+;     -- Registered Connections               ; 1073 ; 796              ; 12379                          ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; External Connections                        ;      ;                  ;                                ;                                ;
+;     -- Top                                  ; 0    ; 123              ; 3257                           ; 0                              ;
+;     -- sld_hub:auto_hub                     ; 123  ; 20               ; 322                            ; 0                              ;
+;     -- sld_signaltap:auto_signaltap_0       ; 3257 ; 322              ; 64                             ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Partition Interface                         ;      ;                  ;                                ;                                ;
+;     -- Input Ports                          ; 5    ; 45               ; 609                            ; 0                              ;
+;     -- Output Ports                         ; 182  ; 62               ; 375                            ; 0                              ;
+;     -- Bidir Ports                          ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Registered Ports                            ;      ;                  ;                                ;                                ;
+;     -- Registered Input Ports               ; 0    ; 4                ; 366                            ; 0                              ;
+;     -- Registered Output Ports              ; 0    ; 29               ; 361                            ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Port Connectivity                           ;      ;                  ;                                ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 0                ; 27                             ; 0                              ;
+;     -- Output Ports driven by GND           ; 0    ; 28               ; 2                              ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 0                ; 15                             ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                ; 1                              ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 25               ; 184                            ; 0                              ;
+;     -- Output Ports with no Source          ; 0    ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 30               ; 198                            ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0    ; 29               ; 363                            ; 0                              ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                                                  ;
++------------------------------------------------------+-----------+---------------+----------+-------------+
+; Name                                                 ; Partition ; Type          ; Location ; Status      ;
++------------------------------------------------------+-----------+---------------+----------+-------------+
+; altera_reserved_tck                                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tck                           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tck~input                     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
+; altera_reserved_tdi                                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tdi                           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdi~input                     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
+; altera_reserved_tdo                                  ; Top       ; Output Port   ; n/a      ;             ;
+;     -- altera_reserved_tdo                           ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdo~output                    ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
+; altera_reserved_tms                                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tms                           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tms~input                     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
+; clk                                                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- clk                                           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- clk~input                                     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_feedEx01_timeout_flag       ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_enable        ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_0_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_10_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_11_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_12_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_13_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_14_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_15_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_16_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_17_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_18_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_19_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_1_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_20_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_21_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_22_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_23_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_24_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_25_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_26_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_27_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_28_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_29_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_2_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_30_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_31_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_3_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_4_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_5_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_6_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_7_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_8_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_high_cnt_9_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_0_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_10_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_11_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_12_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_13_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_14_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_15_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_16_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_17_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_18_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_19_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_1_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_20_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_21_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_22_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_23_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_24_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_25_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_26_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_27_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_28_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_29_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_2_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_30_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_31_   ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_3_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_4_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_5_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_6_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_7_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_8_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_low_cnt_9_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_0_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_10_ ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_11_ ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_12_ ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_13_ ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_14_ ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_15_ ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_1_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_2_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_3_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_4_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_5_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_6_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_7_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_8_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_pwm_driveEx01_state_cnt_9_  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_readhead_sig                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_0_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_10_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_11_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_12_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_13_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_14_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_15_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_16_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_17_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_18_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_19_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_1_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_20_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_21_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_22_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_23_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_24_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_25_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_26_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_27_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_28_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_29_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_2_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_30_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_31_               ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_3_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_4_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_5_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_6_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_7_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_8_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_speed_cnt_9_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_0_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_10_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_11_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_12_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_13_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_14_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_15_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_16_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_17_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_18_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_19_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_1_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_20_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_21_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_22_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_23_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_24_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_25_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_26_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_27_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_28_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_29_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_2_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_30_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_31_                ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_3_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_4_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_5_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_6_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_7_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_8_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_step_cnt_9_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_0_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_10_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_11_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_12_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_13_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_14_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_15_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_16_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_17_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_18_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_19_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_1_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_20_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_21_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_22_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_23_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_24_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_25_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_26_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_27_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_28_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_29_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_2_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_30_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_31_                 ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_3_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_4_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_5_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_6_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_7_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_8_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pre_syn.bp.motor_topEx01_sub_cnt_9_                  ; Top       ; Output Port   ; n/a      ;             ;
+;                                                      ;           ;               ;          ;             ;
+; pwm                                                  ; Top       ; Output Port   ; n/a      ;             ;
+;     -- pwm                                           ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- pwm~output                                    ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
+; readhead_sig                                         ; Top       ; Input Port    ; n/a      ;             ;
+;     -- readhead_sig                                  ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- readhead_sig~input                            ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
+; test_port                                            ; Top       ; Output Port   ; n/a      ;             ;
+;     -- test_port                                     ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- test_port~output                              ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;           ;               ;          ;             ;
++------------------------------------------------------+-----------+---------------+----------+-------------+
+
+
++----------------------------------------+
+; Partition Merge Resource Usage Summary ;
++--------------------------+-------------+
+; Resource                 ; Usage       ;
++--------------------------+-------------+
+; I/O pins                 ; 4           ;
+; Total memory bits        ; 737280      ;
+;                          ;             ;
+; DSP block 9-bit elements ; 0           ;
+;                          ;             ;
+; Maximum fan-out node     ; clk~input   ;
+; Maximum fan-out          ; 2011        ;
+; Total fan-out            ; 18282       ;
+; Average fan-out          ; 3.88        ;
++--------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                 ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_bi24:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4096         ; 180          ; 4096         ; 180          ; 737280 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Partition Merge
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+    Info: Processing started: Thu Oct 25 16:01:14 2018
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off motor -c motor --merge=on
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (35010): Previously generated Fitter netlist for partition "Top" is older than current Synthesis netlist -- using the current Synthesis netlist instead to ensure that the latest source changes are included
+    Info (35011): Set the option to Ignore source file changes to force the Quartus Prime software to always use a previously generated Fitter netlist
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
+Info (35007): Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 393 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Info (35002): Resolved and merged 3 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3863 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 3674 logic cells
+    Info (21064): Implemented 180 RAM segments
+Info: Quartus Prime Partition Merge was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4811 megabytes
+    Info: Processing ended: Thu Oct 25 16:01:15 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

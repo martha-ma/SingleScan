@@ -1,0 +1,226 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/work/ocean_ladar/modelsim
+vangle_cal
+!s10a 1544522384
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 _N^FPKbBhcnjz^^l^h]YS2
+IebC3M?@;jLY^<f[7>b=fe2
+Z1 dE:/work/SingleScan/hdl/motor/modelsim
+w1544522384
+8../src/angle_cal.v
+F../src/angle_cal.v
+Z2 L0 12
+Z3 OL;L;10.6c;65
+!s108 1544522401.000000
+!s107 ../src/angle_cal.v|
+!s90 -reportprogress|300|-incr|+define+DEBUG|../src/angle_cal.v|
+!i113 0
+Z4 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 !s92 +define+DEBUG -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0
+vangle_valid
+!s10a 1544776282
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 GHgQd7F5zYlEGjZ0VHE4=1
+I^ZdJ@FR9h`PAZM65SeKo`3
+R1
+w1544776282
+8../src/angle_valid.v
+F../src/angle_valid.v
+L0 17
+R3
+Z7 !s108 1544776588.000000
+!s107 ../src/angle_valid.v|
+!s90 -reportprogress|300|-incr|+define+DEBUG|../src/angle_valid.v|
+!i113 0
+R4
+R5
+R6
+vdiv_distance
+Z8 !s10a 1543904609
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 ?TTAYUHHng:OoX6FoQI=n0
+IR1daCZozZ[c44NUWjKHX[0
+R1
+Z9 w1543904609
+8../../../ip/div_distance/div_distance.v
+F../../../ip/div_distance/div_distance.v
+Z10 L0 39
+R3
+Z11 !s108 1544687062.000000
+!s107 ../../../ip/div_distance/div_distance.v|
+!s90 -reportprogress|300|-incr|../../../ip/div_distance/div_distance.v|
+!i113 0
+R4
+R6
+vfeed
+Z12 !s10a 1544769539
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 dY3XaO=ORcPHGIGkEIhfm2
+IO@e=CNY2DYFPV_TN4^`2_2
+R1
+w1544680904
+8../src/feed.v
+F../src/feed.v
+L0 37
+R3
+Z13 !s108 1544682008.000000
+!s107 ../src/feed.v|
+!s90 -reportprogress|300|-incr|+define+DEBUG_FEED|../src/feed.v|
+!i113 0
+R4
+!s92 +define+DEBUG_FEED -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R6
+vfilter_signal
+R12
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 ^ZEzgdjIWlESEQcNnR8N;1
+IKP=gV7ZIYB3I5Ha6Q36=o1
+R1
+w1544600604
+8../src/filter_signal.v
+F../src/filter_signal.v
+R2
+R3
+!s108 1544663855.000000
+!s107 ../src/filter_signal.v|
+!s90 -reportprogress|300|-incr|../src/filter_signal.v|
+!i113 0
+R4
+R6
+vmotor_info
+R12
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 >5FAmP08e44_:LY@>gR_>3
+IJ8RE]6zkh>fE;KMHh0[gO2
+R1
+w1544680931
+8../src/motor_info.v
+F../src/motor_info.v
+R2
+R3
+R13
+!s107 ../src/motor_info.v|
+!s90 -reportprogress|300|-incr|../src/motor_info.v|
+!i113 0
+R4
+R6
+vmotor_top
+!s10a 1544776545
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 dRad<gOjn]QRQk9mZ:VOD1
+IV4]l9<<6OS<GIF2Rf<di40
+R1
+w1544776545
+8../src/motor_top.v
+F../src/motor_top.v
+R2
+R3
+R7
+!s107 ../src/motor_top.v|
+!s90 -reportprogress|300|-incr|../src/motor_top.v|
+!i113 0
+R4
+R6
+vmotor_top_tb
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 <Nj^3bL5ezN4Sb:LU5EO]2
+IhZJFV6;V]?K7^8U7c;Eoe3
+!s105 motor_top_tb_sv_unit
+S1
+R1
+w1544776905
+8../bench/motor_top_tb.sv
+F../bench/motor_top_tb.sv
+F..\bench\.\dut_bfm.svh
+L0 3
+R3
+!s108 1544777102.000000
+!s107 ..\bench\.\dut_bfm.svh|../bench/motor_top_tb.sv|
+!s90 -reportprogress|300|-sv|-incr|../bench/motor_top_tb.sv|
+!i113 0
+o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R6
+vmul_ip
+R8
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 kCZ7M=A4C7`?T>klVZGMG3
+I;n0OnF3CnSNl=c;CIY2ho1
+R1
+R9
+8../../../ip/mul/mul_ip.v
+F../../../ip/mul/mul_ip.v
+R10
+R3
+R11
+!s107 ../../../ip/mul/mul_ip.v|
+!s90 -reportprogress|300|-incr|../../../ip/mul/mul_ip.v|
+!i113 0
+R4
+R6
+vpwm_drive
+!s10a 1542940972
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 5DgZI;@CCm8Pz[BLEYla>1
+I01Khk6;kIE;1JkBJ?IP6O2
+dE:/study/fpga/motor/modelsim
+w1539135871
+8../src/pwm_drive.v
+F../src/pwm_drive.v
+R2
+R3
+!s108 1539149577.000000
+!s107 ../src/pwm_drive.v|
+!s90 -reportprogress|300|-incr|../src/pwm_drive.v|
+!i113 0
+R4
+R6

@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Oct 25 16:01:28 2018
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : motor
+Top-level Entity Name : motor_test
+Family : Cyclone IV GX
+Device : EP4CGX50CF23I7
+Timing Models : Final
+Total logic elements : 3,446 / 49,888 ( 7 % )
+    Total combinational functions : 1,657 / 49,888 ( 3 % )
+    Dedicated logic registers : 2,858 / 49,888 ( 6 % )
+Total registers : 2858
+Total pins : 5 / 307 ( 2 % )
+Total virtual pins : 0
+Total memory bits : 737,280 / 2,562,048 ( 29 % )
+Embedded Multiplier 9-bit elements : 0 / 280 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 4 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 4 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 4 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 4 ( 0 % )
+Total PLLs : 0 / 6 ( 0 % )

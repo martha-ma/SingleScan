@@ -1,0 +1,18 @@
+Analysis & Synthesis Status : Successful - Mon Jun 17 13:17:39 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : distance
+Top-level Entity Name : calc_distance_top
+Family : Cyclone IV GX
+Total logic elements : 1,342
+    Total combinational functions : 966
+    Dedicated logic registers : 687
+Total registers : 687
+Total pins : 87
+Total virtual pins : 0
+Total memory bits : 32,810
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0

@@ -1,0 +1,252 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/work/SingleScan/modelsim/top_sim
+T_opt
+!s110 1560159987
+Vcf`ijnU1VT=badJ13H15G0
+Z1 04 19 4 work calc_distance_toptb fast 0
+=1-1831bfba115d-5cfe26f2-33c-405c
+Z2 o-quiet -auto_acc_if_foreign -work work -L altera18.0_questasim_10.6c_lib +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;10.6c;65
+R0
+T_opt1
+!s110 1560760790
+V]7Ggk@=B?29hMMAmbzWd91
+R1
+=1-1831bfba115d-5d0751d6-b2-3b3c
+R2
+R3
+n@_opt1
+R4
+R0
+T_opt2
+!s110 1560760826
+V`44FR76gASfW2I6d4Gg300
+R1
+=2-1831bfba115d-5d0751fa-6-3b3c
+o-quiet -auto_acc_if_foreign -work work -L altera18.0_questasim_10.6c_lib
+R3
+n@_opt2
+R4
+R0
+vcalc_distance_top
+!s10a 1562550018
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 WzGD6JFXDXCJRd>TiYmKU0
+I^2<3dk4GC?A`dQNTe5mKX1
+Z6 dE:/work/SingleScan/hdl/calc_distance/modelsim
+w1562550018
+8../hdl/calc_distance_top.v
+F../hdl/calc_distance_top.v
+L0 3
+Z7 OL;L;10.6c;65
+!s108 1562550075.000000
+Z8 !s107 ../hdl/zero_revise.v|../hdl/zero_distance.v|../hdl/grid_statistical.v|../hdl/grid_division.v|../hdl/dust_alarm.v|../hdl/data_select.v|../hdl/calc_distance_top.v|
+Z9 !s90 -reportprogress|300|-incr|../hdl/calc_distance_top.v|../hdl/data_select.v|../hdl/dust_alarm.v|../hdl/grid_division.v|../hdl/grid_statistical.v|../hdl/zero_distance.v|../hdl/zero_revise.v|
+!i113 0
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vcalc_distance_toptb
+!s10a 1565335789
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 1<TEgCVPOXc6QD`WMYF4L0
+I8[Gdj?cF_Z]EE:f`k5c0e0
+!s105 calc_distance_toptb_sv_unit
+S1
+R6
+w1565335789
+8../bench/calc_distance_toptb.sv
+F../bench/calc_distance_toptb.sv
+L0 3
+R7
+!s108 1565335793.000000
+!s107 ../bench/calc_distance_toptb.sv|
+!s90 -reportprogress|300|-sv|-incr|../bench/calc_distance_toptb.sv|
+!i113 0
+o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vdata_select
+!s10a 1561276251
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 0iI`81Zdn0jf]Tjf_Hm><3
+I0d`bBf:7;N[]8fUN2=M_j3
+R6
+w1560906689
+8../hdl/data_select.v
+F../hdl/data_select.v
+Z11 L0 12
+R7
+!s108 1561014886.000000
+!s107 ../hdl/grid_statistical.v|../hdl/grid_division.v|../hdl/data_select.v|../hdl/calc_distance_top.v|
+!s90 -reportprogress|300|-incr|../hdl/calc_distance_top.v|../hdl/data_select.v|../hdl/grid_division.v|../hdl/grid_statistical.v|
+!i113 0
+R10
+R3
+vdust_alarm
+!s10a 1561700867
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 nV[;]IF7JGbU;1g9EG1LY1
+I=F;B:bUIEVin8300Q;e433
+R6
+w1561700867
+8../hdl/dust_alarm.v
+F../hdl/dust_alarm.v
+Z12 L0 13
+R7
+!s108 1561946519.000000
+R8
+R9
+!i113 0
+R10
+R3
+vgrid_division
+!s10a 1562549357
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 _fjB7V6;^7DnnWE9^LN]Q3
+IkG3JHN_JMH;0JnAUn]LOK0
+R6
+w1562549357
+8../hdl/grid_division.v
+F../hdl/grid_division.v
+R11
+R7
+Z13 !s108 1562549359.000000
+R8
+R9
+!i113 0
+R10
+R3
+vgrid_ram
+!s10a 1562548133
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 365M;U@X;nkkCR1dkhDKE1
+I5LRR5:kG2aUHOeU2K=E900
+R6
+w1562548133
+8../ip/grid_ram/grid_ram.v
+F../ip/grid_ram/grid_ram.v
+Z14 L0 39
+R7
+R13
+!s107 ../ip/grid_ram/grid_ram.v|
+!s90 -reportprogress|300|-incr|../ip/grid_ram/grid_ram.v|
+!i113 0
+R10
+R3
+vgrid_statistical
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 Se9OZAE16[[QhL10i`GSY2
+IilLGehf4RV^F[kZj7kX[`2
+R6
+w1565337168
+8../hdl/grid_statistical.v
+F../hdl/grid_statistical.v
+L0 3
+R7
+!s108 1565337181.000000
+R8
+R9
+!i113 0
+R10
+R3
+vmod10
+!s10a 1561542177
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 V4>FCK>HeCVPQJ=YZ?LIz3
+IKF2E083Un0T<H6;bEHNkK1
+R6
+w1561542177
+8../ip/mod10/mod10.v
+F../ip/mod10/mod10.v
+R14
+R7
+Z15 !s108 1561543451.000000
+!s107 ../ip/mod10/mod10.v|
+!s90 -reportprogress|300|-incr|../ip/mod10/mod10.v|
+!i113 0
+R10
+R3
+vzero_distance
+!s10a 1561536105
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 zNjkaAFHNY<bMl46KRanH1
+I1_M]S:5hm]GQP7j7TNzz>2
+R6
+w1561536105
+8../hdl/zero_distance.v
+F../hdl/zero_distance.v
+R12
+R7
+R15
+R8
+R9
+!i113 0
+R10
+R3
+vzero_revise
+!s10a 1565318131
+R5
+r1
+!s85 0
+31
+!i10b 1
+!s100 <f7g:UYiE;lGC7bjCCJFY1
+InNJ8@nni]NRYi6<FO_E`P2
+R6
+w1565318131
+8../hdl/zero_revise.v
+F../hdl/zero_revise.v
+R12
+R7
+!s108 1565335189.000000
+R8
+R9
+!i113 0
+R10
+R3

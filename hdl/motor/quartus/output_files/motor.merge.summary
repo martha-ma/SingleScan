@@ -1,0 +1,18 @@
+Partition Merge Status : Successful - Thu Oct 25 16:01:15 2018
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : motor
+Top-level Entity Name : motor_test
+Family : Cyclone IV GX
+Total logic elements : 3,618
+    Total combinational functions : 1,655
+    Dedicated logic registers : 2,858
+Total registers : 2858
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 737,280
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0
