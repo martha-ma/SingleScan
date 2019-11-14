@@ -1,0 +1,759 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+# Date created = 09:15:44  May 25, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		SingleScan_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV GX"
+set_global_assignment -name DEVICE EP4CGX50CF23I7
+set_global_assignment -name TOP_LEVEL_ENTITY SingleScan
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:15:44  MAY 25, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/para.stp
+set_location_assignment PIN_K10 -to clk
+set_location_assignment PIN_J10 -to "clk(n)"
+set_location_assignment PIN_AB21 -to pwr_rst
+set_location_assignment PIN_A18 -to pwm
+set_location_assignment PIN_AB19 -to motor_direction
+set_location_assignment PIN_AA20 -to readhead_sig
+set_location_assignment PIN_H2 -to rx_datain[0]
+set_location_assignment PIN_F2 -to tx_dataout[0]
+set_location_assignment PIN_F1 -to "tx_dataout[0](n)"
+set_location_assignment PIN_A15 -to spi_MISO
+set_location_assignment PIN_A14 -to spi_MOSI
+set_location_assignment PIN_A17 -to spi_SS_n
+set_location_assignment PIN_A16 -to spi_SCLK
+set_location_assignment PIN_A12 -to w5500_rst
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ON
+set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
+set_global_assignment -name QII_AUTO_PACKED_REGISTERS NORMAL
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
+set_global_assignment -name SYNCHRONIZATION_REGISTER_CHAIN_LENGTH 3
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_location_assignment PIN_H1 -to "rx_datain[0](n)"
+set_location_assignment PIN_AB4 -to scl
+set_location_assignment PIN_AB5 -to sda
+
+
+set_location_assignment PIN_A5 -to ad5302_dout
+set_location_assignment PIN_B4 -to ad5302_sync_n
+set_location_assignment PIN_A6 -to ad5302_ldac_n
+set_location_assignment PIN_A4 -to ad5302_sclk
+set_location_assignment PIN_D3 -to epcq32_dclk
+set_location_assignment PIN_J4 -to epcq32_sce
+set_location_assignment PIN_D1 -to epcq32_sdo
+set_location_assignment PIN_K4 -to epcq32_data0
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name ACTIVE_SERIAL_CLOCK FREQ_40MHZ
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_location_assignment PIN_P22 -to adt7301_cs_n
+set_location_assignment PIN_N22 -to adt7301_din
+set_location_assignment PIN_T22 -to adt7301_dout
+set_location_assignment PIN_R22 -to adt7301_sclk
+set_location_assignment PIN_B6 -to LED1
+set_location_assignment PIN_C6 -to LED2
+set_location_assignment PIN_Y4 -to alarm_io[0]
+set_location_assignment PIN_AA4 -to alarm_io[1]
+set_location_assignment PIN_AA6 -to alarm_io[2]
+set_location_assignment PIN_A3 -to send_data[0]
+set_location_assignment PIN_A8 -to ad5302_dout_LD
+set_location_assignment PIN_B7 -to ad5302_sclk_LD
+set_location_assignment PIN_A7 -to ad5302_sync_n_LD
+set_location_assignment PIN_A10 -to ad5302_ldac_n_LD
+set_location_assignment PIN_AB15 -to cpu_test_io[0]
+set_location_assignment PIN_A21 -to txd
+set_location_assignment PIN_K22 -to rxd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name IO_STANDARD LVDS -to clk
+set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to rx_datain[0]
+set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to tx_dataout[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to txd
+set_location_assignment PIN_AB6 -to alarm_io3
+set_location_assignment PIN_U22 -to alarm_select_io[0]
+set_location_assignment PIN_V22 -to alarm_select_io[1]
+set_location_assignment PIN_W22 -to alarm_select_io[2]
+set_location_assignment PIN_Y22 -to alarm_select_io[3]
+set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
+
+set_location_assignment PIN_G22 -to HEN
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id rx
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to rx_clkout -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334548" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=512" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to rx|vcc -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=512" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to rx|gnd -section_id rx
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/IP/div_16.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/da_adjust.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/hdl/zero_revise.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/hdl/zero_distance.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/hdl/dust_alarm.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/mult_div.v
+set_global_assignment -name QSYS_FILE kernel.qsys
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/hdl/data_select.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/degree_info.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/p2s.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/ip/mod10/mod10.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/ip/grid_ram/grid_ram.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/hdl/grid_statistical.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/hdl/grid_division.v
+set_global_assignment -name VERILOG_FILE ../hdl/calc_distance/hdl/calc_distance_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/laser_send_top.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/quartus/pll.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/src/uart/src/uart.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/src/uart/src/tx_part.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/src/uart/src/rx_part.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/src/uart2stream.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/src/uart2fifo.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/src/stream2uart.v
+set_global_assignment -name VERILOG_FILE ../test/nios_test/src/nios_test_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/Ranging_distance.v
+set_global_assignment -name VERILOG_FILE ../ip/pll/pll_250.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/compa_value.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/tem_adjust.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/delay_da.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/adt7031_drive/src/spi_master_core_t.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/adt7031_drive/src/high_v.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/adt7031_drive/src/cal_tem.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/adt7031_drive/src/adt7301_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/adt7031_drive/src/adt7301_core.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/trip_point.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/zero_sub.v
+set_global_assignment -name QIP_FILE ../hdl/scanner/IP/mul_p.qip
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/average_value.v
+set_global_assignment -name VERILOG_FILE ../hdl/compare_region.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/ad5302_drive/src/ad5328_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/ad5302_drive/src/ad5328_drive.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/ad5302_drive/src/ad5328_core.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/ad5302_drive/src/ad5302_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/ad5302_drive/src/ad5302_core.v
+set_global_assignment -name VERILOG_FILE ../hdl/distance/data_select.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/move_average.v
+set_global_assignment -name VERILOG_FILE ../hdl/test_data.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/motor_info.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/angle_valid.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/remove_noise/RE_noise.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/recv/recv_module.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/IP/t_fifo.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/IP/mul_z.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/IP/mul.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/IP/all_fifo.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/zero_module.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/RE_noise.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/peak_div.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/parallel_serial.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/max_distance.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/final_distance.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/distance_module.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/distance/adjust_distance.v
+set_global_assignment -name VERILOG_FILE ../hdl/scanner/calc_distance.v
+set_global_assignment -name VERILOG_FILE ../hdl/distance/wr_distance.v
+set_global_assignment -name VERILOG_FILE ../hdl/distance/search_target_pos.v
+set_global_assignment -name VERILOG_FILE ../hdl/send_test.v
+set_global_assignment -name SDC_FILE SingleScan.out.sdc
+set_global_assignment -name VERILOG_FILE ../hdl/spi_master_core/src/spi_master_core.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/pwm_drive.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/motor_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/filter_signal.v
+set_global_assignment -name VERILOG_FILE ../hdl/motor/src/feed.v
+set_global_assignment -name VERILOG_FILE ../hdl/fifo2spi_bridge/fifo2spi_bridge_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/distance/algo_top.v
+set_global_assignment -name VERILOG_FILE ../ip/pos_fifo/pos_fifo.v
+set_global_assignment -name VERILOG_FILE ../ip/mul/mul_ip.v
+set_global_assignment -name VERILOG_FILE ../ip/div_distance/div_distance.v
+set_global_assignment -name VERILOG_FILE ../ip/altgx/ALTGX.v
+set_global_assignment -name VERILOG_FILE ../hdl/upload_module.v
+set_global_assignment -name VERILOG_FILE ../hdl/update2nios.v
+set_global_assignment -name VERILOG_FILE ../hdl/SingleScan.v
+set_global_assignment -name VERILOG_FILE ../hdl/send_data.v
+set_global_assignment -name VERILOG_FILE ../hdl/rst_module.v
+set_global_assignment -name VERILOG_FILE ../hdl/pos_buffer.v
+set_global_assignment -name VERILOG_FILE ../hdl/gx_rst_ctrl.v
+set_global_assignment -name VERILOG_FILE ../hdl/generate_send_enable.v
+set_global_assignment -name VERILOG_FILE ../hdl/cycle_ctrl.v
+set_global_assignment -name VERILOG_FILE ../hdl/cpu_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/command_module.v
+set_global_assignment -name VERILOG_FILE ../hdl/altgx_drive.v
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SIGNALTAP_FILE distance.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/cycle_distance.stp
+set_global_assignment -name SIGNALTAP_FILE step_cnt.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/step_cnt.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/angle.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/cycle_angle.stp
+set_global_assignment -name QIP_FILE ../ip/fifo_4096x20bit/fifo_4096x20bit.qip
+set_global_assignment -name QIP_FILE ../ip/div_12bit_12/div_12bit_12.qip
+set_global_assignment -name SIGNALTAP_FILE avr_distance.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/single_distance.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/avr_distance.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/debug.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/motor_step_cnt.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/continue_distance.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/after_avr.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/pwm.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/pulse_sig_fall.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/cycle_cnt.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/laser_fifo.stp
+set_global_assignment -name QIP_FILE ../ip/ram_1024x18bit/ram_1024x18bit.qip
+set_global_assignment -name SIGNALTAP_FILE output_files/region.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/algo.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/para.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/cycle_data.stp
+set_global_assignment -name QIP_FILE ../ip/pll/pll_100m.qip
+set_global_assignment -name QIP_FILE ../hdl/motor/ip/mod_degree.qip
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT1[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT2[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT3[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|POINT_CNT4[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance[9]" -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to rx|gnd -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[71] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[72] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[73] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[74] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[75] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[76] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[77] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[78] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[79] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[80] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[81] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[82] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[83] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[84] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[85] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[86] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[87] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[88] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[89] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[90] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[91] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[92] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[93] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[94] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[95] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[96] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[97] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[98] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[99] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[100] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[101] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[102] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[103] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[104] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[105] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[106] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[107] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[108] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[109] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[110] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[111] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[112] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[113] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[114] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[115] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[116] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[117] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[118] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[119] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[120] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[121] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[122] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[123] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[124] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[125] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[126] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[127] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[128] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[129] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[130] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[131] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[132] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[133] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[134] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[135] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[136] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[137] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[138] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[139] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[140] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[141] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[142] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[143] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[144] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[145] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[146] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[147] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[148] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[149] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[150] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[151] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[152] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[153] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[154] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[155] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[156] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[157] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[158] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[159] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[160] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[161] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[162] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[163] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[164] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[165] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[166] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[167] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[168] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[169] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[170] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[171] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[172] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[173] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[174] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[177] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[178] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[194] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[195] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[196] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[197] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[198] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[199] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[200] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[201] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[202] -to "altgx_drive:altgx_driveEx01|rx_dataout[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[203] -to "altgx_drive:altgx_driveEx01|rx_dataout[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[204] -to "altgx_drive:altgx_driveEx01|rx_dataout[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[205] -to "altgx_drive:altgx_driveEx01|rx_dataout[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[206] -to "altgx_drive:altgx_driveEx01|rx_dataout[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[207] -to "altgx_drive:altgx_driveEx01|rx_dataout[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[208] -to "altgx_drive:altgx_driveEx01|rx_dataout[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[209] -to "altgx_drive:altgx_driveEx01|rx_dataout[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[210] -to "altgx_drive:altgx_driveEx01|rx_dataout[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[211] -to "altgx_drive:altgx_driveEx01|rx_dataout[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[212] -to "altgx_drive:altgx_driveEx01|rx_dataout[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[213] -to "altgx_drive:altgx_driveEx01|rx_dataout[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[214] -to "altgx_drive:altgx_driveEx01|rx_dataout[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[215] -to "altgx_drive:altgx_driveEx01|rx_dataout[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[216] -to "altgx_drive:altgx_driveEx01|rx_dataout[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[217] -to "altgx_drive:altgx_driveEx01|rx_dataout[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[218] -to "laser_send_top:laser_send_topEx01|send_en" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[71] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[72] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[73] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m2[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[74] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[75] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[76] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[77] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[78] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[79] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[80] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[81] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[82] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[83] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[84] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[85] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[86] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[87] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[88] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[89] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[90] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[91] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m3[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[92] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[93] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[94] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[95] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[96] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[97] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[98] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[99] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[100] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[101] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[102] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[103] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[104] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[105] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[106] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[107] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[108] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[109] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|ad_distance_m[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[110] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[111] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[112] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[113] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[114] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[115] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[116] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[117] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[16]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[118] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[17]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[119] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[120] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[121] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[122] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[123] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[124] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[125] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[126] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[127] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|mid_distance[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[128] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[129] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[130] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[131] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[132] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[133] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[134] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[135] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[136] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[137] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_1[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[138] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[139] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[140] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[141] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[142] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[143] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[144] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[145] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[146] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[147] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_2[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[148] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[149] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[150] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[151] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[152] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[153] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[154] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[155] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[156] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[157] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_3[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[158] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[159] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[160] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[161] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[162] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[163] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[164] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[165] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[166] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[167] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_4[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[168] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[169] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[170] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[171] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[172] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[173] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[174] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[175] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[176] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[177] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_5[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[178] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[182] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[183] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[184] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[185] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[186] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[187] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[188] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[189] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[190] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[193] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[194] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[195] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[196] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[197] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[198] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[199] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[200] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[201] -to "Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|final_diatance:final_diatanceEx01|distance_module:distance_moduleEx01|adjust_distance:adjust_distanceEx01|time_pluse_com[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[202] -to "altgx_drive:altgx_driveEx01|rx_dataout[0]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[203] -to "altgx_drive:altgx_driveEx01|rx_dataout[10]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[204] -to "altgx_drive:altgx_driveEx01|rx_dataout[11]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[205] -to "altgx_drive:altgx_driveEx01|rx_dataout[12]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[206] -to "altgx_drive:altgx_driveEx01|rx_dataout[13]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[207] -to "altgx_drive:altgx_driveEx01|rx_dataout[14]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[208] -to "altgx_drive:altgx_driveEx01|rx_dataout[15]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[209] -to "altgx_drive:altgx_driveEx01|rx_dataout[1]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[210] -to "altgx_drive:altgx_driveEx01|rx_dataout[2]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[211] -to "altgx_drive:altgx_driveEx01|rx_dataout[3]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[212] -to "altgx_drive:altgx_driveEx01|rx_dataout[4]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[213] -to "altgx_drive:altgx_driveEx01|rx_dataout[5]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[214] -to "altgx_drive:altgx_driveEx01|rx_dataout[6]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[215] -to "altgx_drive:altgx_driveEx01|rx_dataout[7]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[216] -to "altgx_drive:altgx_driveEx01|rx_dataout[8]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[217] -to "altgx_drive:altgx_driveEx01|rx_dataout[9]" -section_id rx
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[218] -to "laser_send_top:laser_send_topEx01|send_en" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=219" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=219" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=219" -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to rx|gnd -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id rx
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=680" -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to rx|gnd -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to rx|vcc -section_id rx
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to rx|vcc -section_id rx
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/para_auto_stripped.stp

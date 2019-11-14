@@ -1,0 +1,20 @@
+
+State Machine - |SingleScan|cpu_top:cpu_topEx01|update2nios:update2niosEx01|tx_command
+Name tx_command.00000000000000000000000000000000 tx_command.UP_FPGA_STATUS tx_command.UP_DISTANCE_DATA 
+tx_command.00000000000000000000000000000000 0 0 0 
+tx_command.UP_DISTANCE_DATA 1 0 1 
+tx_command.UP_FPGA_STATUS 1 1 0 
+
+State Machine - |SingleScan|cpu_top:cpu_topEx01|kernel:kernelEx01|kernel_nios2:nios2|kernel_nios2_cpu:cpu|kernel_nios2_cpu_nios2_oci:the_kernel_nios2_cpu_nios2_oci|kernel_nios2_cpu_debug_slave_wrapper:the_kernel_nios2_cpu_debug_slave_wrapper|kernel_nios2_cpu_debug_slave_tck:the_kernel_nios2_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |SingleScan|Ranging_distance:Ranging_distanceEx01|calc_distance:calc_distanceEx01|recv_module:recv_moduleEx01|tola_en_state
+Name tola_en_state.01 
+tola_en_state.00 0 
+tola_en_state.01 1 

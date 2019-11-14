@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Fri Apr 19 16:38:36 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : SingleScan
+Top-level Entity Name : SingleScan
+Family : Cyclone IV GX
+Device : EP4CGX50CF23I7
+Power Models : Final
+Total Thermal Power Dissipation : 1012.42 mW
+Core Dynamic Thermal Power Dissipation : 659.74 mW
+Core Static Thermal Power Dissipation : 310.00 mW
+I/O Thermal Power Dissipation : 42.69 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

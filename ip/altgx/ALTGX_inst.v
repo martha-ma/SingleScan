@@ -1,0 +1,22 @@
+ALTGX	ALTGX_inst (
+	.cal_blk_clk ( cal_blk_clk_sig ),
+	.gxb_powerdown ( gxb_powerdown_sig ),
+	.pll_areset ( pll_areset_sig ),
+	.pll_inclk ( pll_inclk_sig ),
+	.reconfig_clk ( reconfig_clk_sig ),
+	.reconfig_togxb ( reconfig_togxb_sig ),
+	.rx_analogreset ( rx_analogreset_sig ),
+	.rx_datain ( rx_datain_sig ),
+	.rx_digitalreset ( rx_digitalreset_sig ),
+	.rx_locktodata ( rx_locktodata_sig ),
+	.rx_locktorefclk ( rx_locktorefclk_sig ),
+	.tx_datain ( tx_datain_sig ),
+	.tx_digitalreset ( tx_digitalreset_sig ),
+	.pll_locked ( pll_locked_sig ),
+	.reconfig_fromgxb ( reconfig_fromgxb_sig ),
+	.rx_clkout ( rx_clkout_sig ),
+	.rx_dataout ( rx_dataout_sig ),
+	.rx_freqlocked ( rx_freqlocked_sig ),
+	.tx_clkout ( tx_clkout_sig ),
+	.tx_dataout ( tx_dataout_sig )
+	);

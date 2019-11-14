@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_05" class="java.beans.XMLDecoder">
+ <object class="com.altera.embeddedsw.utilities.bean.PersistModels" id="PersistModels0">
+  <void property="filesModels">
+   <void method="add">
+    <object class="com.altera.embeddedsw.flash.model.internal.FileModel">
+     <void property="baseAddress">
+      <string>0x81000</string>
+     </void>
+     <void property="cpuResetAddress">
+      <string>0x81000</string>
+     </void>
+     <void property="endAddress">
+      <string>0x81800</string>
+     </void>
+     <void property="extraArgs">
+      <string></string>
+     </void>
+     <void property="fileType">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>com.altera.embeddedsw.flash.model.IMemoryFilesModel$FileType</class>
+       <string>ELF</string>
+      </object>
+     </void>
+     <void property="filename">
+      <string>E:\work\SingleScan\fpga_project\sopc\software\scan\scan.elf</string>
+     </void>
+     <void property="memoryName">
+      <string>epcs_flash_controller_0</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="com.altera.embeddedsw.flash.model.internal.FileModel">
+     <void property="baseAddress">
+      <string>0x81000</string>
+     </void>
+     <void property="cpuResetAddress">
+      <string>0x81000</string>
+     </void>
+     <void property="endAddress">
+      <string>0x81800</string>
+     </void>
+     <void property="extraArgs">
+      <string></string>
+     </void>
+     <void property="fileType">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>com.altera.embeddedsw.flash.model.IMemoryFilesModel$FileType</class>
+       <string>SOF</string>
+      </object>
+     </void>
+     <void property="filename">
+      <string>E:\work\SingleScan\fpga_project\output_files\SingleScan.sof</string>
+     </void>
+     <void property="memoryName">
+      <string>epcs_flash_controller_0</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void id="LinkedHashMap0" property="map">
+   <void method="put">
+    <string>VERSION</string>
+    <string>18.0</string>
+   </void>
+   <void method="put">
+    <string>BUILD</string>
+    <string>614</string>
+   </void>
+   <void method="put">
+    <string>sopcinfoFile</string>
+    <string>E:\work\SingleScan\fpga_project\kernel.sopcinfo</string>
+   </void>
+   <void method="put">
+    <string>physicalCpuName</string>
+    <string>nios2</string>
+   </void>
+   <void method="put">
+    <string>generateFiles</string>
+    <string>true</string>
+   </void>
+   <void method="put">
+    <string>programFlash</string>
+    <string>true</string>
+   </void>
+   <void method="put">
+    <string>flashFilesDir</string>
+    <string>E:\work\SingleScan\fpga_project\flash</string>
+   </void>
+   <void method="put">
+    <string>scriptDir</string>
+    <string>E:\work\SingleScan\fpga_project\script</string>
+   </void>
+   <void method="put">
+    <string>eraseAllEnabled</string>
+    <string>false</string>
+   </void>
+   <void method="put">
+    <string>runFromResetEnabled</string>
+    <string>false</string>
+   </void>
+   <void method="put">
+    <string>acceptBadSysId</string>
+    <string>false</string>
+   </void>
+   <void method="put">
+    <string>acceptBadTimestamp</string>
+    <string>false</string>
+   </void>
+   <void method="put">
+    <string>processorCableName</string>
+    <string>USB-Blaster on localhost [USB-0]</string>
+   </void>
+   <void method="put">
+    <string>processorDeviceIndex</string>
+    <string>1</string>
+   </void>
+   <void method="put">
+    <string>processorInstanceId</string>
+    <string>0</string>
+   </void>
+   <void method="put">
+    <string>userQpfFile</string>
+    <string>E:\work\SingleScan\fpga_project\SingleScan.qpf</string>
+   </void>
+  </void>
+  <void property="map">
+   <object idref="LinkedHashMap0"/>
+  </void>
+ </object>
+</java>

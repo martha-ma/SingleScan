@@ -1,0 +1,257 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pwm",
+					"strict" : false
+				},
+				{
+					"name" : "LED1",
+					"strict" : false
+				},
+				{
+					"name" : "LED2",
+					"strict" : false
+				},
+				{
+					"name" : "spi_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "spi_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "spi_SS_n",
+					"strict" : false
+				},
+				{
+					"name" : "epcq32_dclk",
+					"strict" : false
+				},
+				{
+					"name" : "epcq32_sce",
+					"strict" : false
+				},
+				{
+					"name" : "epcq32_sdo",
+					"strict" : false
+				},
+				{
+					"name" : "scl",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_io[0]",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_io[1]",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_io[2]",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_io3",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[0]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[1]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[2]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[3]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[4]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[5]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[6]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[7]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[8]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[9]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[10]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[11]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[12]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[13]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[14]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[15]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[16]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[17]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[18]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[19]",
+					"strict" : false
+				},
+				{
+					"name" : "test_out_port[20]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_test_io[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ad5302_sync_n",
+					"strict" : false
+				},
+				{
+					"name" : "ad5302_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "ad5302_dout",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ad5302_sync_n_LD",
+					"strict" : false
+				},
+				{
+					"name" : "ad5302_sclk_LD",
+					"strict" : false
+				},
+				{
+					"name" : "ad5302_dout_LD",
+					"strict" : false
+				},
+				{
+					"name" : "adt7301_cs_n",
+					"strict" : false
+				},
+				{
+					"name" : "adt7301_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "HEN",
+					"strict" : false
+				},
+				{
+					"name" : "w5500_rst",
+					"strict" : false
+				},
+				{
+					"name" : "sda",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "pwr_rst",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_select_io[1]",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_select_io[0]",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_select_io[3]",
+					"strict" : false
+				},
+				{
+					"name" : "alarm_select_io[2]",
+					"strict" : false
+				},
+				{
+					"name" : "readhead_sig",
+					"strict" : false
+				},
+				{
+					"name" : "spi_MISO",
+					"strict" : false
+				},
+				{
+					"name" : "epcq32_data0",
+					"strict" : false
+				},
+				{
+					"name" : "adt7301_din",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

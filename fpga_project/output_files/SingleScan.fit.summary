@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Nov 01 14:55:38 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : SingleScan
+Top-level Entity Name : SingleScan
+Family : Cyclone IV GX
+Device : EP4CGX50CF23I7
+Timing Models : Final
+Total logic elements : 25,301 / 49,888 ( 51 % )
+    Total combinational functions : 18,668 / 49,888 ( 37 % )
+    Dedicated logic registers : 17,493 / 49,888 ( 35 % )
+Total registers : 17493
+Total pins : 79 / 307 ( 26 % )
+Total virtual pins : 0
+Total memory bits : 1,951,620 / 2,562,048 ( 76 % )
+Embedded Multiplier 9-bit elements : 118 / 280 ( 42 % )
+Total GXB Receiver Channel PCS : 1 / 4 ( 25 % )
+Total GXB Receiver Channel PMA : 1 / 4 ( 25 % )
+Total GXB Transmitter Channel PCS : 1 / 4 ( 25 % )
+Total GXB Transmitter Channel PMA : 1 / 4 ( 25 % )
+Total PLLs : 3 / 6 ( 50 % )

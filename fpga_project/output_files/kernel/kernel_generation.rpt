@@ -1,0 +1,183 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate E:\work\SingleScan\fpga_project\sopc\kernel.qsys --synthesis=VERILOG --output-directory=E:\work\SingleScan\fpga_project\output_files\kernel\synthesis --family="Cyclone IV GX" --part=EP4CGX50CF23I7
+Progress: Loading sopc/kernel.qsys
+Progress: Reading input file
+Progress: Adding SCL [altera_avalon_pio 18.0]
+Progress: Parameterizing module SCL
+Progress: Adding SDA [altera_avalon_pio 18.0]
+Progress: Parameterizing module SDA
+Progress: Adding alarm_select [altera_avalon_pio 18.0]
+Progress: Parameterizing module alarm_select
+Progress: Adding clk [clock_source 18.0]
+Progress: Parameterizing module clk
+Progress: Adding epcs_flash [altera_avalon_epcs_flash_controller 18.0]
+Progress: Parameterizing module epcs_flash
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding laser_fifo [altera_avalon_fifo 18.0]
+Progress: Parameterizing module laser_fifo
+Progress: Adding led_timer [altera_avalon_timer 18.0]
+Progress: Parameterizing module led_timer
+Progress: Adding nios2 [altera_nios2_gen2 18.0]
+Progress: Parameterizing module nios2
+Progress: Adding onchip_memory [altera_avalon_onchip_memory2 18.0]
+Progress: Parameterizing module onchip_memory
+Progress: Adding power_led [altera_avalon_pio 18.0]
+Progress: Parameterizing module power_led
+Progress: Adding protocol_fifo [altera_avalon_fifo 18.0]
+Progress: Parameterizing module protocol_fifo
+Progress: Adding spird_fifo [altera_avalon_fifo 18.0]
+Progress: Parameterizing module spird_fifo
+Progress: Adding spiwr_fifo [altera_avalon_fifo 18.0]
+Progress: Parameterizing module spiwr_fifo
+Progress: Adding status_led [altera_avalon_pio 18.0]
+Progress: Parameterizing module status_led
+Progress: Adding sysid [altera_avalon_sysid_qsys 18.0]
+Progress: Parameterizing module sysid
+Progress: Adding w5500_cs [altera_avalon_pio 18.0]
+Progress: Parameterizing module w5500_cs
+Progress: Adding w5500_int [altera_avalon_pio 18.0]
+Progress: Parameterizing module w5500_int
+Progress: Adding w5500_rst [altera_avalon_pio 18.0]
+Progress: Parameterizing module w5500_rst
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: kernel.SDA: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: kernel.alarm_select: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: kernel.epcs_flash: Legacy EPCS/EPCQx1 Flash Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: kernel.epcs_flash: Dedicated AS interface is not supported, signals are exported to top level design.
+Info: kernel.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: kernel.laser_fifo: For Avalon-ST and Avalon-MM combinations, data width is 32 bits.
+Info: kernel.protocol_fifo: For Avalon-ST and Avalon-MM combinations, data width is 32 bits.
+Info: kernel.spird_fifo: For Avalon-ST and Avalon-MM combinations, data width is 32 bits.
+Info: kernel.spiwr_fifo: For Avalon-ST and Avalon-MM combinations, data width is 32 bits.
+Info: kernel.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: kernel.sysid: Time stamp will be automatically updated when this component is generated.
+Info: kernel.w5500_int: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: kernel: Generating kernel "kernel" for QUARTUS_SYNTH
+Info: SCL: Starting RTL generation for module 'kernel_SCL'
+Info: SCL:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=kernel_SCL --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0002_SCL_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0002_SCL_gen//kernel_SCL_component_configuration.pl  --do_build_sim=0  ]
+Info: SCL: Done RTL generation for module 'kernel_SCL'
+Info: SCL: "kernel" instantiated altera_avalon_pio "SCL"
+Info: SDA: Starting RTL generation for module 'kernel_SDA'
+Info: SDA:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=kernel_SDA --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0003_SDA_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0003_SDA_gen//kernel_SDA_component_configuration.pl  --do_build_sim=0  ]
+Info: SDA: Done RTL generation for module 'kernel_SDA'
+Info: SDA: "kernel" instantiated altera_avalon_pio "SDA"
+Info: alarm_select: Starting RTL generation for module 'kernel_alarm_select'
+Info: alarm_select:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=kernel_alarm_select --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0004_alarm_select_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0004_alarm_select_gen//kernel_alarm_select_component_configuration.pl  --do_build_sim=0  ]
+Info: alarm_select: Done RTL generation for module 'kernel_alarm_select'
+Info: alarm_select: "kernel" instantiated altera_avalon_pio "alarm_select"
+Info: epcs_flash: Starting RTL generation for module 'kernel_epcs_flash'
+Info: epcs_flash:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller/generate_rtl.pl --name=kernel_epcs_flash --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0005_epcs_flash_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0005_epcs_flash_gen//kernel_epcs_flash_component_configuration.pl  --do_build_sim=0  ]
+Info: epcs_flash: Done RTL generation for module 'kernel_epcs_flash'
+Info: epcs_flash: "kernel" instantiated altera_avalon_epcs_flash_controller "epcs_flash"
+Info: jtag_uart: Starting RTL generation for module 'kernel_jtag_uart'
+Info: jtag_uart:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=kernel_jtag_uart --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0006_jtag_uart_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0006_jtag_uart_gen//kernel_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'kernel_jtag_uart'
+Info: jtag_uart: "kernel" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: laser_fifo: Starting RTL generation for module 'kernel_laser_fifo'
+Info: laser_fifo:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo/generate_rtl.pl --name=kernel_laser_fifo --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0007_laser_fifo_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0007_laser_fifo_gen//kernel_laser_fifo_component_configuration.pl  --do_build_sim=0  ]
+Info: laser_fifo: Done RTL generation for module 'kernel_laser_fifo'
+Info: laser_fifo: "kernel" instantiated altera_avalon_fifo "laser_fifo"
+Info: led_timer: Starting RTL generation for module 'kernel_led_timer'
+Info: led_timer:   Generation command is [exec C:/intelFPGA/18.0/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA/18.0/quartus/bin64//perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=kernel_led_timer --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0008_led_timer_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0008_led_timer_gen//kernel_led_timer_component_configuration.pl  --do_build_sim=0  ]
+Info: led_timer: Done RTL generation for module 'kernel_led_timer'
+Info: led_timer: "kernel" instantiated altera_avalon_timer "led_timer"
+Info: nios2: "kernel" instantiated altera_nios2_gen2 "nios2"
+Info: onchip_memory: Starting RTL generation for module 'kernel_onchip_memory'
+Info: onchip_memory:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=kernel_onchip_memory --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0009_onchip_memory_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0009_onchip_memory_gen//kernel_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory: Done RTL generation for module 'kernel_onchip_memory'
+Info: onchip_memory: "kernel" instantiated altera_avalon_onchip_memory2 "onchip_memory"
+Info: protocol_fifo: Starting RTL generation for module 'kernel_protocol_fifo'
+Info: protocol_fifo:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo/generate_rtl.pl --name=kernel_protocol_fifo --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0010_protocol_fifo_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0010_protocol_fifo_gen//kernel_protocol_fifo_component_configuration.pl  --do_build_sim=0  ]
+Info: protocol_fifo: Done RTL generation for module 'kernel_protocol_fifo'
+Info: protocol_fifo: "kernel" instantiated altera_avalon_fifo "protocol_fifo"
+Info: spird_fifo: Starting RTL generation for module 'kernel_spird_fifo'
+Info: spird_fifo:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo/generate_rtl.pl --name=kernel_spird_fifo --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0011_spird_fifo_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0011_spird_fifo_gen//kernel_spird_fifo_component_configuration.pl  --do_build_sim=0  ]
+Info: spird_fifo: Done RTL generation for module 'kernel_spird_fifo'
+Info: spird_fifo: "kernel" instantiated altera_avalon_fifo "spird_fifo"
+Info: spiwr_fifo: Starting RTL generation for module 'kernel_spiwr_fifo'
+Info: spiwr_fifo:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_fifo/generate_rtl.pl --name=kernel_spiwr_fifo --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0012_spiwr_fifo_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0012_spiwr_fifo_gen//kernel_spiwr_fifo_component_configuration.pl  --do_build_sim=0  ]
+Info: spiwr_fifo: Done RTL generation for module 'kernel_spiwr_fifo'
+Info: spiwr_fifo: "kernel" instantiated altera_avalon_fifo "spiwr_fifo"
+Info: sysid: "kernel" instantiated altera_avalon_sysid_qsys "sysid"
+Info: w5500_int: Starting RTL generation for module 'kernel_w5500_int'
+Info: w5500_int:   Generation command is [exec C:/intelfpga/18.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/18.0/quartus/bin64/perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/18.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=kernel_w5500_int --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0014_w5500_int_gen/ --quartus_dir=C:/intelfpga/18.0/quartus --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0014_w5500_int_gen//kernel_w5500_int_component_configuration.pl  --do_build_sim=0  ]
+Info: w5500_int: Done RTL generation for module 'kernel_w5500_int'
+Info: w5500_int: "kernel" instantiated altera_avalon_pio "w5500_int"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_013: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_014: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_015: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_016: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_017: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_018: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_019: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_020: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_021: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "kernel" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "kernel" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "kernel" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'kernel_nios2_cpu'
+Info: cpu:   Generation command is [exec C:/intelFPGA/18.0/quartus/bin64//eperlcmd.exe -I C:/intelFPGA/18.0/quartus/bin64//perl/lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin/europa -I C:/intelfpga/18.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/18.0/quartus/sopc_builder/bin -I C:/intelfpga/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga/18.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=kernel_nios2_cpu --dir=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0017_cpu_gen/ --quartus_bindir=C:/intelFPGA/18.0/quartus/bin64/ --verilog --config=C:/Users/wj/AppData/Local/Temp/alt8021_2798342846270901231.dir/0017_cpu_gen//kernel_nios2_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2019.05.05 09:17:58 (*) Starting Nios II generation
+Info: cpu: # 2019.05.05 09:17:58 (*)   Checking for plaintext license.
+Info: cpu: # 2019.05.05 09:17:58 (*)   Plaintext license not found.
+Info: cpu: # 2019.05.05 09:17:58 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2019.05.05 09:17:58 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2019.05.05 09:17:58 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2019.05.05 09:17:58 (*)   Creating all objects for CPU
+Info: cpu: # 2019.05.05 09:17:58 (*)     Testbench
+Info: cpu: # 2019.05.05 09:17:59 (*)     Instruction decoding
+Info: cpu: # 2019.05.05 09:17:59 (*)       Instruction fields
+Info: cpu: # 2019.05.05 09:17:59 (*)       Instruction decodes
+Info: cpu: # 2019.05.05 09:17:59 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2019.05.05 09:17:59 (*)       Instruction controls
+Info: cpu: # 2019.05.05 09:17:59 (*)     Pipeline frontend
+Info: cpu: # 2019.05.05 09:17:59 (*)     Pipeline backend
+Info: cpu: # 2019.05.05 09:18:01 (*)   Generating RTL from CPU objects
+Info: cpu: # 2019.05.05 09:18:02 (*)   Creating encrypted RTL
+Info: cpu: # 2019.05.05 09:18:03 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'kernel_nios2_cpu'
+Info: cpu: "nios2" instantiated altera_nios2_gen2_unit "cpu"
+Info: nios2_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_data_master_translator"
+Info: jtag_uart_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_avalon_jtag_slave_translator"
+Info: nios2_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_data_master_agent"
+Info: jtag_uart_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_avalon_jtag_slave_agent"
+Info: jtag_uart_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: nios2_instruction_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_instruction_master_limiter"
+Info: Reusing file E:/work/SingleScan/fpga_project/output_files/kernel/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file E:/work/SingleScan/fpga_project/output_files/kernel/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file E:/work/SingleScan/fpga_project/output_files/kernel/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file E:/work/SingleScan/fpga_project/output_files/kernel/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: kernel: Done "kernel" with 39 modules, 59 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

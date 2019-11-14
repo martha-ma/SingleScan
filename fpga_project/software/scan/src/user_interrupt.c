@@ -1,0 +1,96 @@
+#include "user_interrupt.h"
+
+alt_u32 timer_isr_context;
+
+void timer_initial(void)
+{
+    // 1s/8-1
+    // 100ms/8-1 = 0xbebc1f
+    // 10ms/8-1 = 0x1312cf
+    // 1ms/10-1 = 0xf4240
+    void *isr_context_ptr = (void *)&timer_isr_context;
+    IOWR_ALTERA_AVALON_TIMER_PERIODH(LED_TIMER_BASE, 0x000f);
+    IOWR_ALTERA_AVALON_TIMER_PERIODL(LED_TIMER_BASE, 0x4240);
+
+    IOWR_ALTERA_AVALON_TIMER_CONTROL(
+        LED_TIMER_BASE,
+        ALTERA_AVALON_TIMER_CONTROL_START_MSK |
+            ALTERA_AVALON_TIMER_CONTROL_CONT_MSK |
+            ALTERA_AVALON_TIMER_CONTROL_ITO_MSK);
+
+    alt_ic_isr_register(
+        LED_TIMER_IRQ_INTERRUPT_CONTROLLER_ID,
+        LED_TIMER_IRQ,
+        timer_isr_interrupt,
+        isr_context_ptr,
+        0x00);
+}
+
+void timer_isr_interrupt(void *isr_context, alt_u32 id)
+{
+    IOWR_ALTERA_AVALON_TIMER_STATUS(LED_TIMER_BASE, ~ALTERA_AVALON_TIMER_STATUS_TO_MSK);
+
+    if(led_time_flag.cnt_1s == 50)
+    {
+        led_time_flag.cnt_1s             = 0;
+        led_time_flag.status_led_1s_flag = 0x01;
+
+        led_time_flag.power_led_value = (~led_time_flag.power_led_value) & 0x01;
+        power_led_light(led_time_flag.power_led_value);
+    }
+    else
+        led_time_flag.cnt_1s++;
+
+    if(led_time_flag.cnt_300ms == 15)
+    {
+        led_time_flag.cnt_300ms             = 0;
+        led_time_flag.status_led_300ms_flag = 0x01;
+    }
+    else
+        led_time_flag.cnt_300ms++;
+
+    if(led_time_flag.cnt_30ms == 3)
+    {
+        alarm_region.last_io_value[0] = rd_switch_io_value();
+        if(alarm_region.last_io_value[0] != alarm_region.last_io_value[1])
+        {
+            alarm_region.change_region_flag  = 0x01;
+            alarm_region.change_region_value = alarm_region.last_io_value[0];
+        }
+        alarm_region.last_io_value[1] = alarm_region.last_io_value[0];
+        led_time_flag.cnt_30ms        = 0;
+    }
+    else
+        led_time_flag.cnt_30ms++;
+}
+
+//void alarm_select_pio_initial(void)
+//{
+//    // 使能中断
+//    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(ALARM_SELECT_BASE, 0xff);
+//    // 清中断边沿捕获寄存器
+//    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(ALARM_SELECT_BASE, 0xff);
+//    alt_ic_isr_register(
+//        ALARM_SELECT_IRQ_INTERRUPT_CONTROLLER_ID,
+//        ALARM_SELECT_IRQ,
+//        alarm_select_pio_isr_interrupt,
+//        0x00,
+//        0x00
+//    );
+//}
+//void alarm_select_pio_isr_interrupt(void)
+//{
+//    alarm_region.change_region_flag = 0x01;
+////    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(ALARM_SELECT_BASE, 0x00);
+//    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(ALARM_SELECT_BASE, 0xff);
+//}
+
+void watchdog_init(void)
+{
+    IOWR_ALTERA_AVALON_TIMER_CONTROL(WATCHDOG_BASE, ALTERA_AVALON_TIMER_CONTROL_START_MSK);
+}
+
+void watchdog_feed(void)
+{
+    IOWR_ALTERA_AVALON_TIMER_PERIODL(WATCHDOG_BASE, 0x1234);
+}

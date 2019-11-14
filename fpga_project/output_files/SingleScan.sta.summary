@@ -1,0 +1,377 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 100C Model Setup 'rx_clkout'
+Slack : 0.396
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Setup 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.815
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Setup 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.920
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Setup 'n/a'
+Slack : 11.269
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Setup 'osc_clk'
+Slack : 15.633
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Setup 'altera_reserved_tck'
+Slack : 42.242
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.350
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'rx_clkout'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'altera_reserved_tck'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'osc_clk'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.595
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'n/a'
+Slack : 5.104
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Recovery 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -3.333
+TNS   : -6.666
+
+Type  : Slow 1200mV 100C Model Recovery 'rx_clkout'
+Slack : 0.807
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Recovery 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.165
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Recovery 'osc_clk'
+Slack : 15.922
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Recovery 'altera_reserved_tck'
+Slack : 47.920
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Removal 'altera_reserved_tck'
+Slack : 1.490
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Removal 'osc_clk'
+Slack : 3.381
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Removal 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.233
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Removal 'rx_clkout'
+Slack : 5.326
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Removal 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.045
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.500
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'altgx_drive:altgx_driveEx01|ALTGX:ALTGXEx01|ALTGX_alt_c3gxb:ALTGX_alt_c3gxb_component|rx_pma_clockout[0]'
+Slack : 2.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'altgx_drive:altgx_driveEx01|ALTGX:ALTGXEx01|ALTGX_alt_c3gxb:ALTGX_alt_c3gxb_component|tx_localrefclk[0]'
+Slack : 2.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'rx_clkout'
+Slack : 3.584
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'altgx_driveEx01|ALTGXEx01|ALTGX_alt_c3gxb_component|receive_pcs0|recoveredclk'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'altgx_driveEx01|ALTGXEx01|ALTGX_alt_c3gxb_component|transmit_pcs0|localrefclk'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.538
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'osc_clk'
+Slack : 9.608
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.710
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Setup 'rx_clkout'
+Slack : 1.355
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Setup 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.825
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Setup 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.052
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Setup 'n/a'
+Slack : 12.344
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Setup 'osc_clk'
+Slack : 16.078
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Setup 'altera_reserved_tck'
+Slack : 42.932
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'rx_clkout'
+Slack : 0.331
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'altera_reserved_tck'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'osc_clk'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.526
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'n/a'
+Slack : 4.424
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Recovery 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.141
+TNS   : -4.282
+
+Type  : Slow 1200mV -40C Model Recovery 'rx_clkout'
+Slack : 1.668
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Recovery 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.445
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Recovery 'osc_clk'
+Slack : 16.460
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Recovery 'altera_reserved_tck'
+Slack : 48.151
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Removal 'altera_reserved_tck'
+Slack : 1.314
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Removal 'osc_clk'
+Slack : 2.865
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Removal 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.572
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Removal 'rx_clkout'
+Slack : 4.525
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Removal 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.960
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.500
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'altgx_drive:altgx_driveEx01|ALTGX:ALTGXEx01|ALTGX_alt_c3gxb:ALTGX_alt_c3gxb_component|rx_pma_clockout[0]'
+Slack : 2.000
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'altgx_drive:altgx_driveEx01|ALTGX:ALTGXEx01|ALTGX_alt_c3gxb:ALTGX_alt_c3gxb_component|tx_localrefclk[0]'
+Slack : 2.000
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'rx_clkout'
+Slack : 3.613
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'altgx_driveEx01|ALTGXEx01|ALTGX_alt_c3gxb_component|receive_pcs0|recoveredclk'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'altgx_driveEx01|ALTGXEx01|ALTGX_alt_c3gxb_component|transmit_pcs0|localrefclk'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.570
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'osc_clk'
+Slack : 9.632
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.700
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Setup 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.511
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Setup 'rx_clkout'
+Slack : 4.363
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Setup 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 5.560
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Setup 'n/a'
+Slack : 15.605
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Setup 'osc_clk'
+Slack : 17.955
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Setup 'altera_reserved_tck'
+Slack : 46.532
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.129
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'rx_clkout'
+Slack : 0.158
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'altera_reserved_tck'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'osc_clk'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.250
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'n/a'
+Slack : 2.586
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Recovery 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Recovery 'rx_clkout'
+Slack : 4.491
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Recovery 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.046
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Recovery 'osc_clk'
+Slack : 17.950
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Recovery 'altera_reserved_tck'
+Slack : 49.288
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Removal 'altera_reserved_tck'
+Slack : 0.687
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Removal 'osc_clk'
+Slack : 1.683
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Removal 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.111
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Removal 'rx_clkout'
+Slack : 2.555
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Removal 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.084
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'laser_send_topEx01|n1|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.770
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'altgx_drive:altgx_driveEx01|ALTGX:ALTGXEx01|ALTGX_alt_c3gxb:ALTGX_alt_c3gxb_component|rx_pma_clockout[0]'
+Slack : 2.000
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'altgx_drive:altgx_driveEx01|ALTGX:ALTGXEx01|ALTGX_alt_c3gxb:ALTGX_alt_c3gxb_component|tx_localrefclk[0]'
+Slack : 2.000
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'rx_clkout'
+Slack : 3.746
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'altgx_driveEx01|ALTGXEx01|ALTGX_alt_c3gxb_component|receive_pcs0|recoveredclk'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'altgx_driveEx01|ALTGXEx01|ALTGX_alt_c3gxb_component|transmit_pcs0|localrefclk'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'pll_100mEx01|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.744
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'osc_clk'
+Slack : 9.732
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.412
+TNS   : 0.000
+
+------------------------------------------------------------

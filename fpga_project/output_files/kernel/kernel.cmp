@@ -1,0 +1,32 @@
+	component kernel is
+		port (
+			alarm_select_export     : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+			clk_clk                 : in    std_logic                     := 'X';             -- clk
+			epcs_flash_dclk         : out   std_logic;                                        -- dclk
+			epcs_flash_sce          : out   std_logic;                                        -- sce
+			epcs_flash_sdo          : out   std_logic;                                        -- sdo
+			epcs_flash_data0        : in    std_logic                     := 'X';             -- data0
+			laser_fifo_in_valid     : in    std_logic                     := 'X';             -- valid
+			laser_fifo_in_data      : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
+			laser_fifo_in_ready     : out   std_logic;                                        -- ready
+			power_led_export        : out   std_logic;                                        -- export
+			protocol_fifo_out_valid : out   std_logic;                                        -- valid
+			protocol_fifo_out_data  : out   std_logic_vector(31 downto 0);                    -- data
+			protocol_fifo_out_ready : in    std_logic                     := 'X';             -- ready
+			reset_reset_n           : in    std_logic                     := 'X';             -- reset_n
+			scl_export              : out   std_logic;                                        -- export
+			sda_export              : inout std_logic                     := 'X';             -- export
+			spird_fifo_in_valid     : in    std_logic                     := 'X';             -- valid
+			spird_fifo_in_data      : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
+			spird_fifo_in_ready     : out   std_logic;                                        -- ready
+			spiwr_fifo_out_valid    : out   std_logic;                                        -- valid
+			spiwr_fifo_out_data     : out   std_logic_vector(31 downto 0);                    -- data
+			spiwr_fifo_out_ready    : in    std_logic                     := 'X';             -- ready
+			status_led_export       : out   std_logic;                                        -- export
+			w5500_cs_export         : out   std_logic;                                        -- export
+			w5500_int_in_port       : in    std_logic                     := 'X';             -- in_port
+			w5500_int_out_port      : out   std_logic;                                        -- out_port
+			w5500_rst_export        : out   std_logic                                         -- export
+		);
+	end component kernel;
+
