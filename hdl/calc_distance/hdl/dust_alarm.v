@@ -37,7 +37,7 @@ begin
     else if(data_in_valid)
     begin
         //if(data_in <= 8950)
-        if(data_in[07:00] <= dust_alarm_threshold)
+        if(data_in <= dust_alarm_threshold)
             dust_cnt_r0 <= dust_cnt_r0 + 1'b1;
     end
 end
