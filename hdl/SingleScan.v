@@ -104,7 +104,7 @@ wire    [17:00]             region2_rddata;
 wire    [61:00]             system_para;
 wire    [239:00]            laser_presdo;
 wire    [89:00]             da_cycle_para;
-wire    [215:00]            distance_para;
+wire    [223:00]            distance_para;
 wire                        gxb_pwrdn;
 
 wire                        rst_n/* synthesis keep */;
@@ -161,6 +161,7 @@ wire    [07:00]             dust_alarm_threshold /* synthesis keep */;
 
 wire    [31:00]             laser_freq /* synthesis keep */;
 wire    [07:00]             motor_speed /* synthesis keep */;
+wire    [07:00]             min_target_size/* synthesis keep */;
 
 wire    [01:00]             hw_type;        // 1, NPN;  2, PNP
 wire                        laser_enable /* synthesis keep */;
@@ -210,6 +211,7 @@ altgx_drive altgx_driveEx01
 );
 //                       按照通信协议, 从上到下排列
 assign                  {
+                                    min_target_size,
                                     valid_num_threshold,
                                     laser_recv_delay,   // 8bit
                                     zero_distance_revise,   // 16bit
@@ -349,6 +351,7 @@ compare_region compare_regionEx01
     .cycle_enable           (    cycle_enable           ),
     .target_valid           (    target_valid           ),
     .target_pos             (    target_pos             ),
+	 .min_target_size        (    min_target_size        ),
 
     .region0_rden           (    region0_rden           ),
     .region0_rdaddr         (    region0_rdaddr         ),

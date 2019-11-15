@@ -153,11 +153,11 @@ C_SRCS += src/queue.c
 C_SRCS += src/region.c
 C_SRCS += src/sick_protocol.c
 C_SRCS += src/socket.c
-C_SRCS += src/status_led.c
 C_SRCS += src/tim561.c
 C_SRCS += src/user_interrupt.c
 C_SRCS += src/w5500.c
 C_SRCS += src/remote_update.c
+C_SRCS += src/led.c
 CXX_SRCS :=
 ASM_SRCS :=
 

@@ -16,11 +16,6 @@
 
 #include "bsp.h"
 
-static alt_u8 read_byte(alt_u32 addr);
-static void write_byte(alt_u32 addr, alt_u8 dat);
-
-void write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len);
-IIC iic = {.write_byte = write_byte, .write_page = write_page, .read_byte = read_byte};
 /*
  * === FUNCTION ===================================================
  * Name: start
@@ -69,7 +64,7 @@ static void wait_slave_ack(void)
     IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 1);
     delay_us(1);
     tmp = IORD_ALTERA_AVALON_PIO_DATA(SDA_BASE);
-    
+
     delay_us(1);
     IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 0);
     delay_us(2);
@@ -155,11 +150,11 @@ static alt_u8 iic_read(void)
         delay_us(1);
     }
     delay_us(1);
-//    IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 0);
-//    delay_us(1);
-//    IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 1);
-//    delay_us(1);
-//    IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 0);
+    //    IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 0);
+    //    delay_us(1);
+    //    IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 1);
+    //    delay_us(1);
+    //    IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 0);
     return dat;
 }
 
@@ -168,10 +163,10 @@ static alt_u8 iic_read(void)
  * @param addr
  * @param dat
  */
-static void write_byte(alt_u32 addr, alt_u8 dat)
+void eeprom_write_byte(alt_u32 addr, alt_u8 dat)
 {
     alt_u8 cmd;
-    cmd = 0xa0 | ( (addr >> 15) & 0x02 );
+    cmd = 0xa0 | ((addr >> 15) & 0x02);
     start();
     iic_write(cmd);
     wait_slave_ack();
@@ -192,15 +187,15 @@ static void write_byte(alt_u32 addr, alt_u8 dat)
  * @param dat, 地址指针
  * @param len, 写入数据长度
  */
-void write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
+void eeprom_write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
 {
-    alt_u8 cmd;
+    alt_u8  cmd;
     alt_u16 i, j;
-    alt_u8 number, remain;
-    alt_32 i2c_addr;
+    alt_u8  number, remain;
+    alt_32  i2c_addr;
 
     // 最高位地址放到bit6上
-    cmd = 0xa0 | ( (addr >> 15) & 0x02 );
+    cmd = 0xa0 | ((addr >> 15) & 0x02);
 
     number = len / EEPROM_PAGE_SIZE;
     remain = len % EEPROM_PAGE_SIZE;
@@ -222,7 +217,7 @@ void write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
         }
         stop();
         delay_us(10000);
-//        usleep(5000);
+        //        usleep(5000);
     }
     if(remain != 0)
     {
@@ -241,7 +236,7 @@ void write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
         }
         stop();
         delay_us(10000);
-//        usleep(5000);
+        //        usleep(5000);
     }
 }
 /*
@@ -250,14 +245,14 @@ void write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
  * Description: 从EEPROM读一个字节
  * =================================================================
  */
-static alt_u8 read_byte(alt_u32 addr)
+alt_u8 eeprom_read_byte(alt_u32 addr)
 {
     alt_u8 cmd, dat;
-    
+
     if(addr > AT24C1024_MAX_ADDR)
         return 0xff;
-        
-    cmd = 0xa0 | ( (addr >> 15) & 0x02 );
+
+    cmd = 0xa0 | ((addr >> 15) & 0x02);
     start();
     iic_write(cmd);
     wait_slave_ack();
@@ -275,14 +270,13 @@ static alt_u8 read_byte(alt_u32 addr)
     return dat;
 }
 
-
-void iic_sequential_read(alt_u32 addr, alt_u8 *dat, alt_u16 len)
+void eeprom_sequential_read(alt_u32 addr, alt_u8 *dat, alt_u16 len)
 {
     alt_u16 i;
-    alt_u8 cmd;
+    alt_u8  cmd;
     if(addr > AT24C1024_MAX_ADDR)
         return;
-    cmd = 0xa0 | ( (addr >> 15) & 0x02 );
+    cmd = 0xa0 | ((addr >> 15) & 0x02);
     start();
     iic_write(cmd);
     wait_slave_ack();
@@ -294,7 +288,7 @@ void iic_sequential_read(alt_u32 addr, alt_u8 *dat, alt_u16 len)
     start();
     iic_write(cmd);
     wait_slave_ack();
-//    dat = iic_read();
+    //    dat = iic_read();
 
     for(i = 0; i < len; i++)
     {
@@ -304,5 +298,5 @@ void iic_sequential_read(alt_u32 addr, alt_u8 *dat, alt_u16 len)
     }
     no_ack();
     stop();
-    iic.read_byte(addr);
+    eeprom_read_byte(addr);
 }

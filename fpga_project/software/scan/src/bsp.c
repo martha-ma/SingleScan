@@ -14,35 +14,35 @@ Sys_Para      SysPara = {.update_pos_flag      = false,
                     .laser_enable         = 0x11111111,
                     .laser_freq           = 100000000,
                     .laser_pulse_width    = 7,
-                    .laser_recv_delay     = 4,
+                    .laser_recv_delay     = 2,
                     .motor_enable         = 0x11111111,
                     .motor_expect_speed   = 15,
                     .zero_distance_revise = 0,
                     .zero_angle_revise    = 135,
 
-                    .gray_distance_revise1 = 36,
-                    .gray_distance_revise2 = 8,
-                    .gray_distance_revise3 = 0,
-                    .gray_inflection1      = 27,
-                    .gray_inflection2      = 27,
-                    .gray_inflection3      = 120,
+                    .gray_distance_revise1 = 35,
+                    .gray_distance_revise2 = 140,
+                    .gray_distance_revise3 = 140,
+                    .gray_inflection1      = 59,
+                    .gray_inflection2      = 120,
+                    .gray_inflection3      = 200,
 
-                    .noise_diff_setting1 = 150,
+                    .noise_diff_setting1 = 180,
                     .noise_diff_setting2 = 100,
 
-                    .signal_thresold = 60,
-                    .apd_vol_base    = 480,
+                    .signal_thresold = 100,
+                    .apd_vol_base    = 520,
                     .placeholer1     = 0xeeeeeeee,
                     .nios_ver        = "0.01",
                     .fpga_ver        = "0.01",
 
-                    .temp_volt_cof1       = 27,
-                    .temp_volt_cof2       = 27,
+                    .temp_volt_cof1       = 35,
+                    .temp_volt_cof2       = 38,
                     .temp_volt_inflection = 25,
 
-                    .temp_distance_cof1       = 9,
+                    .temp_distance_cof1       = 13,
                     .temp_distance_cof2       = 9,
-                    .temp_distance_inflection = 25,
+                    .temp_distance_inflection = 16,
 
                     .min_display_distance = 50,
                     .first_noise_filter   = 3,
@@ -60,10 +60,12 @@ Sys_Para      SysPara = {.update_pos_flag      = false,
                     .da_cycle_para3   = 136,
                     .da_cycle_para4   = 160,
                     .da_cycle_para5   = 172,
-                    .da_cycle_para6   = 153,
+                    .da_cycle_para6   = 152,
                     .da_cycle_para7   = 124,
                     .da_cycle_para8   = 100,
-                    .da_cycle_para9   = 76};
+                    .da_cycle_para9   = 76,
+					.min_target_size =0
+};
 
 Sys_Status SysStatus;
 // 500us宸﹀彸
@@ -307,11 +309,11 @@ void test(void)
         {
             for(int i = 0; i < 811 * 2; i++)
                 buf[i] = data;
-            iic.write_page(offset_addr, buf, len);
+            eeprom_write_page(offset_addr, buf, len);
             memset(buf, 0, TARGET_NUMBER * 2);
         }
         //		alarm_region.read_from_rom(&alarm_region, alarm_region.change_region_value * 3);
-        iic_sequential_read(offset_addr, buf, len);
+        eeprom_sequential_read(offset_addr, buf, len);
         delay_us(1000);
     }
 #if 0
@@ -326,7 +328,7 @@ void test(void)
 	{
 	    IOWR_ALTERA_AVALON_PIO_DIRECTION(SDA_BASE, OUT);
 	    IOWR_ALTERA_AVALON_PIO_DATA(SDA_BASE, 1);
-		iic_sequential_read(addr, buf, len);
+		eeprom_sequential_read(addr, buf, len);
 		iic.read_byte(addr);
 	    IOWR_ALTERA_AVALON_PIO_DIRECTION(SDA_BASE, OUT);
 	    IOWR_ALTERA_AVALON_PIO_DATA(SDA_BASE, 1);

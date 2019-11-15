@@ -1,13 +1,13 @@
 module da_adjust(
-	input wire 				clk,
-	input wire 				rst,
-	input wire  [15:0]  	dac_value,
-	input wire 				temp_en,
-	input wire  [17:0]  	ad_distance,
+	input wire              clk,
+	input wire              rst,
+	input wire  [15:0]      dac_value,
+	input wire              temp_en,
+	input wire  [17:0]      ad_distance,
 	input wire  [9:0]       dac_max,
 	input wire  [9:0]       dac_min,
-	output reg 				da_en,
-	output reg  [17:0] 	    da_distance
+	output reg              da_en,
+	output reg  [17:0]      da_distance
 );
 
 //localparam                       LOW_DA = 310;

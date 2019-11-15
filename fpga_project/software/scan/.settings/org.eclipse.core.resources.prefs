@@ -3,4 +3,5 @@ encoding//inc/scan_config.h=UTF-8
 encoding//src/bsp.c=UTF-8
 encoding//src/fpga2nios_protocol.c=UTF-8
 encoding//src/main.c=UTF-8
+encoding//src/nios2fpga_protocol.c=UTF-8
 encoding//src/pc2dev.c=UTF-8

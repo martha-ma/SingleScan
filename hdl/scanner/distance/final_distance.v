@@ -17,12 +17,12 @@ module final_diatance(                                                          
     input  wire     [7:0]                           CORRECT_CNT_N,          //不同反射率目标距离矫正系数
     input  wire     [7:0]                           CORRECT_CNT_B,
     input  wire     [7:0]                           CORRECT_CNT_M,
-	input  wire     [7:0]                           CORRECT_CNT_5,
-	input  wire     [7:0]                           CORRECT_CNT_4,
+    input  wire     [7:0]                           CORRECT_CNT_5,
+    input  wire     [7:0]                           CORRECT_CNT_4,
     input  wire     [9:0]                           POINT_CNT1,
     input  wire     [9:0]                           POINT_CNT2,
-	input  wire     [9:0]                           POINT_CNT3,
-	input  wire     [9:0]                           POINT_CNT4,
+    input  wire     [9:0]                           POINT_CNT3,
+    input  wire     [9:0]                           POINT_CNT4,
     input  wire     [15:0]                          ABSOLUTE_CNT,
     input  wire     [7:0]                           POINT_TEM,        
     input  wire     [7:0]                           CORRECT_TEM_1,
@@ -32,8 +32,8 @@ module final_diatance(                                                          
     input  wire                                     set_en,           
     input  wire     [15:0]                          tem_count,        
     input  wire     [15:0]                          dac_value,
-	input  wire     [9:0]                           dac_max,
-	input  wire     [9:0]                           dac_min,
+    input  wire     [9:0]                           dac_max,
+    input  wire     [9:0]                           dac_min,
 	 
     output wire                                     valid,               //有最大距离值时标志信号
     output wire     [11:0]                          time_pluse,             //输出脉冲宽度
@@ -49,15 +49,15 @@ module final_diatance(                                                          
 
         reg             [1:0]                           sel;                    //400个点输入选择依据
         reg             [1:0]                           state;                  //距离读取选择依据
-		reg             [39:0]                          mult_pluse;
-		reg             [79:0]                          mult_distance;
+        reg             [39:0]                          mult_pluse;
+        reg             [79:0]                          mult_distance;
 
         //四个模块的输出距离值(保留三回波)
         wire            [39:0]                          mult_pluse_1;
         wire            [39:0]                          mult_pluse_2;
         wire            [39:0]                          mult_pluse_3;
         wire            [39:0]                          mult_pluse_4;
-		wire            [79:0]                          mult_distance_1;
+        wire            [79:0]                          mult_distance_1;
         wire            [79:0]                          mult_distance_2;
         wire            [79:0]                          mult_distance_3;
         wire            [79:0]                          mult_distance_4;
@@ -243,25 +243,25 @@ distance_module distance_moduleEx01(
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
     .CORRECT_CNT_M   (    CORRECT_CNT_M     ),
-	.CORRECT_CNT_5   (    CORRECT_CNT_5     ),
-	.CORRECT_CNT_4   (    CORRECT_CNT_4     ),
+    .CORRECT_CNT_5   (    CORRECT_CNT_5     ),
+    .CORRECT_CNT_4   (    CORRECT_CNT_4     ),
     .POINT_CNT1      (    POINT_CNT1        ),
     .POINT_CNT2      (    POINT_CNT2        ),
-	.POINT_CNT3      (    POINT_CNT3        ),
-	.POINT_CNT4      (    POINT_CNT4        ),
+    .POINT_CNT3      (    POINT_CNT3        ),
+    .POINT_CNT4      (    POINT_CNT4        ),
     .POINT_TEM       (    POINT_TEM         ),
     .CORRECT_TEM_1   (    CORRECT_TEM_1     ),
     .CORRECT_TEM_2   (    CORRECT_TEM_2     ),
-	.CHANGE_TH_1     (    CHANGE_TH_1       ),
-	.CHANGE_TH_2     (    CHANGE_TH_2       ),
+    .CHANGE_TH_1     (    CHANGE_TH_1       ),
+    .CHANGE_TH_2     (    CHANGE_TH_2       ),
     .set_en          (    set_en            ),
     .tem_count       (    tem_count         ),
     .dac_value       (    dac_value         ),
-	.dac_max         (    dac_max           ),
-	.dac_min         (    dac_min           ),
+    .dac_max         (    dac_max           ),
+    .dac_min         (    dac_min           ),
     .target_valid    (    valid_1           ),      //有距离值时标志信号
-	.mult_pluse      (    mult_pluse_1      ),
-	.mult_distance   (    mult_distance_1   )
+    .mult_pluse      (    mult_pluse_1      ),
+    .mult_distance   (    mult_distance_1   )
     );
 distance_module distance_moduleEx02(
     .clk             (    clk               ),
@@ -272,25 +272,25 @@ distance_module distance_moduleEx02(
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
     .CORRECT_CNT_M   (    CORRECT_CNT_M     ),
-	.CORRECT_CNT_5   (    CORRECT_CNT_5     ),
-	.CORRECT_CNT_4   (    CORRECT_CNT_4     ),
+    .CORRECT_CNT_5   (    CORRECT_CNT_5     ),
+    .CORRECT_CNT_4   (    CORRECT_CNT_4     ),
     .POINT_CNT1      (    POINT_CNT1        ),
     .POINT_CNT2      (    POINT_CNT2        ),
-	.POINT_CNT3      (    POINT_CNT3        ),
-	.POINT_CNT4      (    POINT_CNT4        ),
+    .POINT_CNT3      (    POINT_CNT3        ),
+    .POINT_CNT4      (    POINT_CNT4        ),
     .POINT_TEM       (    POINT_TEM         ),
     .CORRECT_TEM_1   (    CORRECT_TEM_1     ),
     .CORRECT_TEM_2   (    CORRECT_TEM_2     ),
-	.CHANGE_TH_1     (    CHANGE_TH_1       ),
-	.CHANGE_TH_2     (    CHANGE_TH_2       ),
+    .CHANGE_TH_1     (    CHANGE_TH_1       ),
+    .CHANGE_TH_2     (    CHANGE_TH_2       ),
     .set_en          (    set_en            ),
     .tem_count       (    tem_count         ),
     .dac_max         (    dac_max           ),
-	.dac_min         (    dac_min           ),    
+    .dac_min         (    dac_min           ),    
     .dac_value       (    dac_value         ),
     .target_valid    (    valid_2           ),
-	.mult_pluse      (    mult_pluse_2      ),
-	.mult_distance   (    mult_distance_2   )
+    .mult_pluse      (    mult_pluse_2      ),
+    .mult_distance   (    mult_distance_2   )
     );
 distance_module distance_moduleEx03(
     .clk             (    clk               ),
@@ -301,25 +301,25 @@ distance_module distance_moduleEx03(
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
     .CORRECT_CNT_M   (    CORRECT_CNT_M     ),
-	.CORRECT_CNT_5   (    CORRECT_CNT_5     ),
-	.CORRECT_CNT_4   (    CORRECT_CNT_4     ),
+    .CORRECT_CNT_5   (    CORRECT_CNT_5     ),
+    .CORRECT_CNT_4   (    CORRECT_CNT_4     ),
     .POINT_CNT1      (    POINT_CNT1        ),
     .POINT_CNT2      (    POINT_CNT2        ),
-	.POINT_CNT3      (    POINT_CNT3        ),
-	.POINT_CNT4      (    POINT_CNT4        ),
+    .POINT_CNT3      (    POINT_CNT3        ),
+    .POINT_CNT4      (    POINT_CNT4        ),
     .POINT_TEM       (    POINT_TEM         ),
     .CORRECT_TEM_1   (    CORRECT_TEM_1     ),
     .CORRECT_TEM_2   (    CORRECT_TEM_2     ),
-	.CHANGE_TH_1     (    CHANGE_TH_1       ),
-	.CHANGE_TH_2     (    CHANGE_TH_2       ),
+    .CHANGE_TH_1     (    CHANGE_TH_1       ),
+    .CHANGE_TH_2     (    CHANGE_TH_2       ),
     .set_en          (    set_en            ),
     .tem_count       (    tem_count         ),    
     .dac_value       (    dac_value         ),
-	.dac_max         (    dac_max           ),
-	.dac_min         (    dac_min           ),
+    .dac_max         (    dac_max           ),
+    .dac_min         (    dac_min           ),
     .target_valid    (    valid_3           ),
-	.mult_pluse      (    mult_pluse_3      ),
-	.mult_distance   (    mult_distance_3   )
+    .mult_pluse      (    mult_pluse_3      ),
+    .mult_distance   (    mult_distance_3   )
     );
 distance_module distance_moduleEx04(
     .clk             (    clk               ),
@@ -330,36 +330,36 @@ distance_module distance_moduleEx04(
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
     .CORRECT_CNT_M   (    CORRECT_CNT_M     ),
-	.CORRECT_CNT_5   (    CORRECT_CNT_5     ),
-	.CORRECT_CNT_4   (    CORRECT_CNT_4     ),
+    .CORRECT_CNT_5   (    CORRECT_CNT_5     ),
+    .CORRECT_CNT_4   (    CORRECT_CNT_4     ),
     .POINT_CNT1      (    POINT_CNT1        ),
     .POINT_CNT2      (    POINT_CNT2        ),
-	.POINT_CNT3      (    POINT_CNT3        ),
-	.POINT_CNT4      (    POINT_CNT4        ),
+    .POINT_CNT3      (    POINT_CNT3        ),
+    .POINT_CNT4      (    POINT_CNT4        ),
     .POINT_TEM       (    POINT_TEM         ),
     .CORRECT_TEM_1   (    CORRECT_TEM_1     ),
     .CORRECT_TEM_2   (    CORRECT_TEM_2     ),
-	.CHANGE_TH_1     (    CHANGE_TH_1       ),
-	.CHANGE_TH_2     (    CHANGE_TH_2       ),
+    .CHANGE_TH_1     (    CHANGE_TH_1       ),
+    .CHANGE_TH_2     (    CHANGE_TH_2       ),
     .set_en          (    set_en            ),
     .tem_count       (    tem_count         ),
     .dac_max         (    dac_max           ),
-	.dac_min         (    dac_min           ),    
+    .dac_min         (    dac_min           ),    
     .dac_value       (    dac_value         ),
     .target_valid    (    valid_4           ),
-	.mult_pluse      (    mult_pluse_4      ),
-	.mult_distance   (    mult_distance_4   )
+    .mult_pluse      (    mult_pluse_4      ),
+    .mult_distance   (    mult_distance_4   )
     );
 	 
 mult_div mult_divEx04(
-	.clk            (     clk               ),
-	.rst            (     rst               ),
-	.mult_pluse     (     mult_pluse        ),
-	.mult_distance  (     mult_distance     ),
-	.valid_m        (     valid_m           ),
-	.valid          (     valid             ),
-	.time_pluse     (     time_pluse        ),
-	.distance	    (     distance          ) 
+    .clk            (     clk               ),
+    .rst            (     rst               ),
+    .mult_pluse     (     mult_pluse        ),
+    .mult_distance  (     mult_distance     ),
+    .valid_m        (     valid_m           ),
+    .valid          (     valid             ),
+    .time_pluse     (     time_pluse        ),
+    .distance       (     distance          ) 
 );	 
 	 
 	 

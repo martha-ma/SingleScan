@@ -25,7 +25,7 @@ module command_module
     output  reg  [239:00]       laser_presdo,
     output  wire [61:00]        system_para,
     output  wire [89:00]        da_cycle_para,
-    output  wire [215:00]       distance_para
+    output  wire [223:00]       distance_para
 );
 
 reg     [15:00]             recv_command;
@@ -63,6 +63,7 @@ reg     [31:00]             laser_freq;
 reg     [07:00]             motor_speed;
 
 reg     [09:00]             da_cycle_para1, da_cycle_para2, da_cycle_para3, da_cycle_para4, da_cycle_para5, da_cycle_para6, da_cycle_para7, da_cycle_para8, da_cycle_para9; 
+reg     [07:00]             min_target_size;
 
 reg     [01:00]             hw_type;
 reg                         laser_enable;
@@ -72,7 +73,8 @@ reg                         dac_set_flag;
 
 // 根据协议从上而下依次排列, 207
 assign                  distance_para = {
-                                    valid_num_threshold,
+                                    min_target_size,        // 8bit
+                                    valid_num_threshold,    // 8bit
                                     laser_recv_delay,   // 8bit
                                     zero_distance_revise,   // 16bit
                                     gray_distance_revise1,  // 8bit
@@ -177,6 +179,8 @@ localparam              M_DA_CYCLE_SETTING6       = 16'hac06;
 localparam              M_DA_CYCLE_SETTING7       = 16'hac07;
 localparam              M_DA_CYCLE_SETTING8       = 16'hac08;
 localparam              M_DA_CYCLE_SETTING9       = 16'hac09;
+
+localparam              M_MIN_TARGET_SIZE         = 16'had00;
 
 localparam              M_WR_REGION0              = 16'hb100;
 localparam              M_WR_REGION1              = 16'hb101;
@@ -689,6 +693,14 @@ begin
         da_cycle_para9 <= 123;
     else if(ns[DATA] & (recv_command == M_DA_CYCLE_SETTING9))
         da_cycle_para9 <= protocol_fifo_out_data;
+end
+
+always @ (posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        min_target_size <= 0;
+    else if(ns[DATA] & (recv_command == M_MIN_TARGET_SIZE))
+        min_target_size <= protocol_fifo_out_data;
 end
 
 always @ (posedge clk or negedge rst_n)

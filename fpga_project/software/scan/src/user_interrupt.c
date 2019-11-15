@@ -36,7 +36,7 @@ void timer_isr_interrupt(void *isr_context, alt_u32 id)
         led_time_flag.status_led_1s_flag = 0x01;
 
         led_time_flag.power_led_value = (~led_time_flag.power_led_value) & 0x01;
-        power_led_light(led_time_flag.power_led_value);
+        led_power_light(led_time_flag.power_led_value);
     }
     else
         led_time_flag.cnt_1s++;

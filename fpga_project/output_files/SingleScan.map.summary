@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Fri Nov 01 14:41:43 2019
+Analysis & Synthesis Status : Successful - Fri Nov 15 16:04:46 2019
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : SingleScan
 Top-level Entity Name : SingleScan
 Family : Cyclone IV GX
-Total logic elements : 26,717
-    Total combinational functions : 18,658
-    Dedicated logic registers : 17,567
-Total registers : 17567
+Total logic elements : 25,709
+    Total combinational functions : 19,460
+    Dedicated logic registers : 15,698
+Total registers : 15698
 Total pins : 76
 Total virtual pins : 0
-Total memory bits : 1,951,620
+Total memory bits : 1,848,309
 Embedded Multiplier 9-bit elements : 118
 Total GXB Receiver Channel PCS : 1
 Total GXB Receiver Channel PMA : 1

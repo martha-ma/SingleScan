@@ -7,12 +7,12 @@
 
 #include "nios2fpga_protocol.h"
 
-UpDataFrame CycleData;
+UpDataFrame     CycleData;
 NIOS2FPGA_Pck_t Nios2FPGA_pck;
 
 static unsigned int check_sum(unsigned int *data, unsigned char len)
 {
-    int i;
+    int          i;
     unsigned int checksum = 0;
     for(i = 0; i < len; i++)
     {
@@ -22,14 +22,16 @@ static unsigned int check_sum(unsigned int *data, unsigned char len)
     return checksum;
 }
 
-void motor_init() {}
+void motor_init()
+{
+}
 
 /*
- * 打包数据并发送
+ * 鎵撳寘鏁版嵁骞跺彂閫�
  */
-void nios2fpga_packet(unsigned short command, unsigned char len, unsigned int *src)
+void nios2fpga_data_packet(unsigned short command, unsigned char len, unsigned int *src)
 {
-    int i;
+    int          i;
     unsigned int buf[30];
     buf[0] = (0x1234 << 16) + command;
     buf[1] = len;
@@ -40,13 +42,13 @@ void nios2fpga_packet(unsigned short command, unsigned char len, unsigned int *s
     }
     buf[len + 2] = check_sum(buf, len + 2);
 
-    write_data_to_fpga(buf, len + 3);
+    nios2fpga_data_write(buf, len + 3);
 }
 
 /*
- * niso 数据通过fifo写到 FPGA
+ * niso 鏁版嵁閫氳繃fifo鍐欏埌 FPGA
  */
-bool write_data_to_fpga(unsigned int *data, unsigned int len)
+bool nios2fpga_data_write(unsigned int *data, unsigned int len)
 {
     int i;
     for(i = 0; i < len; i++)
@@ -60,19 +62,13 @@ bool write_data_to_fpga(unsigned int *data, unsigned int len)
 void set_laser_paramter(NIOS2FPGA_Pck_t *pck, unsigned short command, unsigned int data)
 {
     unsigned char len = 1;
-    pck->command = command;
-    // switch (pck->command)
-    // {
-
-    //     default:
-    //         break;
-    // }
-    nios2fpga_packet(pck->command, len, &data);
+    pck->command      = command;
+    nios2fpga_data_packet(pck->command, len, &data);
 }
 
 void init_fpga_sys(void)
 {
-	set_laser_paramter(&Nios2FPGA_pck, UPLOAD_EN, ENABLE);
+    set_laser_paramter(&Nios2FPGA_pck, UPLOAD_EN, ENABLE);
     set_laser_paramter(&Nios2FPGA_pck, LASER_ENABLE, SysPara.laser_enable);
     set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ, SysPara.laser_freq);
     set_laser_paramter(&Nios2FPGA_pck, LASER_PULSE_WIDTH, SysPara.laser_pulse_width);
@@ -114,6 +110,7 @@ void init_fpga_sys(void)
     set_laser_paramter(&Nios2FPGA_pck, DA_CYCLE_PARA7, SysPara.da_cycle_para7);
     set_laser_paramter(&Nios2FPGA_pck, DA_CYCLE_PARA8, SysPara.da_cycle_para8);
     set_laser_paramter(&Nios2FPGA_pck, DA_CYCLE_PARA9, SysPara.da_cycle_para9);
+    set_laser_paramter(&Nios2FPGA_pck, MIN_TARGET_SIZE, SysPara.min_target_size);
     set_laser_paramter(&Nios2FPGA_pck, PC_SET_HW_TYPE, SysPara.board_type);
     write_laser_presdo(SysPara.laser_presdo);
 }
@@ -129,10 +126,9 @@ void close_peripheral_dev(void)
 #endif
 }
 
-
 void write_laser_presdo(unsigned char *arr)
 {
-    int i;
+    int          i;
     unsigned int data;
     data = 0x1234a104;
 
@@ -141,9 +137,9 @@ void write_laser_presdo(unsigned char *arr)
     altera_avalon_fifo_write_fifo(PROTOCOL_FIFO_IN_BASE, PROTOCOL_FIFO_IN_CSR_BASE, (data >> 16) + (data << 16));
 
     //    data = 0x1000;
-    for(i = 0; i < sizeof(SysPara.laser_presdo); i=i+4)
+    for(i = 0; i < sizeof(SysPara.laser_presdo); i = i + 4)
     {
-        data = (arr[i] << 24) + (arr[i+1] << 16) + (arr[i+2] << 8) + (arr[i+3] << 0);
+        data = (arr[i] << 24) + (arr[i + 1] << 16) + (arr[i + 2] << 8) + (arr[i + 3] << 0);
         altera_avalon_fifo_write_fifo(PROTOCOL_FIFO_IN_BASE, PROTOCOL_FIFO_IN_CSR_BASE, (data >> 16) + (data << 16));
     }
     data = 0xccccdddd;

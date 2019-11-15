@@ -15,17 +15,17 @@
  * @return true
  * @return false
  */
-bool save2rom(struct __region *region)
+bool region_save2eeprom(struct __region *region)
 {
     unsigned int offset_addr;
 
-    iic.write_byte(3, (unsigned char)region->select);  //
+    eeprom_write_byte(3, (unsigned char)region->select);  //
     delay_us(10000);
 
     offset_addr = GROUP_OFFSET_ADDR + REGION_SPACE_SIZE * region->wr_which;
-    iic.write_page(offset_addr, (alt_u8 *)region->buffer, TARGET_NUMBER * 2);
+    eeprom_write_page(offset_addr, (alt_u8 *)region->buffer, TARGET_NUMBER * 2);
     offset_addr += TARGET_NUMBER * 2;
-    iic.write_page(offset_addr, (alt_u8 *)region->zenith_save, ZENITH_NUMBER);
+    eeprom_write_page(offset_addr, (alt_u8 *)region->zenith_save, ZENITH_NUMBER);
 
     return true;
 }
@@ -38,7 +38,7 @@ bool save2rom(struct __region *region)
  * @return true
  * @return false
  */
-bool save2fpga(struct __region *region, int num)
+bool region_save2fpga(struct __region *region, int num)
 {
     int          i;
     unsigned int data;
@@ -72,13 +72,13 @@ bool save2fpga(struct __region *region, int num)
  * @return true
  * @return false
  */
-bool read_from_rom(struct __region *region, int num)
+bool region_read_from_rom(struct __region *region, int num)
 {
     unsigned int offset_addr;
 
     offset_addr = GROUP_OFFSET_ADDR + num * REGION_SPACE_SIZE;
-    iic_sequential_read(offset_addr, (alt_u8 *)region->buffer, TARGET_NUMBER * 2);
-    alarm_region.save2fpga(&alarm_region, num % 3);
+    eeprom_sequential_read(offset_addr, (alt_u8 *)region->buffer, TARGET_NUMBER * 2);
+    region_save2fpga(&alarm_region, num % 3);
 
     return true;
 }
@@ -93,7 +93,7 @@ void save_sys_para(Sys_Para *data)
     unsigned char buf[384];
     memset(buf, 0, sizeof(buf));
     memcpy(buf, (unsigned char *)data, sizeof(Sys_Para));
-    iic.write_page(SYS_PARA_ADDR, buf, sizeof(Sys_Para));
+    eeprom_write_page(SYS_PARA_ADDR, buf, sizeof(Sys_Para));
 }
 
 /**
@@ -108,7 +108,7 @@ void read_sys_para(Sys_Para *status)
 
     while(num--)
     {
-        iic_sequential_read(SYS_PARA_ADDR, buf, sizeof(Sys_Para));
+        eeprom_sequential_read(SYS_PARA_ADDR, buf, sizeof(Sys_Para));
         status->dust_threshold = 400;
         // 简单判断从eeprom读出来的数据是否正确
         if(((buf[4] == 0x11) && (buf[5] == 0x11) && (buf[6] == 0x11) && (buf[7] == 0x11)) ||
@@ -121,7 +121,7 @@ void read_sys_para(Sys_Para *status)
             status->motor_enable    = ENABLE;
             status->laser_enable    = ENABLE;
             status->max_pwm_duty    = 10;
-            status->dust_threshold = 400;
+            status->dust_threshold  = 400;
             memcpy(status->nios_ver, NIOS_VERSION, 4);
             memcpy(status->fpga_ver, FPGA_VERSION, 4);
             memcpy(status->dev_pn, DEV_PN_NUM, 20);
@@ -140,8 +140,4 @@ unsigned char rd_switch_io_value(void)
 }
 
 region_t alarm_region = {
-    .select        = 0x07,
-    .save2rom      = save2rom,
-    .save2fpga     = save2fpga,
-    .read_from_rom = read_from_rom};
-
+    .select = 0x07};

@@ -2,11 +2,11 @@ module high_v(
     input wire          clk,
     input wire          rst,
     input wire          m_axis_tvalid,
-	input wire [9:0]    INITIAL_COUNT,
+    input wire [9:0]    INITIAL_COUNT,
     input wire [15:0]   tem_count,
-	input wire [7:0]    TEM_K,
-	input wire [7:0]    TEM_KH,
-	input wire [7:0]    POINT_TEM,
+    input wire [7:0]    TEM_K,
+    input wire [7:0]    TEM_KH,
+    input wire [7:0]    POINT_TEM,
     output reg          set_en,
     output wire[12:0]   tem_count_test,
     output reg [15:0]   da_count
@@ -32,7 +32,7 @@ module high_v(
     reg                 set_en_m;
     reg        [1:0]    set_en_r;
     wire                set_en_fall;
-//assign      INITIAL_TEM = POINT_TEM;	 
+//assign      INITIAL_TEM = POINT_TEM;     
 assign      MAX = INITIAL_COUNT+240;                   //715;         //上限60c
 assign      m_axis_tvalid_fall=m_axis_tvalid_r[1:0]==2'b10;
 assign      m_axis_tvalid_rise=m_axis_tvalid_r[1:0]==2'b01;

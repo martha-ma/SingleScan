@@ -14,7 +14,7 @@ module adt7301_core
 (
     input   wire                clk,
     input   wire                rst_n,
-   input   wire                data_in,
+    input   wire                data_in,
     input   wire                read_temp_flag,
     input   wire                enable,
     output  wire                m_axis_tvalid,
@@ -30,9 +30,9 @@ module adt7301_core
     assign                      dout=1'b0;
 spi_master_core_t #
 (
-    .DATA_W          (  16                 ),
-    .SYS_FREQ        (  125_000_000        ),
-    .SPI_FREQ        (  1000_000          )
+    .DATA_W          (  16                  ),
+    .SYS_FREQ        (  125_000_000         ),
+    .SPI_FREQ        (  1000_000            )
 )
 spi_master_core_tEx01
 (

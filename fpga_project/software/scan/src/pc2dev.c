@@ -64,15 +64,15 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
 
                     if(alarm_region.select <= 15)  // 范围保护
                     {
-                        iic.write_byte(CUR_ALARM_GROUP + 2, buf[10]);
-                        iic.write_byte(CUR_ALARM_GROUP + 3, buf[11]);
+                        eeprom_write_byte(CUR_ALARM_GROUP + 2, buf[10]);
+                        eeprom_write_byte(CUR_ALARM_GROUP + 3, buf[11]);
                     }
                     else
                         return;
                     //  接受到设置后, 从E2PROM里读出之前的设置数据
-                    alarm_region.read_from_rom(&alarm_region, alarm_region.select * 3 + 0);
-                    alarm_region.read_from_rom(&alarm_region, alarm_region.select * 3 + 1);
-                    alarm_region.read_from_rom(&alarm_region, alarm_region.select * 3 + 2);
+                    region_read_from_rom(&alarm_region, alarm_region.select * 3 + 0);
+                    region_read_from_rom(&alarm_region, alarm_region.select * 3 + 1);
+                    region_read_from_rom(&alarm_region, alarm_region.select * 3 + 2);
                     break;
                 case PC_READ_ALARM_REGION:
                     if(para <= 15)
@@ -100,11 +100,11 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
                     if(SysPara.update_pos_flag)
                     {
                         set_laser_paramter(&Nios2FPGA_pck, UPLOAD_EN, DISABLE);
-                        alarm_region.save2rom(&alarm_region);
+                        region_save2eeprom(&alarm_region);
                         set_laser_paramter(&Nios2FPGA_pck, UPLOAD_EN, ENABLE);
                     }
                     else
-                        alarm_region.save2rom(&alarm_region);
+                        region_save2eeprom(&alarm_region);
                     // 如果当前开关输入量的值和修改区域的值一样，才去修改FPGA内报警区域值
                     if(alarm_region.change_region_value == alarm_region.wr_which / 3)
                         alarm_region.change_region_flag = 0x01;
@@ -182,7 +182,7 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
                     }
                     break;
                 case MOTOR_SPEED:
-                    if((para >= 8) && (para <= 20))
+                    if((para >= 8) && (para <= 15))
                     {
                         SysPara.motor_expect_speed = para;
                         set_laser_paramter(&Nios2FPGA_pck, pc2nios.command, para);
@@ -399,6 +399,13 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
                         set_laser_paramter(&Nios2FPGA_pck, pc2nios.command, para);
                     }
                     break;
+                case MIN_TARGET_SIZE:
+                	if((para >= 0) && (para <= 500))
+                	{
+                    SysPara.min_target_size = para;
+                    set_laser_paramter(&Nios2FPGA_pck, pc2nios.command, para);
+                	}
+                    break;
 
                 case PC_REMOTE_UPDATE_WRITE:
                     image.addr = (buf[8] << 24) + (buf[9] << 16) + (buf[10] << 8) + (buf[11]);
@@ -467,7 +474,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
             offset_addr = CUR_ALARM_GROUP;
             for(i = 0; i < data->data_len; i++)
             {
-                buf[i + 8] = iic.read_byte(offset_addr + i);
+                buf[i + 8] = eeprom_read_byte(offset_addr + i);
             }
             buf[8]   = 0x00;
             buf[9]   = 0x00;
@@ -490,7 +497,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
             offset_addr = GROUP_OFFSET_ADDR + alarm_region.rd_which * REGION_SPACE_SIZE;
             buf[8]      = alarm_region.rd_which;
             buf_len     = 9;
-            iic_sequential_read(offset_addr, buf + 9, TARGET_NUMBER * 2 + 1 + 102);
+            eeprom_sequential_read(offset_addr, buf + 9, TARGET_NUMBER * 2 + 1 + 102);
             for(i = 9; i < 9 + TARGET_NUMBER * 2; i += 2)
             {
                 temp       = buf[i + 1];

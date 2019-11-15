@@ -14,10 +14,10 @@
 #include "altera_avalon_pio_regs.h"
 #include "altera_avalon_spi_regs.h"
 #include "altera_avalon_timer_regs.h"
+#include "led.h"
 #include "sys/alt_dma.h"
 #include "sys/alt_irq.h"
 
-#include "status_led.h"
 #include "region.h"
 
 extern alt_u32 timer_isr_context;

@@ -21,24 +21,24 @@ module distance_module(
     input  wire     [7:0]                   CORRECT_CNT_N,
     input  wire     [7:0]                   CORRECT_CNT_B,            //不同反射率目标距离矫正系数
     input  wire     [7:0]                   CORRECT_CNT_M,
-	input  wire     [7:0]                   CORRECT_CNT_5,
-	input  wire     [7:0]                   CORRECT_CNT_4,
+    input  wire     [7:0]                   CORRECT_CNT_5,
+    input  wire     [7:0]                   CORRECT_CNT_4,
     input  wire     [9:0]                   POINT_CNT1,
     input  wire     [9:0]                   POINT_CNT2,
-	input  wire     [9:0]                   POINT_CNT3,
-	input  wire     [9:0]                   POINT_CNT4,
-	input  wire     [7:0]                   CHANGE_TH_2,
-	input  wire     [7:0]                   POINT_TEM,
-	input  wire     [7:0]                   CORRECT_TEM_1,
-	input  wire     [7:0]                   CORRECT_TEM_2,
-	input  wire     [7:0]                   CHANGE_TH_1,
-	input  wire                             set_en,
-	input  wire     [15:0]                  tem_count,
-	input  wire     [15:0]                  dac_value,
-	input  wire     [9:0]                   dac_max,
-	input  wire     [9:0]                   dac_min,
+    input  wire     [9:0]                   POINT_CNT3,
+    input  wire     [9:0]                   POINT_CNT4,
+    input  wire     [7:0]                   CHANGE_TH_2,
+    input  wire     [7:0]                   POINT_TEM,
+    input  wire     [7:0]                   CORRECT_TEM_1,
+    input  wire     [7:0]                   CORRECT_TEM_2,
+    input  wire     [7:0]                   CHANGE_TH_1,
+    input  wire                             set_en,
+    input  wire     [15:0]                  tem_count,
+    input  wire     [15:0]                  dac_value,
+    input  wire     [9:0]                   dac_max,
+    input  wire     [9:0]                   dac_min,
     output wire                             target_valid,         //有最大距离值时标志信号
-	output wire     [39:0]                  mult_pluse,
+    output wire     [39:0]                  mult_pluse,
     output wire     [79:0]                  mult_distance
     
     );
@@ -46,13 +46,13 @@ module distance_module(
     wire                                    data_en,time_en,ad_en,far_en,temp_en,da_en;
     wire                                    serial_data;
     wire            [11:0]                  time_pluse;
-	wire            [11:0]                  time_pluse_t;
-	wire            [11:0]                  time_pluse_a;
+    wire            [11:0]                  time_pluse_t;
+    wire            [11:0]                  time_pluse_a;
     wire            [17:0]                  mid_distance;
     wire            [9:0]                   single_cnt;
-	wire            [15:0]                  ad_distance;
+    wire            [15:0]                  ad_distance;
     wire            [15:0]                  ad_distance_p;
-	wire            [15:0]                  ad_distance_t;
+    wire            [15:0]                  ad_distance_t;
     wire            [7:0]                   tem_per;
     wire            [17:0]                  da_distance;
 parallel_serial parallel_serialEx01(                                                  //并行数据转为串行数据输出
@@ -74,7 +74,7 @@ peak_div peak_divEx01(                                                          
     .NOISE_CNT                  (    NOISE_CNT       ),
     .time_en                    (    time_en         ),
     .mid_distance               (    mid_distance    ),
-	.UPP_WITH                   (    CHANGE_TH_1     ),
+    .UPP_WITH                   (    CHANGE_TH_1     ),
     .time_pluse                 (    time_pluse      ),
     .far_en                     (    far_en          )
     );
@@ -87,14 +87,14 @@ adjust_distance adjust_distanceEx01(                                          //
     .CORRECT_CNT_M              (   CORRECT_CNT_M    ),
     .POINT_CNT1                 (   POINT_CNT1       ),
     .POINT_CNT2                 (   POINT_CNT2       ),
-	.POINT_CNT3                 (   POINT_CNT3       ),
+    .POINT_CNT3                 (   POINT_CNT3       ),
     .POINT_CNT4                 (   POINT_CNT4       ),
     .CORRECT_CNT_N              (   CORRECT_CNT_N    ),
     .CORRECT_CNT_B              (   CORRECT_CNT_B    ),
-	.CORRECT_CNT_5              (   CORRECT_CNT_5    ),
-	.CORRECT_CNT_4              (   CORRECT_CNT_4    ),
+    .CORRECT_CNT_5              (   CORRECT_CNT_5    ),
+    .CORRECT_CNT_4              (   CORRECT_CNT_4    ),
     .ad_en                      (   ad_en            ),
-	.time_pluse_a               (   time_pluse_a     ),
+    .time_pluse_a               (   time_pluse_a     ),
     .ad_distance                (   ad_distance_p    )
    );
 
@@ -104,26 +104,26 @@ tem_adjust tem_adjustEx01(                                                //对�
     .rst                        (   rst              ),
     .ad_en                      (   ad_en            ),
     .ad_distance                (   ad_distance_p    ),
-	.time_pluse_a               (   time_pluse_a     ), 
+    .time_pluse_a               (   time_pluse_a     ), 
     .POINT_TEM                  (   POINT_TEM        ),
     .CORRECT_TEM_1              (   CORRECT_TEM_1    ),
     .CORRECT_TEM_2              (   CORRECT_TEM_2    ),
 //    .tem_per                    (  tem_per          ),
     .tem_per                    (   tem_count        ),
     .temp_en                    (   temp_en          ),
-	.time_pluse_t               (   time_pluse_t     ), 
+    .time_pluse_t               (   time_pluse_t     ), 
     .tem_distance               (   ad_distance      )
 	);
 da_adjust da_adjustEx01(
-	.clk						(	clk		         ),
-	.rst						(	rst		         ),
-	.dac_value					(	dac_value		 ),
-	.dac_max                    (   dac_max          ),
-	.dac_min                    (   dac_min          ),
-	.temp_en					(	temp_en		     ),
-	.ad_distance				(	ad_distance		 ),
-	.da_en						(	da_en			 ),
-	.da_distance				(	da_distance		 )
+    .clk                        (	clk              ),
+    .rst                        (	rst              ),
+    .dac_value                  (	dac_value        ),
+    .dac_max                    (   dac_max          ),
+    .dac_min                    (   dac_min          ),
+    .temp_en                    (	temp_en          ),
+    .ad_distance                (	ad_distance      ),
+    .da_en                      (	da_en            ),
+    .da_distance                (	da_distance      )
 );
 
 max_distance max_distanceEx01(                                                       //进行前五次回波距离及脉冲宽度的统计
@@ -139,8 +139,8 @@ max_distance max_distanceEx01(                                                  
     .single_cnt                 (    single_cnt      ),
 
     .target_valid               (    target_valid    ),
-	.mult_pluse                 (    mult_pluse      ),
-	.mult_distance              (    mult_distance   ) 
+    .mult_pluse                 (    mult_pluse      ),
+    .mult_distance              (    mult_distance   ) 
     );
 
 endmodule

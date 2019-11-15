@@ -14,6 +14,8 @@
  *
  */
 #include <sys/unistd.h>
+
+#include "../inc/led.h"
 #include "altera_avalon_epcs_flash_controller.h"
 #include "altera_avalon_fifo_util.h"
 #include "altera_avalon_pio_regs.h"
@@ -32,7 +34,6 @@
 #include "sick_protocol.h"
 #include "region.h"
 #include "socket.h"
-#include "status_led.h"
 #include "user_interrupt.h"
 #include "w5500.h"
 
@@ -69,14 +70,14 @@ int main()
     alarm_region.change_region_flag  = 0x01;
     isPowerUp                        = 0x01;
     // 从默认地址读取数据作为默认报警区域
-    alarm_region.read_from_rom(&alarm_region, alarm_region.change_region_value * 3);
-    alarm_region.read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 1);
-    alarm_region.read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 2);
+    region_read_from_rom(&alarm_region, alarm_region.change_region_value * 3);
+    region_read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 1);
+    region_read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 2);
     read_sys_para(&SysPara);
     init_fpga_sys();
     timer_initial();
     //    alarm_select_pio_initial();
-       watchdog_init();
+        watchdog_init();
     queue_init(&LaserDataQueue, &LaserData[0], 2048);
     while(1)
     {
@@ -153,7 +154,7 @@ int main()
 
         if(sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm)
         {
-            status_led_light(LED_ON);
+            led_status_light(LED_ON);
             set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
                                sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
         }
@@ -163,7 +164,7 @@ int main()
             {
                 led_time_flag.status_led_1s_flag = 0x00;
                 led_time_flag.status_led_value   = (~led_time_flag.status_led_value) & 0x01;
-                status_led_light(led_time_flag.status_led_value);
+                led_status_light(led_time_flag.status_led_value);
             }
             set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
                                sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
@@ -174,7 +175,7 @@ int main()
             {
                 led_time_flag.status_led_300ms_flag = 0x00;
                 led_time_flag.status_led_value      = (~led_time_flag.status_led_value) & 0x01;
-                status_led_light(led_time_flag.status_led_value);
+                led_status_light(led_time_flag.status_led_value);
             }
             set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
                                sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
@@ -201,9 +202,9 @@ int main()
         if(alarm_region.change_region_flag == 0x01)
         {
             alarm_region.change_region_flag = 0x00;
-            alarm_region.read_from_rom(&alarm_region, alarm_region.change_region_value * 3);
-            alarm_region.read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 1);
-            alarm_region.read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 2);
+            region_read_from_rom(&alarm_region, alarm_region.change_region_value * 3);
+            region_read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 1);
+            region_read_from_rom(&alarm_region, alarm_region.change_region_value * 3 + 2);
 
             //            if(isTcpEstablished)
             {
