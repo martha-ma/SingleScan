@@ -1,4 +1,4 @@
-/*
+﻿/*
  * scan_config.h
  *
  *  Created on: 2019骞�5鏈�8鏃�
@@ -13,7 +13,7 @@
 #define PNP (0x02)
 
 #define EEPROM_PAGE_SIZE (256)
-#define FPGA_VERSION "4.05"
+#define FPGA_VERSION "4.06"
 #define NIOS_VERSION FPGA_VERSION
 
 #define DEV_TYPE "SCA01-011331525P"
