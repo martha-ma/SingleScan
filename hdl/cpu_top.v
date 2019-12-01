@@ -43,7 +43,7 @@ module cpu_top
     output  wire [239:00]       laser_presdo,
     output  wire [61:00]        system_para,
     output  wire [89:00]        da_cycle_para,
-    output  wire [223:00]       distance_para,
+    output  wire [231:00]       distance_para,
 
     input   wire [255:00]       fpga_status,
     input   wire [31:00]        motor_speed,

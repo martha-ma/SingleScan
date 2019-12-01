@@ -25,7 +25,7 @@ module command_module
     output  reg  [239:00]       laser_presdo,
     output  wire [61:00]        system_para,
     output  wire [89:00]        da_cycle_para,
-    output  wire [223:00]       distance_para
+    output  wire [231:00]       distance_para
 );
 
 reg     [15:00]             recv_command;
@@ -63,7 +63,7 @@ reg     [31:00]             laser_freq;
 reg     [07:00]             motor_speed;
 
 reg     [09:00]             da_cycle_para1, da_cycle_para2, da_cycle_para3, da_cycle_para4, da_cycle_para5, da_cycle_para6, da_cycle_para7, da_cycle_para8, da_cycle_para9; 
-reg     [07:00]             min_target_size;
+reg     [15:00]             min_target_size;
 
 reg     [01:00]             hw_type;
 reg                         laser_enable;

@@ -400,7 +400,7 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
                     }
                     break;
                 case MIN_TARGET_SIZE:
-                	if((para >= 0) && (para <= 500))
+                	if((para >= 0) && (para <= 8000))
                 	{
                     SysPara.min_target_size = para;
                     set_laser_paramter(&Nios2FPGA_pck, pc2nios.command, para);

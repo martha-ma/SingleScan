@@ -104,7 +104,7 @@ wire    [17:00]             region2_rddata;
 wire    [61:00]             system_para;
 wire    [239:00]            laser_presdo;
 wire    [89:00]             da_cycle_para;
-wire    [223:00]            distance_para;
+wire    [231:00]            distance_para;
 wire                        gxb_pwrdn;
 
 wire                        rst_n/* synthesis keep */;
@@ -161,7 +161,7 @@ wire    [07:00]             dust_alarm_threshold /* synthesis keep */;
 
 wire    [31:00]             laser_freq /* synthesis keep */;
 wire    [07:00]             motor_speed /* synthesis keep */;
-wire    [07:00]             min_target_size/* synthesis keep */;
+wire    [15:00]             min_target_size/* synthesis keep */;
 
 wire    [01:00]             hw_type;        // 1, NPN;  2, PNP
 wire                        laser_enable /* synthesis keep */;

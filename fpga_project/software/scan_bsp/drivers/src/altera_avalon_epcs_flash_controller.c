@@ -154,12 +154,6 @@ static int alt_epcs_flash_query(alt_flash_epcs_dev* flash)
       flash->dev.region_info[0].number_of_blocks = 64; /* number of sectors */
       flash->dev.region_info[0].block_size = 65536;  /* sector size */
     }
-    else if((flash->silicon_id & 0xFFFFFF) == 0xEF4016) /* EPCQ32 */
-       {
-         flash->dev.region_info[0].region_size = 32 * 1024 * 1024 / 8;
-         flash->dev.region_info[0].number_of_blocks = 64; /* number of sectors */
-         flash->dev.region_info[0].block_size = 65536;  /* sector size */
-       }
     else if((flash->silicon_id & 0xFFFFFF) == 0x20BA17) /* EPCQ64 */
     {
       flash->dev.region_info[0].region_size = 64 * 1024 * 1024 / 8;
