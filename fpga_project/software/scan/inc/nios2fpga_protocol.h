@@ -81,6 +81,7 @@ typedef enum __NIOS2FPGA_Command
     DA_CYCLE_PARA9 = 0xac09,
 
     MIN_TARGET_SIZE = 0xad00,
+	ALARM_OUTPUT_THRESHOLD = 0xad01,
 
     WR_REGION0_DATA = 0xb100,
     WR_REGION1_DATA = 0xb101,
@@ -94,17 +95,17 @@ typedef struct __NIOS2FPGA_Pck
 } NIOS2FPGA_Pck_t;
 
 /*
- * 保存从FPGA部分接收到一圈数据，以及相关操作状态
+ * 淇濆瓨浠嶧PGA閮ㄥ垎鎺ユ敹鍒颁竴鍦堟暟鎹紝浠ュ強鐩稿叧鎿嶄綔鐘舵��
  */
 typedef struct _UpDataFrame
 {
-    // 从FPGA接收系统状态完成, 可以发送给上位机
+    // 浠嶧PGA鎺ユ敹绯荤粺鐘舵�佸畬鎴�, 鍙互鍙戦�佺粰涓婁綅鏈�
     bool         pos_finish;
     unsigned int distance_len;
     unsigned int gray_len;
 
-    unsigned char distance_data[811 * 5];  // 存放ascii码格式数据，拼接后传给上位机
-    unsigned char gray_data[811 * 5];      // 存放ascii码格式数据，拼接后传给上位机
+    unsigned char distance_data[811 * 5];  // 瀛樻斁ascii鐮佹牸寮忔暟鎹紝鎷兼帴鍚庝紶缁欎笂浣嶆満
+    unsigned char gray_data[811 * 5];      // 瀛樻斁ascii鐮佹牸寮忔暟鎹紝鎷兼帴鍚庝紶缁欎笂浣嶆満
 } UpDataFrame;
 
 extern UpDataFrame     CycleData;
@@ -114,22 +115,22 @@ void nios2fpga_data_packet(unsigned short command, unsigned char len, unsigned i
 bool nios2fpga_data_write(unsigned int *data, unsigned int len);
 
 /**
- * @brief 将command和data封装好, 发送到FPGA部分
+ * @brief 灏哻ommand鍜宒ata灏佽濂�, 鍙戦�佸埌FPGA閮ㄥ垎
  * Ex. set_laser_paramter(&Nios2FPGA_pck, MOTOR_ENABLE, DISABLE);
  * @param pck 
- * @param command   要发送的命令
- * @param data  要发送的数据
+ * @param command   瑕佸彂閫佺殑鍛戒护
+ * @param data  瑕佸彂閫佺殑鏁版嵁
  */
 void set_laser_paramter(NIOS2FPGA_Pck_t *pck, unsigned short command, unsigned int data);
 
 /**
- * @brief 系统报警时, 关闭外围设备
+ * @brief 绯荤粺鎶ヨ鏃�, 鍏抽棴澶栧洿璁惧
  * 
  */
 void close_peripheral_dev(void);
 
 /**
- * @brief 上电后, 从E2PROM里读取参数后, 将参数同步设置给FPGA
+ * @brief 涓婄數鍚�, 浠嶦2PROM閲岃鍙栧弬鏁板悗, 灏嗗弬鏁板悓姝ヨ缃粰FPGA
  * 
  */
 void init_fpga_sys(void);

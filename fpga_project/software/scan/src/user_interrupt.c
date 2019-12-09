@@ -35,34 +35,66 @@ void timer_isr_interrupt(void *isr_context, alt_u32 id)
         led_time_flag.cnt_1s             = 0;
         led_time_flag.status_led_1s_flag = 0x01;
 
-        led_time_flag.power_led_value = (~led_time_flag.power_led_value) & 0x01;
-        led_power_light(led_time_flag.power_led_value);
+//        led_time_flag.power_led_value = (~led_time_flag.power_led_value) & 0x01;
+
+//        led_power_light(led_time_flag.power_led_value);
     }
     else
         led_time_flag.cnt_1s++;
 
     if(led_time_flag.cnt_300ms == 15)
-    {
-        led_time_flag.cnt_300ms             = 0;
-        led_time_flag.status_led_300ms_flag = 0x01;
-    }
-    else
-        led_time_flag.cnt_300ms++;
-
-    if(led_time_flag.cnt_30ms == 3)
-    {
-        alarm_region.last_io_value[0] = rd_switch_io_value();
-        if(alarm_region.last_io_value[0] != alarm_region.last_io_value[1])
         {
-            alarm_region.change_region_flag  = 0x01;
-            alarm_region.change_region_value = alarm_region.last_io_value[0];
+            led_time_flag.cnt_300ms             = 0;
+            led_time_flag.status_led_300ms_flag = 0x01;
         }
-        alarm_region.last_io_value[1] = alarm_region.last_io_value[0];
-        led_time_flag.cnt_30ms        = 0;
+        else
+            led_time_flag.cnt_300ms++;
+
+
+ //新增2s选项
+    if(led_time_flag.cnt_2s_p == 100)
+    {
+        led_time_flag.cnt_2s_p             = 0;
+        led_time_flag.power_led_2s_flag = 0x01;
     }
     else
-        led_time_flag.cnt_30ms++;
-}
+        led_time_flag.cnt_2s_p++;
+
+    if(led_time_flag.cnt_1s_p == 50)
+    {
+        led_time_flag.cnt_1s_p             = 0;
+        led_time_flag.power_led_1s_flag = 0x01;
+    }
+    else
+        led_time_flag.cnt_1s_p++;
+    if(led_time_flag.cnt_300ms_p == 15)
+    {
+        led_time_flag.cnt_300ms_p             = 0;
+        led_time_flag.power_led_300ms_flag = 0x01;
+    }
+    else
+        led_time_flag.cnt_300ms_p++;
+  //  if(led_time_flag.cnt_30ms_p == 1)
+   //     {
+   //         led_time_flag.cnt_30ms_p             = 0;
+   //         led_time_flag.power_led_30ms_flag = 0x01;
+   //     }
+    //    else
+    //        led_time_flag.cnt_30ms_p++;
+    if(led_time_flag.cnt_30ms == 3)
+        {
+            alarm_region.last_io_value[0] = rd_switch_io_value();
+            if(alarm_region.last_io_value[0] != alarm_region.last_io_value[1])
+            {
+                alarm_region.change_region_flag  = 0x01;
+                alarm_region.change_region_value = alarm_region.last_io_value[0];
+            }
+            alarm_region.last_io_value[1] = alarm_region.last_io_value[0];
+            led_time_flag.cnt_30ms        = 0;
+        }
+        else
+            led_time_flag.cnt_30ms++;
+    }
 
 //void alarm_select_pio_initial(void)
 //{

@@ -111,6 +111,7 @@ void init_fpga_sys(void)
     set_laser_paramter(&Nios2FPGA_pck, DA_CYCLE_PARA8, SysPara.da_cycle_para8);
     set_laser_paramter(&Nios2FPGA_pck, DA_CYCLE_PARA9, SysPara.da_cycle_para9);
     set_laser_paramter(&Nios2FPGA_pck, MIN_TARGET_SIZE, SysPara.min_target_size);
+    set_laser_paramter(&Nios2FPGA_pck, ALARM_OUTPUT_THRESHOLD, SysPara.alarm_output_threshold);
     set_laser_paramter(&Nios2FPGA_pck, PC_SET_HW_TYPE, SysPara.board_type);
     write_laser_presdo(SysPara.laser_presdo);
 }

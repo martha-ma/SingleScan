@@ -180,13 +180,56 @@ int main()
             set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
                                sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
         }
-        // alarm_region.last_io_value[0] = rd_switch_io_value();
-        // if(alarm_region.last_io_value[0] != alarm_region.last_io_value[1])
-        // {
-        //     alarm_region.change_region_flag = 0x01;
-        //     alarm_region.change_region_value = alarm_region.last_io_value[0];
-        // }
-        // alarm_region.last_io_value[1] = alarm_region.last_io_value[0];
+
+
+        if(sys_warn.region_alarm)
+        {
+
+            if(sys_warn.region_alarm & 0x01)
+            {
+            	if(led_time_flag.power_led_300ms_flag)
+            	{
+           	    led_time_flag.power_led_300ms_flag = 0x00;
+            	led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
+            	led_power_light(led_time_flag.power_led_value);
+            	}
+            }
+            else if(sys_warn.region_alarm & 0x02)
+            {
+            	if(led_time_flag.power_led_1s_flag)
+            	{
+            	led_time_flag.power_led_1s_flag = 0x00;
+            	led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
+            	led_power_light(led_time_flag.power_led_value);
+            	}
+            }
+            else if(sys_warn.region_alarm & 0x04)
+            {
+            	if(led_time_flag.power_led_2s_flag)
+            	{
+                led_time_flag.power_led_2s_flag = 0x00;
+                led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
+                led_power_light(led_time_flag.power_led_value);
+            	}
+            }
+        }
+        else if(~sys_warn.region_alarm |isPowerUp)
+        {
+        	//if(led_time_flag.power_led_30ms_flag)
+        	 //           	{
+        	 //               led_time_flag.power_led_30ms_flag = 0x00;
+        	  //              led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
+        	  //              led_power_light(led_time_flag.power_led_value);
+        	  //          	}
+        	led_power_light(LED_ON);
+        }
+         alarm_region.last_io_value[0] = rd_switch_io_value();
+         if(alarm_region.last_io_value[0] != alarm_region.last_io_value[1])
+         {
+             alarm_region.change_region_flag = 0x01;
+             alarm_region.change_region_value = alarm_region.last_io_value[0];
+         }
+         alarm_region.last_io_value[1] = alarm_region.last_io_value[0];
 
         if(isTcpEstablished & isPowerUp)  // 刚上电且TCP连接建立时，发送一次
         {

@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2019-11-28 15:01:33</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1574924493920</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 5, 2019 5:29:42 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1575538182058</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>E:\work\SingleScan\fpga_project\software\scan_bsp</BspGeneratedLocation>
-        <BspSettingsFile>settings.bsp</BspSettingsFile>
+        <BspSettingsFile>E:\work\SingleScan\fpga_project\software\scan_bsp\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\kernel.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2</Cpu>

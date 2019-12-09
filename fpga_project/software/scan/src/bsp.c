@@ -60,11 +60,12 @@ Sys_Para      SysPara = {.update_pos_flag      = false,
                     .da_cycle_para3   = 136,
                     .da_cycle_para4   = 160,
                     .da_cycle_para5   = 172,
-                    .da_cycle_para6   = 152,
+                    .da_cycle_para6   = 148,
                     .da_cycle_para7   = 124,
                     .da_cycle_para8   = 100,
                     .da_cycle_para9   = 76,
-					.min_target_size =0
+					.min_target_size = 0,
+					.alarm_output_threshold = 1
 };
 
 Sys_Status SysStatus;

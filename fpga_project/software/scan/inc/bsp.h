@@ -32,13 +32,13 @@
 //#define SIM_DATA_TEST
 extern uint8 buffer[];
 /**
- * @brief 保存系统运行时的状态参数
+ * @brief 淇濆瓨绯荤粺杩愯鏃剁殑鐘舵�佸弬鏁�
  * 
  */
 typedef struct _sys_para
 {
-    //update_pos_flag = 1时, 让FPGA上传距离数据
-    bool         update_pos_flag;  //  update_pos_flag=1, 需要上传位置数据
+    //update_pos_flag = 1鏃�, 璁〧PGA涓婁紶璺濈鏁版嵁
+    bool         update_pos_flag;  //  update_pos_flag=1, 闇�瑕佷笂浼犱綅缃暟鎹�
     unsigned int laser_enable;
     unsigned int laser_freq;
     unsigned int laser_recv_delay;
@@ -57,7 +57,7 @@ typedef struct _sys_para
     unsigned int gray_inflection1;
     unsigned int gray_inflection2;
     unsigned int min_display_distance;
-    unsigned int placeholer1;  // 灰尘报警占位
+    unsigned int placeholer1;  // 鐏板皹鎶ヨ鍗犱綅
     unsigned int first_noise_filter;
 
     unsigned char nios_ver[4];
@@ -70,9 +70,9 @@ typedef struct _sys_para
     unsigned int temp_distance_cof1;
     unsigned int temp_distance_cof2;
     int          temp_distance_inflection;
-    // 零位距离值
+    // 闆朵綅璺濈鍊�
     unsigned int zero_value;
-    // 系统温度值
+    // 绯荤粺娓╁害鍊�
     unsigned int sys_temp;
     unsigned int max_pwm_duty;
     unsigned int min_pwm_duty;
@@ -105,8 +105,9 @@ typedef struct _sys_para
     unsigned int  gray_distance_revise5;
     unsigned int  dust_threshold;
     unsigned int  min_target_size;
+    unsigned int  alarm_output_threshold;
 
-    unsigned int pc_command_value;  // 接受到上位机的命令个数
+    unsigned int pc_command_value;  // 鎺ュ彈鍒颁笂浣嶆満鐨勫懡浠や釜鏁�
 } Sys_Para;
 
 typedef struct _sys_status
@@ -126,7 +127,7 @@ extern unsigned char isPowerUp;
 #define VALID_ANGLE_RANGE 0.0165 * 3600
 #define TARGET_THRESHOLD 100
 
-// 270度测量范围内上传的数据点
+// 270搴︽祴閲忚寖鍥村唴涓婁紶鐨勬暟鎹偣
 #define TARGET_NUMBER 811
 #define ZENITH_NUMBER 103
 
@@ -134,7 +135,7 @@ void IINCHIP_CSoff();
 
 void IINCHIP_CSon();
 
-void delay_ms(unsigned int d);  //延时函数(ms)
+void delay_ms(unsigned int d);  //寤舵椂鍑芥暟(ms)
 void delay_us(unsigned int d);
 
 void tim561_run(void);

@@ -406,7 +406,13 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
                     set_laser_paramter(&Nios2FPGA_pck, pc2nios.command, para);
                 	}
                     break;
-
+                case ALARM_OUTPUT_THRESHOLD:
+                    if((para >= 1) && (para <= 500))
+                    {
+                    SysPara.alarm_output_threshold = para;
+                    set_laser_paramter(&Nios2FPGA_pck, pc2nios.command, para);
+                    }
+                    break;
                 case PC_REMOTE_UPDATE_WRITE:
                     image.addr = (buf[8] << 24) + (buf[9] << 16) + (buf[10] << 8) + (buf[11]);
                     memcpy(image.data, &buf[12], 256);

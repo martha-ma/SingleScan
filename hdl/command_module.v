@@ -25,7 +25,7 @@ module command_module
     output  reg  [239:00]       laser_presdo,
     output  wire [61:00]        system_para,
     output  wire [89:00]        da_cycle_para,
-    output  wire [231:00]       distance_para
+    output  wire [241:00]       distance_para
 );
 
 reg     [15:00]             recv_command;
@@ -64,6 +64,7 @@ reg     [07:00]             motor_speed;
 
 reg     [09:00]             da_cycle_para1, da_cycle_para2, da_cycle_para3, da_cycle_para4, da_cycle_para5, da_cycle_para6, da_cycle_para7, da_cycle_para8, da_cycle_para9; 
 reg     [15:00]             min_target_size;
+reg     [09:00]             alarm_output_threshold;
 
 reg     [01:00]             hw_type;
 reg                         laser_enable;
@@ -73,6 +74,7 @@ reg                         dac_set_flag;
 
 // 根据协议从上而下依次排列, 207
 assign                  distance_para = {
+                                    alarm_output_threshold,//10
                                     min_target_size,        // 8bit
                                     valid_num_threshold,    // 8bit
                                     laser_recv_delay,   // 8bit
@@ -181,6 +183,7 @@ localparam              M_DA_CYCLE_SETTING8       = 16'hac08;
 localparam              M_DA_CYCLE_SETTING9       = 16'hac09;
 
 localparam              M_MIN_TARGET_SIZE         = 16'had00;
+localparam              ALARM_OUTPUT_THRESHOLD    = 16'had01;
 
 localparam              M_WR_REGION0              = 16'hb100;
 localparam              M_WR_REGION1              = 16'hb101;
@@ -701,6 +704,14 @@ begin
         min_target_size <= 0;
     else if(ns[DATA] & (recv_command == M_MIN_TARGET_SIZE))
         min_target_size <= protocol_fifo_out_data;
+end
+
+always @ (posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+        alarm_output_threshold <= 1;
+    else if(ns[DATA] & (recv_command == ALARM_OUTPUT_THRESHOLD))
+        alarm_output_threshold <= protocol_fifo_out_data;
 end
 
 always @ (posedge clk or negedge rst_n)

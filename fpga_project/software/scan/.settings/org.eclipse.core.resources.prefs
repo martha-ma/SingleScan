@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//inc/bsp.h=UTF-8
+encoding//inc/led.h=UTF-8
+encoding//inc/nios2fpga_protocol.h=UTF-8
 encoding//inc/scan_config.h=UTF-8
 encoding//src/bsp.c=UTF-8
 encoding//src/fpga2nios_protocol.c=UTF-8
