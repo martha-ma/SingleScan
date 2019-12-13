@@ -21,7 +21,8 @@ obj/default/src/user_interrupt.o: src/user_interrupt.c \
  ../scan_bsp//HAL/inc/sys/alt_flash_types.h \
  ../scan_bsp//HAL/inc/sys/alt_flash.h \
  ../scan_bsp//HAL/inc/sys/alt_flash_dev.h \
- ../scan_bsp//HAL/inc/sys/alt_cache.h inc/device.h
+ ../scan_bsp//HAL/inc/sys/alt_cache.h inc/device.h \
+ inc/fpga2nios_protocol.h inc/nios2fpga_protocol.h
 
 inc/user_interrupt.h:
 
@@ -102,3 +103,7 @@ inc/remote_update.h:
 ../scan_bsp//HAL/inc/sys/alt_cache.h:
 
 inc/device.h:
+
+inc/fpga2nios_protocol.h:
+
+inc/nios2fpga_protocol.h:
