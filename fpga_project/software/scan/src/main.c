@@ -152,6 +152,34 @@ int main()
             }
         }
 
+        if(sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm)
+        {
+             led_status_light(LED_ON);
+             set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
+            		 sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
+        }
+        else if(sys_warn.window_dust_alarm)
+        {
+              if(led_time_flag.status_led_1s_flag)
+                   {
+                         led_time_flag.status_led_1s_flag = 0x00;
+                         led_time_flag.status_led_value   = (~led_time_flag.status_led_value) & 0x01;
+                         led_status_light(led_time_flag.status_led_value);
+                   }
+                         set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
+                                              sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
+         }
+         else if(sys_warn.temp_out_alarm)
+         {
+              if(led_time_flag.status_led_300ms_flag)
+                   {
+                         led_time_flag.status_led_300ms_flag = 0x00;
+                         led_time_flag.status_led_value      = (~led_time_flag.status_led_value) & 0x01;
+                         led_status_light(led_time_flag.status_led_value);
+                   }
+                         set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
+                                              sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
+          }
 
 
 

@@ -549,7 +549,7 @@ begin
         //end
         //else
         begin
-            target_valid_r0 <= (cs[CLEAR] & (state_cnt == 12) );
+            target_valid_r0 <= (cs[CLEAR] & (state_cnt == 15) );
             target_valid_r1 <= target_valid_r0;
             target_valid_r2 <= target_valid_r1;
             target_valid <= target_valid_r2;

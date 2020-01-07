@@ -75,13 +75,7 @@ void timer_isr_interrupt(void *isr_context, alt_u32 id)
     }
     else
         led_time_flag.cnt_300ms_p++;
-  //  if(led_time_flag.cnt_30ms_p == 1)
-   //     {
-   //         led_time_flag.cnt_30ms_p             = 0;
-   //         led_time_flag.power_led_30ms_flag = 0x01;
-   //     }
-    //    else
-    //        led_time_flag.cnt_30ms_p++;
+
     if(led_time_flag.cnt_30ms == 3)
         {
             alarm_region.last_io_value[0] = rd_switch_io_value();
@@ -103,64 +97,37 @@ void timer_isr_interrupt(void *isr_context, alt_u32 id)
 
            if(sys_warn.region_alarm & 0x01)
            {
-           	if(led_time_flag.power_led_300ms_flag)
-           	{
-          	    led_time_flag.power_led_300ms_flag = 0x00;
-           	led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
-           	led_power_light(led_time_flag.power_led_value);
-           	}
+           	    if(led_time_flag.power_led_300ms_flag)
+           	    {
+          	        led_time_flag.power_led_300ms_flag = 0x00;
+           	        led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
+           	        led_power_light(led_time_flag.power_led_value);
+           	    }
            }
            else if(sys_warn.region_alarm & 0x02)
            {
-           	if(led_time_flag.power_led_1s_flag)
-           	{
-           	led_time_flag.power_led_1s_flag = 0x00;
-           	led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
-           	led_power_light(led_time_flag.power_led_value);
-           	}
+           	    if(led_time_flag.power_led_1s_flag)
+           	    {
+           	        led_time_flag.power_led_1s_flag = 0x00;
+                	led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
+           	        led_power_light(led_time_flag.power_led_value);
+           	    }
            }
            else if(sys_warn.region_alarm & 0x04)
            {
-           	if(led_time_flag.power_led_2s_flag)
-           	{
-               led_time_flag.power_led_2s_flag = 0x00;
-               led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
-               led_power_light(led_time_flag.power_led_value);
-           	}
+           	    if(led_time_flag.power_led_2s_flag)
+             	{
+                   led_time_flag.power_led_2s_flag = 0x00;
+                   led_time_flag.power_led_value      = (~led_time_flag.power_led_value) & 0x01;
+                   led_power_light(led_time_flag.power_led_value);
+           	    }
            }
        }
        else if(~sys_warn.region_alarm |isPowerUp)
        {
-       	led_power_light(LED_ON);
+       	   led_power_light(LED_ON);
        }
-       if(sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm)
-               {
-                   led_status_light(LED_ON);
-                   set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
-                                      sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
-               }
-               else if(sys_warn.window_dust_alarm)
-               {
-                   if(led_time_flag.status_led_1s_flag)
-                   {
-                       led_time_flag.status_led_1s_flag = 0x00;
-                       led_time_flag.status_led_value   = (~led_time_flag.status_led_value) & 0x01;
-                       led_status_light(led_time_flag.status_led_value);
-                   }
-                   set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
-                                      sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
-               }
-               else if(sys_warn.temp_out_alarm)
-               {
-                   if(led_time_flag.status_led_300ms_flag)
-                   {
-                       led_time_flag.status_led_300ms_flag = 0x00;
-                       led_time_flag.status_led_value      = (~led_time_flag.status_led_value) & 0x01;
-                       led_status_light(led_time_flag.status_led_value);
-                   }
-                   set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
-                                      sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
-               }
+
 }
 //void alarm_select_pio_initial(void)
 //{

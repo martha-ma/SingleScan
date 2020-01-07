@@ -65,14 +65,12 @@ wire [15:0]     range_des/* synthesis keep */;
 wire [23:0]     range_des_um/* synthesis keep */;
 
 reg  [15:0]     change_r0;
-//reg  [15:0]     change_r1;
-//reg  [15:0]     change_r2;
-wire            flag_0/* synthesis keep */;
-wire            flag_1;
-wire            flag_2;
-wire            judge_0/* synthesis keep */;
-wire            judge_1;
-wire            judge_2;
+reg             flag_0/* synthesis keep */;
+reg             flag_1;
+reg             flag_2;
+reg             judge_0/* synthesis keep */;
+reg             judge_1;
+reg             judge_2;
 
 reg  [16:0]     min_target_size_f;
 reg  [15:0]     min_target_size_r0;
@@ -82,8 +80,6 @@ reg  [9:0]      alarm_output_threshold_r0;
 reg  [9:0]      alarm_output_threshold_r1;
 reg  [9:0]      alarm_output_threshold_com;
 wire            alarm_output_threshold_flag;
-
-
 
 
 
@@ -256,64 +252,59 @@ begin
     min_target_size_f<=min_target_size*10;
 end
 
-assign flag_0=((region0_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region0_rddata))?1'b1:0;
-assign flag_1=((region1_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region1_rddata))?1'b1:0;
-assign flag_2=((region2_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region2_rddata))?1'b1:0;
+//assign flag_0=((region0_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region0_rddata))?1'b1:0;
+//assign flag_1=((region1_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region1_rddata))?1'b1:0;
+//assign flag_2=((region2_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region2_rddata))?1'b1:0;
 
+always @(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+	 begin
+	 flag_0<=0;
+	 flag_1<=0;
+	 flag_2<=0;
+	 end
+	 else
+	 begin
+	flag_0=((region0_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region0_rddata))?1'b1:0;
+	flag_1=((region1_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region1_rddata))?1'b1:0;
+   flag_2=((region2_rddata[15:00] != 16'hFFFF) & (target_pos_r0 <= region2_rddata))?1'b1:0; 
+    end
+end
 
 always@(posedge clk)
 begin
    if(target_pos_s0>target_pos_r0)
 	begin
-//		if(flag_0)
 		change_r0<=target_pos_s0-target_pos_r0;
-//		if(flag_1)
-//		change_r1<=target_pos_s0-target_pos_r0;
-//		if(flag_2)
-//		change_r2<=target_pos_s0-target_pos_r0;
 	end
 	else 
 	begin
-//		if(flag_0)
 		change_r0<=target_pos_r0-target_pos_s0;
-//		if(flag_1)
-//		change_r1<=target_pos_r0-target_pos_s0;
-//		if(flag_2)
-//		change_r2<=target_pos_r0-target_pos_s0;
 	end
 	
 end
-//always@(posedge clk)
-//begin
-//	if(flag_0)
-//	begin
-//		if(target_pos_s0>target_pos_r0)
-//		change_r0<=target_pos_s0-target_pos_r0;
-//		else
-//		change_r0<=target_pos_r0-target_pos_s0;
-//	end
-//	if(flag_1)
-//	begin
-//		if(target_pos_s0>target_pos_r0)
-//		change_r1<=target_pos_s0-target_pos_r0;
-//		else
-//		change_r1<=target_pos_r0-target_pos_s0;
-//	end
-//	if(flag_2)
-//	begin
-//		if(target_pos_s0>target_pos_r0)
-//		change_r2<=target_pos_s0-target_pos_r0;
-//		else
-//		change_r2<=target_pos_r0-target_pos_s0;
-//	end
-//end
 
 
-assign judge_0=((sum_r0+sum_0)<min_target_size_f)?1'b1:1'b0;
-assign judge_1=((sum_r1+sum_1)<min_target_size_f)?1'b1:1'b0;
-assign judge_2=((sum_r2+sum_2)<min_target_size_f)?1'b1:1'b0;
+//assign judge_0=((sum_r0+sum_0)<min_target_size_f)?1'b1:1'b0;
+//assign judge_1=((sum_r1+sum_1)<min_target_size_f)?1'b1:1'b0;
+//assign judge_2=((sum_r2+sum_2)<min_target_size_f)?1'b1:1'b0;
 
- 
+always @(posedge clk or negedge rst_n)
+begin
+    if(~rst_n)
+	 begin
+	 judge_0<=0;
+	 judge_1<=0;
+	 judge_2<=0;
+	 end
+	 else
+	 begin
+	judge_0<=((sum_r0+sum_0)<min_target_size_f)?1'b1:1'b0;
+	judge_1<=((sum_r1+sum_1)<min_target_size_f)?1'b1:1'b0;
+	judge_2<=((sum_r2+sum_2)<min_target_size_f)?1'b1:1'b0;
+	end
+end 
 
 always @(posedge clk or negedge rst_n)
 begin
@@ -321,8 +312,7 @@ begin
         sum_r0<=22'd0;
     else if((!cycle_enable)||((change_r0>50)&&judge_0))
 		sum_r0<=22'd0;
-//	 else if((change_r0>50)&&(judge_0)
-//	    sum_r0<=22'd0;
+
     else if(flag_0)
     begin
 	    if(cnt==8'd30)
@@ -337,8 +327,7 @@ begin
 		sum_r1<=22'd0;
     else if((!cycle_enable)||((change_r0>50)&&judge_1))
 		sum_r1<=22'd0;
-//	 else if((change_r1>50)&&((sum_r1+sum_1)<min_target_size_f))
-//	    sum_r1<=22'd0;
+
     else if(flag_1)
     begin
 	    if(cnt==8'd30)
@@ -351,8 +340,6 @@ begin
 		sum_r2<=22'd0;
     else if((!cycle_enable)||((change_r0>50)&&judge_2))
 		sum_r2<=22'd0;
-//	 else if((change_r2>50)&&((sum_r2+sum_2)<min_target_size_f))
-//	    sum_r2<=22'd0;
     else if(flag_2)
     begin
 	    if(cnt==8'd30)
@@ -521,44 +508,6 @@ begin
     end
 end
 
-//always @(posedge clk or negedge rst_n)
-//begin
-//    if(~rst_n)
-//        alarm_io_r <= 0;
-//    else if((target_valid)&&(min_target_size >0))
-//    begin
-//        // 边界数据是ff的时候,不能判断
-//        if(~judge_0)
-//            alarm_io_r[0] <= 1;
-//
-//        if(~judge_1)
-//            alarm_io_r[1] <= 1;
-//
-//        if(~judge_2)
-//            alarm_io_r[2] <= 1;
-//    end
-//	
-//	 else if(target_valid && (min_target_size==0))
-//		  begin
-//		      if (flag_0 )
-//                alarm_io_r[0] <= 1;
-//
-//            if(flag_1)
-//                alarm_io_r[1] <= 1;
-//
-//            if(flag_2)
-//                alarm_io_r[2] <= 1;
-//		  end
-//    else if(cycle_enable_fall)
-//    begin
-//        if(region_flag[0])   // 本圈数据正常, 清除之前的异常
-//            alarm_io_r[0] <= 0;
-//        if(region_flag[1])
-//            alarm_io_r[1] <= 0;
-//        if(region_flag[2])
-//            alarm_io_r[2] <= 0;
-//    end
-//end
 
 
 
