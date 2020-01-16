@@ -1,0 +1,4 @@
+[EPCS-C22016] # MX25L3232F (lead-free)
+sector_size = 65536
+sector_count = 64
+

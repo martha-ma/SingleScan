@@ -52,7 +52,7 @@ module adt7301_top #
     reg         [31:00]        time_cnt;
     wire        [15:00]        m_axis_tdata;
 
-    assign    flag=((APD_HIGH_DEFAUT[9:0]<=680)&&(APD_HIGH_DEFAUT[9:0]>=400))?1'b1:1'b0;
+    assign    flag=((APD_HIGH_DEFAUT[9:0]<=680)&&(APD_HIGH_DEFAUT[9:0]>=200))?1'b1:1'b0;
     
 
 always @ (posedge clk or negedge rst_n)  //比较器值设计

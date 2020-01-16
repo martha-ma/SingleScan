@@ -556,11 +556,16 @@ begin
         end
     end
 end
-always @ (posedge clk)
+always @ (posedge clk or negedge rst_n)
 begin
-    if((target_gray_r0>=(CORRECT_PULSE_WIDTH - 3))&&(target_gray_r0 < (CORRECT_PULSE_WIDTH + 3)))
+    if(!rst_n)
+	 begin
+	    target_pos <= 16'd0;
+		 target_gray <=16'd0;
+	 end
+    else if((target_gray_r0>=(CORRECT_PULSE_WIDTH - 3))&&(target_gray_r0 < (CORRECT_PULSE_WIDTH + 3)))
     begin
-        target_pos <= target_pos_r0+12;
+        target_pos <= target_pos_r0 + 18;
         target_gray <= target_gray_r1;
     end
     else

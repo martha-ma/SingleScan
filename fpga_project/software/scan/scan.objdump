@@ -801,14 +801,14 @@ static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_pending (void)
    401a0:	e0bffd15 	stw	r2,-12(fp)
 
     } while (1);
-   401a4:	003fe106 	br	4012c <__alt_mem_epcs_flash+0xfffbf12c>
+   401a4:	003fe106 	br	4012c <__reset+0xfffbf12c>
 
     active = alt_irq_pending ();
    401a8:	e0bffb15 	stw	r2,-20(fp)
     
   } while (active);
    401ac:	e0bffb17 	ldw	r2,-20(fp)
-   401b0:	103fdb1e 	bne	r2,zero,40120 <__alt_mem_epcs_flash+0xfffbf120>
+   401b0:	103fdb1e 	bne	r2,zero,40120 <__reset+0xfffbf120>
 
   /*
    * Notify the operating system that interrupt processing is complete.
@@ -936,7 +936,7 @@ Disassembly of section .text:
     addi r2, r2, 4
    4026c:	10800104 	addi	r2,r2,4
     bltu r2, r3, 0b
-   40270:	10fffd36 	bltu	r2,r3,40268 <__alt_mem_epcs_flash+0xfffbf268>
+   40270:	10fffd36 	bltu	r2,r3,40268 <__reset+0xfffbf268>
      * section aren't defined until alt_load() has been called).
      */
     mov   et, zero
@@ -957,7 +957,7 @@ Disassembly of section .text:
     /* Wait in infinite loop in case alt_main does return. */
 alt_after_alt_main:
     br alt_after_alt_main
-   4027c:	003fff06 	br	4027c <__alt_mem_epcs_flash+0xfffbf27c>
+   4027c:	003fff06 	br	4027c <__reset+0xfffbf27c>
 
 00040280 <delay_ms>:
 };
@@ -987,7 +987,7 @@ void delay_ms(unsigned int d)
    402a4:	e0bfff17 	ldw	r2,-4(fp)
    402a8:	1080fa24 	muli	r2,r2,1000
    402ac:	e0fffe17 	ldw	r3,-8(fp)
-   402b0:	18bff936 	bltu	r3,r2,40298 <__alt_mem_epcs_flash+0xfffbf298>
+   402b0:	18bff936 	bltu	r3,r2,40298 <__reset+0xfffbf298>
         i++;
 }
    402b4:	0001883a 	nop
@@ -1021,7 +1021,7 @@ void delay_us(unsigned int d)
    402f8:	e0bffe15 	stw	r2,-8(fp)
    402fc:	e0bffe17 	ldw	r2,-8(fp)
    40300:	10800090 	cmplti	r2,r2,2
-   40304:	103ffa1e 	bne	r2,zero,402f0 <__alt_mem_epcs_flash+0xfffbf2f0>
+   40304:	103ffa1e 	bne	r2,zero,402f0 <__reset+0xfffbf2f0>
 // 1.4us宸﹀彸
 void delay_us(unsigned int d)
 {
@@ -1033,7 +1033,7 @@ void delay_us(unsigned int d)
    40310:	e0bffd15 	stw	r2,-12(fp)
    40314:	e0fffd17 	ldw	r3,-12(fp)
    40318:	e0bfff17 	ldw	r2,-4(fp)
-   4031c:	18bff236 	bltu	r3,r2,402e8 <__alt_mem_epcs_flash+0xfffbf2e8>
+   4031c:	18bff236 	bltu	r3,r2,402e8 <__reset+0xfffbf2e8>
         for(j = 0; j < 2; j++)
         {
             ;
@@ -1863,7 +1863,7 @@ void test(void)
    40b08:	e0be6515 	stw	r2,-1644(fp)
    40b0c:	e0be6517 	ldw	r2,-1644(fp)
    40b10:	10819590 	cmplti	r2,r2,1622
-   40b14:	103ff51e 	bne	r2,zero,40aec <__alt_mem_epcs_flash+0xfffbfaec>
+   40b14:	103ff51e 	bne	r2,zero,40aec <__reset+0xfffbfaec>
                 buf[i] = data;
             eeprom_write_page(offset_addr, buf, len);
    40b18:	e0fe6817 	ldw	r3,-1632(fp)
@@ -1895,7 +1895,7 @@ void test(void)
    40b6c:	0100fa04 	movi	r4,1000
    40b70:	00402c80 	call	402c8 <delay_us>
     }
-   40b74:	003fd906 	br	40adc <__alt_mem_epcs_flash+0xfffbfadc>
+   40b74:	003fd906 	br	40adc <__reset+0xfffbfadc>
 
 00040b78 <Reset_W5500>:
 
@@ -2402,7 +2402,7 @@ int fpga2nios_parse()
    41114:	00458a40 	call	458a4 <queue_is_empty>
    41118:	1080005c 	xori	r2,r2,1
    4111c:	10803fcc 	andi	r2,r2,255
-   41120:	103feb1e 	bne	r2,zero,410d0 <__alt_mem_epcs_flash+0xfffc00d0>
+   41120:	103feb1e 	bne	r2,zero,410d0 <__reset+0xfffc00d0>
 				fpga2nios_data.frame_head = (recv_data >> 16) & 0xffff;
 				break;
 			}
@@ -2547,7 +2547,7 @@ int fpga2nios_parse()
    412b8:	10b80604 	addi	r2,r2,-8168
    412bc:	10800117 	ldw	r2,4(r2)
    412c0:	e0fff817 	ldw	r3,-32(fp)
-   412c4:	18bfb136 	bltu	r3,r2,4118c <__alt_mem_epcs_flash+0xfffc018c>
+   412c4:	18bfb136 	bltu	r3,r2,4118c <__reset+0xfffc018c>
                 buf[1] = (gray >> 8) & 0xff;
                 buf[2] = (gray >> 0) & 0xff;
                 memcpy(CycleData.gray_data + CycleData.gray_len, buf, 3);  
@@ -3357,7 +3357,7 @@ void process_sys_temp_waring(Sys_warn *data)
    41a9c:	e0bffd15 	stw	r2,-12(fp)
    41aa0:	e0bffd17 	ldw	r2,-12(fp)
    41aa4:	10800150 	cmplti	r2,r2,5
-   41aa8:	103fcd1e 	bne	r2,zero,419e0 <__alt_mem_epcs_flash+0xfffc09e0>
+   41aa8:	103fcd1e 	bne	r2,zero,419e0 <__reset+0xfffc09e0>
                 data->temp_out_alarm = 0x01;
             else
                 data->temp_out_alarm = 0x00;
@@ -3713,7 +3713,7 @@ void iic_write(alt_u8 dat)
    41e3c:	e0bffe05 	stb	r2,-8(fp)
    41e40:	e0bffe03 	ldbu	r2,-8(fp)
    41e44:	10800230 	cmpltui	r2,r2,8
-   41e48:	103fe11e 	bne	r2,zero,41dd0 <__alt_mem_epcs_flash+0xfffc0dd0>
+   41e48:	103fe11e 	bne	r2,zero,41dd0 <__reset+0xfffc0dd0>
         IOWR_ALTERA_AVALON_PIO_DATA(SDA_BASE, tmp);
         delay_us(1);
         IOWR_ALTERA_AVALON_PIO_DATA(SCL_BASE, 1);
@@ -3791,7 +3791,7 @@ static alt_u8 iic_read(void)
    41ef8:	e0bfff05 	stb	r2,-4(fp)
    41efc:	e0bfff03 	ldbu	r2,-4(fp)
    41f00:	10800230 	cmpltui	r2,r2,8
-   41f04:	103fe21e 	bne	r2,zero,41e90 <__alt_mem_epcs_flash+0xfffc0e90>
+   41f04:	103fe21e 	bne	r2,zero,41e90 <__reset+0xfffc0e90>
         delay_us(1);
         dat <<= 1;
         dat |= IORD_ALTERA_AVALON_PIO_DATA(SDA_BASE);
@@ -3979,7 +3979,7 @@ void eeprom_write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
    420c4:	e0bffa8d 	sth	r2,-22(fp)
    420c8:	e0bffa8b 	ldhu	r2,-22(fp)
    420cc:	10804030 	cmpltui	r2,r2,256
-   420d0:	103fee1e 	bne	r2,zero,4208c <__alt_mem_epcs_flash+0xfffc108c>
+   420d0:	103fee1e 	bne	r2,zero,4208c <__reset+0xfffc108c>
         {
             iic_write(dat[i * EEPROM_PAGE_SIZE + j]);
             wait_slave_ack();
@@ -4001,7 +4001,7 @@ void eeprom_write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
    420ec:	e0bffb43 	ldbu	r2,-19(fp)
    420f0:	10bfffcc 	andi	r2,r2,65535
    420f4:	e0fffa0b 	ldhu	r3,-24(fp)
-   420f8:	18bfcc36 	bltu	r3,r2,4202c <__alt_mem_epcs_flash+0xfffc102c>
+   420f8:	18bfcc36 	bltu	r3,r2,4202c <__reset+0xfffc102c>
         }
         stop();
         delay_us(10000);
@@ -4071,7 +4071,7 @@ void eeprom_write_page(alt_u32 addr, alt_u8 *dat, alt_u16 len)
    421a0:	e0bffb83 	ldbu	r2,-18(fp)
    421a4:	10bfffcc 	andi	r2,r2,65535
    421a8:	e0fffa8b 	ldhu	r3,-22(fp)
-   421ac:	18bfed36 	bltu	r3,r2,42164 <__alt_mem_epcs_flash+0xfffc1164>
+   421ac:	18bfed36 	bltu	r3,r2,42164 <__reset+0xfffc1164>
         {
             iic_write(dat[number * EEPROM_PAGE_SIZE + j]);
             wait_slave_ack();
@@ -4264,7 +4264,7 @@ void eeprom_sequential_read(alt_u32 addr, alt_u8 *dat, alt_u16 len)
    42380:	e0bffc0d 	sth	r2,-16(fp)
    42384:	e0fffc0b 	ldhu	r3,-16(fp)
    42388:	e0bfff0b 	ldhu	r2,-4(fp)
-   4238c:	18bff236 	bltu	r3,r2,42358 <__alt_mem_epcs_flash+0xfffc1358>
+   4238c:	18bff236 	bltu	r3,r2,42358 <__reset+0xfffc1358>
     {
         *dat = iic_read();
         master_send_ack();
@@ -4557,7 +4557,7 @@ int main()
         while(fpga_is_has_data())
    42660:	004102c0 	call	4102c <fpga_is_has_data>
    42664:	10803fcc 	andi	r2,r2,255
-   42668:	103fe11e 	bne	r2,zero,425f0 <__alt_mem_epcs_flash+0xfffc15f0>
+   42668:	103fe11e 	bne	r2,zero,425f0 <__reset+0xfffc15f0>
             {
                 LaserDataQueue.frame_over_flag = 0x01;
                 break;
@@ -4637,7 +4637,7 @@ int main()
    4272c:	e0bffd17 	ldw	r2,-12(fp)
    42730:	10816d04 	addi	r2,r2,1460
    42734:	e0bffd15 	stw	r2,-12(fp)
-   42738:	003fdf06 	br	426b8 <__alt_mem_epcs_flash+0xfffc16b8>
+   42738:	003fdf06 	br	426b8 <__reset+0xfffc16b8>
                 }
                 else if((len - offset < 1460) && (len - offset > 0))
    4273c:	e0ffff17 	ldw	r3,-4(fp)
@@ -5149,11 +5149,11 @@ int main()
    42d54:	d0e01417 	ldw	r3,-32688(gp)
    42d58:	00844474 	movhi	r2,4369
    42d5c:	10844444 	addi	r2,r2,4369
-   42d60:	18be2126 	beq	r3,r2,425e8 <__alt_mem_epcs_flash+0xfffc15e8>
+   42d60:	18be2126 	beq	r3,r2,425e8 <__reset+0xfffc15e8>
             watchdog_feed();
    42d64:	0047fa80 	call	47fa8 <watchdog_feed>
     }
-   42d68:	003e1f06 	br	425e8 <__alt_mem_epcs_flash+0xfffc15e8>
+   42d68:	003e1f06 	br	425e8 <__reset+0xfffc15e8>
 
 00042d6c <check_sum>:
 
@@ -5197,7 +5197,7 @@ static unsigned int check_sum(unsigned int *data, unsigned char len)
    42dc0:	e0bffc15 	stw	r2,-16(fp)
    42dc4:	e0bfff03 	ldbu	r2,-4(fp)
    42dc8:	e0fffc17 	ldw	r3,-16(fp)
-   42dcc:	18bff016 	blt	r3,r2,42d90 <__alt_mem_epcs_flash+0xfffc1d90>
+   42dcc:	18bff016 	blt	r3,r2,42d90 <__reset+0xfffc1d90>
     {
         checksum ^= data[i];
     }
@@ -5283,7 +5283,7 @@ void nios2fpga_data_packet(unsigned short command, unsigned char len, unsigned i
    42e90:	e0bfdd15 	stw	r2,-140(fp)
    42e94:	e0bffd03 	ldbu	r2,-12(fp)
    42e98:	e0ffdd17 	ldw	r3,-140(fp)
-   42e9c:	18bfeb16 	blt	r3,r2,42e4c <__alt_mem_epcs_flash+0xfffc1e4c>
+   42e9c:	18bfeb16 	blt	r3,r2,42e4c <__reset+0xfffc1e4c>
     {
         buf[i + 2] = src[i];
     }
@@ -5366,7 +5366,7 @@ bool nios2fpga_data_write(unsigned int *data, unsigned int len)
    42f78:	e0bffd15 	stw	r2,-12(fp)
    42f7c:	e0fffd17 	ldw	r3,-12(fp)
    42f80:	e0bfff17 	ldw	r2,-4(fp)
-   42f84:	18bfec36 	bltu	r3,r2,42f38 <__alt_mem_epcs_flash+0xfffc1f38>
+   42f84:	18bfec36 	bltu	r3,r2,42f38 <__reset+0xfffc1f38>
     {
         altera_avalon_fifo_write_fifo(PROTOCOL_FIFO_IN_BASE, PROTOCOL_FIFO_IN_CSR_BASE, (data[i] >> 16) + (data[i] << 16));
         // usleep(1000);
@@ -5887,7 +5887,7 @@ void write_laser_presdo(unsigned char *arr)
    43604:	e0bffd15 	stw	r2,-12(fp)
    43608:	e0bffd17 	ldw	r2,-12(fp)
    4360c:	108007b0 	cmpltui	r2,r2,30
-   43610:	103fd41e 	bne	r2,zero,43564 <__alt_mem_epcs_flash+0xfffc2564>
+   43610:	103fd41e 	bne	r2,zero,43564 <__reset+0xfffc2564>
     {
         data = (arr[i] << 24) + (arr[i + 1] << 16) + (arr[i + 2] << 8) + (arr[i + 3] << 0);
         altera_avalon_fifo_write_fifo(PROTOCOL_FIFO_IN_BASE, PROTOCOL_FIFO_IN_CSR_BASE, (data >> 16) + (data << 16));
@@ -5995,7 +5995,7 @@ bool pc_data_to_fpga(unsigned int *data, unsigned int len)
    43744:	e0bffd15 	stw	r2,-12(fp)
    43748:	e0fffd17 	ldw	r3,-12(fp)
    4374c:	e0bfff17 	ldw	r2,-4(fp)
-   43750:	18bfc936 	bltu	r3,r2,43678 <__alt_mem_epcs_flash+0xfffc2678>
+   43750:	18bfc936 	bltu	r3,r2,43678 <__reset+0xfffc2678>
         // nios 采用小端格式，char 数组 转 unsigned int 数组， 字节顺序会颠倒
         data[i] = ((data[i] & 0xff000000) >> 24) | ((data[i] & 0x00ff0000) >> 8) | ((data[i] & 0x0000ff00) << 8) | ((data[i] & 0x000000ff) << 32);
 
@@ -6610,7 +6610,7 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
    43d54:	e0bff715 	stw	r2,-36(fp)
    43d58:	e0bff717 	ldw	r2,-36(fp)
    43d5c:	10819590 	cmplti	r2,r2,1622
-   43d60:	103fe11e 	bne	r2,zero,43ce8 <__alt_mem_epcs_flash+0xfffc2ce8>
+   43d60:	103fe11e 	bne	r2,zero,43ce8 <__reset+0xfffc2ce8>
                     {
                         recv_pos                    = (buf[i + 9] << 8) + buf[i + 1 + 9];
                         alarm_region.buffer[i >> 1] = recv_pos;
@@ -6644,7 +6644,7 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
    43da4:	e0bff715 	stw	r2,-36(fp)
    43da8:	e0bff717 	ldw	r2,-36(fp)
    43dac:	108019d0 	cmplti	r2,r2,103
-   43db0:	103fee1e 	bne	r2,zero,43d6c <__alt_mem_epcs_flash+0xfffc2d6c>
+   43db0:	103fee1e 	bne	r2,zero,43d6c <__reset+0xfffc2d6c>
                     {
                         alarm_region.zenith_save[i] = buf[1631 + i];
                     }
@@ -7982,7 +7982,7 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
    44d18:	e0bff715 	stw	r2,-36(fp)
    44d1c:	e0fff717 	ldw	r3,-36(fp)
    44d20:	e0bff817 	ldw	r2,-32(fp)
-   44d24:	18bff836 	bltu	r3,r2,44d08 <__alt_mem_epcs_flash+0xfffc3d08>
+   44d24:	18bff836 	bltu	r3,r2,44d08 <__reset+0xfffc3d08>
                         image_erase(i);
                     break;
    44d28:	00003f06 	br	44e28 <pc2dev_parse+0x16bc>
@@ -8269,7 +8269,7 @@ void pc2dev_parse(SOCKET s, unsigned char *buf, int len)
 
     while(len != 0)
    44e5c:	e0bffe17 	ldw	r2,-8(fp)
-   44e60:	103a4c1e 	bne	r2,zero,43794 <__alt_mem_epcs_flash+0xfffc2794>
+   44e60:	103a4c1e 	bne	r2,zero,43794 <__reset+0xfffc2794>
    44e64:	00000106 	br	44e6c <pc2dev_parse+0x1700>
                     {
                         eeprom_write_byte(CUR_ALARM_GROUP + 2, buf[10]);
@@ -8416,7 +8416,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    44fe0:	e0bffd17 	ldw	r2,-12(fp)
    44fe4:	10800217 	ldw	r2,8(r2)
    44fe8:	e0fff817 	ldw	r3,-32(fp)
-   44fec:	18bfef36 	bltu	r3,r2,44fac <__alt_mem_epcs_flash+0xfffc3fac>
+   44fec:	18bfef36 	bltu	r3,r2,44fac <__reset+0xfffc3fac>
             {
                 buf[i + 8] = eeprom_read_byte(offset_addr + i);
             }
@@ -8466,7 +8466,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    45064:	10800217 	ldw	r2,8(r2)
    45068:	10800204 	addi	r2,r2,8
    4506c:	e0fff817 	ldw	r3,-32(fp)
-   45070:	18bff136 	bltu	r3,r2,45038 <__alt_mem_epcs_flash+0xfffc4038>
+   45070:	18bff136 	bltu	r3,r2,45038 <__reset+0xfffc4038>
             {
                 checksum ^= buf[i];
             }
@@ -8574,7 +8574,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    451a8:	e0bff815 	stw	r2,-32(fp)
    451ac:	e0bff817 	ldw	r2,-32(fp)
    451b0:	108197d0 	cmplti	r2,r2,1631
-   451b4:	103fe61e 	bne	r2,zero,45150 <__alt_mem_epcs_flash+0xfffc4150>
+   451b4:	103fe61e 	bne	r2,zero,45150 <__reset+0xfffc4150>
                 temp       = buf[i + 1];
                 buf[i + 1] = buf[i];
                 buf[i]     = temp;
@@ -8610,7 +8610,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    451f4:	e0bff815 	stw	r2,-32(fp)
    451f8:	e0fff817 	ldw	r3,-32(fp)
    451fc:	e0bff917 	ldw	r2,-28(fp)
-   45200:	18bff316 	blt	r3,r2,451d0 <__alt_mem_epcs_flash+0xfffc41d0>
+   45200:	18bff316 	blt	r3,r2,451d0 <__reset+0xfffc41d0>
             {
                 checksum ^= buf[i];
             }
@@ -8700,7 +8700,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    45300:	e0bff815 	stw	r2,-32(fp)
    45304:	e0bff817 	ldw	r2,-32(fp)
    45308:	10800310 	cmplti	r2,r2,12
-   4530c:	103ff31e 	bne	r2,zero,452dc <__alt_mem_epcs_flash+0xfffc42dc>
+   4530c:	103ff31e 	bne	r2,zero,452dc <__reset+0xfffc42dc>
             {
                 checksum ^= buf[i];
             }
@@ -8758,7 +8758,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    45398:	e0bff815 	stw	r2,-32(fp)
    4539c:	e0bff817 	ldw	r2,-32(fp)
    453a0:	10804f30 	cmpltui	r2,r2,316
-   453a4:	103ff31e 	bne	r2,zero,45374 <__alt_mem_epcs_flash+0xfffc4374>
+   453a4:	103ff31e 	bne	r2,zero,45374 <__reset+0xfffc4374>
             {
                 checksum ^= buf[i];
             }
@@ -8853,7 +8853,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    454b4:	e0bff815 	stw	r2,-32(fp)
    454b8:	e0bff817 	ldw	r2,-32(fp)
    454bc:	10804310 	cmplti	r2,r2,268
-   454c0:	103ff31e 	bne	r2,zero,45490 <__alt_mem_epcs_flash+0xfffc4490>
+   454c0:	103ff31e 	bne	r2,zero,45490 <__reset+0xfffc4490>
                 checksum ^= buf[i];
             buf[272] = buf[273] = buf[274] = 0;
    454c4:	e0bffe17 	ldw	r2,-8(fp)
@@ -8928,7 +8928,7 @@ int pc2dev_packet(struct __nios2pc *data, unsigned char *buf)
    45594:	e0bff815 	stw	r2,-32(fp)
    45598:	e0bff817 	ldw	r2,-32(fp)
    4559c:	10800310 	cmplti	r2,r2,12
-   455a0:	103ff31e 	bne	r2,zero,45570 <__alt_mem_epcs_flash+0xfffc4570>
+   455a0:	103ff31e 	bne	r2,zero,45570 <__reset+0xfffc4570>
             {
                 checksum ^= buf[i];
             }
@@ -9401,7 +9401,7 @@ bool region_save2fpga(struct __region *region, int num)
    45a80:	e0bffc15 	stw	r2,-16(fp)
    45a84:	e0bffc17 	ldw	r2,-16(fp)
    45a88:	1080cad0 	cmplti	r2,r2,811
-   45a8c:	103fea1e 	bne	r2,zero,45a38 <__alt_mem_epcs_flash+0xfffc4a38>
+   45a8c:	103fea1e 	bne	r2,zero,45a38 <__reset+0xfffc4a38>
     {
         data = region->buffer[i];
         altera_avalon_fifo_write_fifo(PROTOCOL_FIFO_IN_BASE, PROTOCOL_FIFO_IN_CSR_BASE, (data >> 16) + (data << 16));
@@ -9647,7 +9647,7 @@ void read_sys_para(Sys_Para *status)
    45d18:	e0bf9e17 	ldw	r2,-392(fp)
    45d1c:	10ffffc4 	addi	r3,r2,-1
    45d20:	e0ff9e15 	stw	r3,-392(fp)
-   45d24:	103fa81e 	bne	r2,zero,45bc8 <__alt_mem_epcs_flash+0xfffc4bc8>
+   45d24:	103fa81e 	bne	r2,zero,45bc8 <__reset+0xfffc4bc8>
             memcpy(status->dev_pn, DEV_PN_NUM, 20);
 
             return;
@@ -9972,7 +9972,7 @@ static void string2hex(const char *src, int len, char *dest)
    46020:	e0bffb15 	stw	r2,-20(fp)
    46024:	e0fffb17 	ldw	r3,-20(fp)
    46028:	e0bffe17 	ldw	r2,-8(fp)
-   4602c:	18bfe316 	blt	r3,r2,45fbc <__alt_mem_epcs_flash+0xfffc4fbc>
+   4602c:	18bfe316 	blt	r3,r2,45fbc <__reset+0xfffc4fbc>
         data[1] = *src++;
         //        *dest = strtol(data, &pEnd, 16);
         *dest = ((data[0] - 0x30) << 4) + (data[1] - 0x30);
@@ -10045,7 +10045,7 @@ static int find_index(char *str, int str_len, char **array, int length)
    460e4:	e0bffa15 	stw	r2,-24(fp)
    460e8:	e0fffa17 	ldw	r3,-24(fp)
    460ec:	e0bfff17 	ldw	r2,-4(fp)
-   460f0:	18bfde16 	blt	r3,r2,4606c <__alt_mem_epcs_flash+0xfffc506c>
+   460f0:	18bfde16 	blt	r3,r2,4606c <__reset+0xfffc506c>
     {
         len = strlen(array[i]);
         if(strncmp(str, array[i], str_len) == 0 && (len == str_len))
@@ -10180,7 +10180,7 @@ void sick_protocol_process(SOCKET s, unsigned char *buf, int len)
    46260:	e0bff815 	stw	r2,-32(fp)
    46264:	e0bff817 	ldw	r2,-32(fp)
    46268:	10800090 	cmplti	r2,r2,2
-   4626c:	103fce1e 	bne	r2,zero,461a8 <__alt_mem_epcs_flash+0xfffc51a8>
+   4626c:	103fce1e 	bne	r2,zero,461a8 <__reset+0xfffc51a8>
    46270:	00010406 	br	46684 <sick_protocol_process+0x578>
                     send(s, send_buffer, send_len + 2);
                 }
@@ -10251,7 +10251,7 @@ void sick_protocol_process(SOCKET s, unsigned char *buf, int len)
    46334:	e0bff815 	stw	r2,-32(fp)
    46338:	e0bff817 	ldw	r2,-32(fp)
    4633c:	10800110 	cmplti	r2,r2,4
-   46340:	103fce1e 	bne	r2,zero,4627c <__alt_mem_epcs_flash+0xfffc527c>
+   46340:	103fce1e 	bne	r2,zero,4627c <__reset+0xfffc527c>
    46344:	0000cf06 	br	46684 <sick_protocol_process+0x578>
                     send(s, send_buffer, send_len + 2);
                 }
@@ -10337,7 +10337,7 @@ void sick_protocol_process(SOCKET s, unsigned char *buf, int len)
    46430:	e0bff815 	stw	r2,-32(fp)
    46434:	e0bff817 	ldw	r2,-32(fp)
    46438:	108002d0 	cmplti	r2,r2,11
-   4643c:	103fce1e 	bne	r2,zero,46378 <__alt_mem_epcs_flash+0xfffc5378>
+   4643c:	103fce1e 	bne	r2,zero,46378 <__reset+0xfffc5378>
                     memcpy(send_buffer + 1, sMI_reply[i], send_len);
                     send_buffer[0]            = 0x02;
                     send_buffer[send_len + 1] = 0x03;
@@ -10601,7 +10601,7 @@ void sick_protocol_process(SOCKET s, unsigned char *buf, int len)
    4676c:	e0bff815 	stw	r2,-32(fp)
    46770:	e0bff817 	ldw	r2,-32(fp)
    46774:	10800150 	cmplti	r2,r2,5
-   46778:	103fda1e 	bne	r2,zero,466e4 <__alt_mem_epcs_flash+0xfffc56e4>
+   46778:	103fda1e 	bne	r2,zero,466e4 <__reset+0xfffc56e4>
    4677c:	00003506 	br	46854 <sick_protocol_process+0x748>
                 send_len = strlen(sRI_E6_reply[i]);
                 string2hex(sRI_E6_reply[i], send_len, (char *)send_buffer);
@@ -11047,7 +11047,7 @@ uint8 socket(SOCKET s, uint8 protocol, uint16 port, uint8 flag)
    46c34:	1009883a 	mov	r4,r2
    46c38:	00482100 	call	48210 <IINCHIP_READ>
    46c3c:	10803fcc 	andi	r2,r2,255
-   46c40:	103ff91e 	bne	r2,zero,46c28 <__alt_mem_epcs_flash+0xfffc5c28>
+   46c40:	103ff91e 	bne	r2,zero,46c28 <__reset+0xfffc5c28>
             ;
         /* ------- */
         ret = 1;
@@ -11100,7 +11100,7 @@ void close_socket(SOCKET s)
    46cac:	1009883a 	mov	r4,r2
    46cb0:	00482100 	call	48210 <IINCHIP_READ>
    46cb4:	10803fcc 	andi	r2,r2,255
-   46cb8:	103ff91e 	bne	r2,zero,46ca0 <__alt_mem_epcs_flash+0xfffc5ca0>
+   46cb8:	103ff91e 	bne	r2,zero,46ca0 <__reset+0xfffc5ca0>
         ;
     /* ------- */
     /* all clear */
@@ -11160,7 +11160,7 @@ uint8 listen(SOCKET s)
    46d4c:	1009883a 	mov	r4,r2
    46d50:	00482100 	call	48210 <IINCHIP_READ>
    46d54:	10803fcc 	andi	r2,r2,255
-   46d58:	103ff91e 	bne	r2,zero,46d40 <__alt_mem_epcs_flash+0xfffc5d40>
+   46d58:	103ff91e 	bne	r2,zero,46d40 <__reset+0xfffc5d40>
             ;
         ret = 1;																	// LISTEN命令发送成功，ret=1
    46d5c:	00800044 	movi	r2,1
@@ -11357,7 +11357,7 @@ uint8 connect(SOCKET s, uint8 * addr, uint16 port)
    46f88:	1009883a 	mov	r4,r2
    46f8c:	00482100 	call	48210 <IINCHIP_READ>
    46f90:	10803fcc 	andi	r2,r2,255
-   46f94:	103ff91e 	bne	r2,zero,46f7c <__alt_mem_epcs_flash+0xfffc5f7c>
+   46f94:	103ff91e 	bne	r2,zero,46f7c <__reset+0xfffc5f7c>
 
         while ( IINCHIP_READ(Sn_SR(s)) != SOCK_SYNSENT )
    46f98:	00001606 	br	46ff4 <connect+0x270>
@@ -11406,7 +11406,7 @@ uint8 connect(SOCKET s, uint8 * addr, uint16 port)
    47004:	00482100 	call	48210 <IINCHIP_READ>
    47008:	10803fcc 	andi	r2,r2,255
    4700c:	10800558 	cmpnei	r2,r2,21
-   47010:	103fe21e 	bne	r2,zero,46f9c <__alt_mem_epcs_flash+0xfffc5f9c>
+   47010:	103fe21e 	bne	r2,zero,46f9c <__reset+0xfffc5f9c>
    47014:	00000106 	br	4701c <connect+0x298>
         {
             if(IINCHIP_READ(Sn_SR(s)) == SOCK_ESTABLISHED)
@@ -11457,7 +11457,7 @@ void disconnect(SOCKET s)
    47074:	1009883a 	mov	r4,r2
    47078:	00482100 	call	48210 <IINCHIP_READ>
    4707c:	10803fcc 	andi	r2,r2,255
-   47080:	103ff91e 	bne	r2,zero,47068 <__alt_mem_epcs_flash+0xfffc6068>
+   47080:	103ff91e 	bne	r2,zero,47068 <__reset+0xfffc6068>
         ;
     /* ------- */
 }
@@ -11539,7 +11539,7 @@ uint16 send(SOCKET s, const uint8 * buf, uint16 len)
     } while (freesize < ret);
    47148:	e0fffc0b 	ldhu	r3,-16(fp)
    4714c:	e0bffb0b 	ldhu	r2,-20(fp)
-   47150:	18bfeb36 	bltu	r3,r2,47100 <__alt_mem_epcs_flash+0xfffc6100>
+   47150:	18bfeb36 	bltu	r3,r2,47100 <__reset+0xfffc6100>
 
     send_data_processing(s, (uint8 *)buf, ret);
    47154:	e0bffd03 	ldbu	r2,-12(fp)
@@ -11564,7 +11564,7 @@ uint16 send(SOCKET s, const uint8 * buf, uint16 len)
    47194:	1009883a 	mov	r4,r2
    47198:	00482100 	call	48210 <IINCHIP_READ>
    4719c:	10803fcc 	andi	r2,r2,255
-   471a0:	103ff91e 	bne	r2,zero,47188 <__alt_mem_epcs_flash+0xfffc6188>
+   471a0:	103ff91e 	bne	r2,zero,47188 <__reset+0xfffc6188>
 
     while ( (IINCHIP_READ(Sn_IR(s) ) & Sn_IR_SEND_OK) != Sn_IR_SEND_OK )
    471a4:	00001106 	br	471ec <send+0x150>
@@ -11604,7 +11604,7 @@ uint16 send(SOCKET s, const uint8 * buf, uint16 len)
    471fc:	00482100 	call	48210 <IINCHIP_READ>
    47200:	10803fcc 	andi	r2,r2,255
    47204:	1080040c 	andi	r2,r2,16
-   47208:	103fe726 	beq	r2,zero,471a8 <__alt_mem_epcs_flash+0xfffc61a8>
+   47208:	103fe726 	beq	r2,zero,471a8 <__reset+0xfffc61a8>
         {
             close_socket(s);
             return 0;
@@ -11685,7 +11685,7 @@ uint16 recv(SOCKET s, uint8 * buf, uint16 len)
    472c4:	1009883a 	mov	r4,r2
    472c8:	00482100 	call	48210 <IINCHIP_READ>
    472cc:	10803fcc 	andi	r2,r2,255
-   472d0:	103ff91e 	bne	r2,zero,472b8 <__alt_mem_epcs_flash+0xfffc62b8>
+   472d0:	103ff91e 	bne	r2,zero,472b8 <__reset+0xfffc62b8>
 
         ret = len;																// 将接收数据长度值赋给ret
    472d4:	e0bfff0b 	ldhu	r2,-4(fp)
@@ -11860,7 +11860,7 @@ uint16 sendto(SOCKET s, const uint8 * buf, uint16 len, uint8 * addr, uint16 port
    474ec:	1009883a 	mov	r4,r2
    474f0:	00482100 	call	48210 <IINCHIP_READ>
    474f4:	10803fcc 	andi	r2,r2,255
-   474f8:	103ff91e 	bne	r2,zero,474e0 <__alt_mem_epcs_flash+0xfffc64e0>
+   474f8:	103ff91e 	bne	r2,zero,474e0 <__reset+0xfffc64e0>
             ;
         /* ------- */
         while( (IINCHIP_READ( Sn_IR(s) ) & Sn_IR_SEND_OK) != Sn_IR_SEND_OK )
@@ -11900,7 +11900,7 @@ uint16 sendto(SOCKET s, const uint8 * buf, uint16 len, uint8 * addr, uint16 port
    47550:	00482100 	call	48210 <IINCHIP_READ>
    47554:	10803fcc 	andi	r2,r2,255
    47558:	1080040c 	andi	r2,r2,16
-   4755c:	103fe826 	beq	r2,zero,47500 <__alt_mem_epcs_flash+0xfffc6500>
+   4755c:	103fe826 	beq	r2,zero,47500 <__reset+0xfffc6500>
                 /* clear interrupt */
                 IINCHIP_WRITE( Sn_IR(s) , (Sn_IR_SEND_OK | Sn_IR_TIMEOUT)); /* clear SEND_OK & TIMEOUT */
                 return 0;
@@ -12230,7 +12230,7 @@ uint16 recvfrom(SOCKET s, uint8 * buf, uint16 len, uint8 * addr, uint16 *port)
    4792c:	1000011e 	bne	r2,zero,47934 <recvfrom+0x3a4>
                 {
                     while(1);
-   47930:	003fff06 	br	47930 <__alt_mem_epcs_flash+0xfffc6930>
+   47930:	003fff06 	br	47930 <__reset+0xfffc6930>
                 }
 
                 addrbsb  = (uint32)(ptr<<8) +  (s<<5) + 0x18;
@@ -12298,7 +12298,7 @@ uint16 recvfrom(SOCKET s, uint8 * buf, uint16 len, uint8 * addr, uint16 *port)
    479f0:	1009883a 	mov	r4,r2
    479f4:	00482100 	call	48210 <IINCHIP_READ>
    479f8:	10803fcc 	andi	r2,r2,255
-   479fc:	103ff91e 	bne	r2,zero,479e4 <__alt_mem_epcs_flash+0xfffc69e4>
+   479fc:	103ff91e 	bne	r2,zero,479e4 <__reset+0xfffc69e4>
         /* ------- */
     }
     return data_len;
@@ -12356,7 +12356,7 @@ int find_index_old(char * str, char ** array, int length)
    47a7c:	e0bffc15 	stw	r2,-16(fp)
    47a80:	e0fffc17 	ldw	r3,-16(fp)
    47a84:	e0bfff17 	ldw	r2,-4(fp)
-   47a88:	18bfed16 	blt	r3,r2,47a40 <__alt_mem_epcs_flash+0xfffc6a40>
+   47a88:	18bfed16 	blt	r3,r2,47a40 <__reset+0xfffc6a40>
     {
         if (strcmp(str, array[i]) == 0)
             return i;
@@ -13140,7 +13140,7 @@ uint8 IINCHIP_READ(uint32 addrbsb)
    48280:	e0bffe0d 	sth	r2,-8(fp)
    48284:	e0bffe0b 	ldhu	r2,-8(fp)
    48288:	108000b0 	cmpltui	r2,r2,2
-   4828c:	103ffa1e 	bne	r2,zero,48278 <__alt_mem_epcs_flash+0xfffc7278>
+   4828c:	103ffa1e 	bne	r2,zero,48278 <__reset+0xfffc7278>
     data = SPI_I2S_ReceiveData();
    48290:	004810c0 	call	4810c <SPI_I2S_ReceiveData>
    48294:	e0bffe85 	stb	r2,-6(fp)
@@ -13221,7 +13221,7 @@ uint16 wiz_write_buf(uint32 addrbsb, uint8* buf,uint16 len)
    4834c:	e0bffc0d 	sth	r2,-16(fp)
    48350:	e0fffc0b 	ldhu	r3,-16(fp)
    48354:	e0bfff0b 	ldhu	r2,-4(fp)
-   48358:	18bff336 	bltu	r3,r2,48328 <__alt_mem_epcs_flash+0xfffc7328>
+   48358:	18bff336 	bltu	r3,r2,48328 <__reset+0xfffc7328>
 //		alt_avalon_dma_tx_ioctl(tx, ALT_DMA_TX_ONLY_ON, (void*)(SPI_BASE+4));
 //		idx = alt_avalon_dma_send(tx, buf, (len<<1), NULL, NULL);
 //	}
@@ -13290,7 +13290,7 @@ uint16 wiz_read_buf(uint32 addrbsb, uint8* buf,uint16 len)
     num = altera_avalon_fifo_read_level(SPIRD_FIFO_IN_CSR_BASE);  // 清空数据
     while(num > 0)
    483e0:	e0bffb8b 	ldhu	r2,-18(fp)
-   483e4:	103ff41e 	bne	r2,zero,483b8 <__alt_mem_epcs_flash+0xfffc73b8>
+   483e4:	103ff41e 	bne	r2,zero,483b8 <__reset+0xfffc73b8>
     {
         num = altera_avalon_fifo_read_level(SPIRD_FIFO_IN_CSR_BASE);
         idx = altera_avalon_fifo_read_fifo(SPIRD_FIFO_OUT_BASE, SPIRD_FIFO_IN_CSR_BASE);
@@ -13330,7 +13330,7 @@ uint16 wiz_read_buf(uint32 addrbsb, uint8* buf,uint16 len)
    48444:	e0bffb8d 	sth	r2,-18(fp)
    48448:	e0bffb8b 	ldhu	r2,-18(fp)
    4844c:	10800130 	cmpltui	r2,r2,4
-   48450:	103ffa1e 	bne	r2,zero,4843c <__alt_mem_epcs_flash+0xfffc743c>
+   48450:	103ffa1e 	bne	r2,zero,4843c <__reset+0xfffc743c>
     {
         ;
     }
@@ -13356,7 +13356,7 @@ uint16 wiz_read_buf(uint32 addrbsb, uint8* buf,uint16 len)
    48478:	e0bffb0d 	sth	r2,-20(fp)
    4847c:	e0fffb0b 	ldhu	r3,-20(fp)
    48480:	e0bffe0b 	ldhu	r2,-8(fp)
-   48484:	18bff536 	bltu	r3,r2,4845c <__alt_mem_epcs_flash+0xfffc745c>
+   48484:	18bff536 	bltu	r3,r2,4845c <__reset+0xfffc745c>
     {
         //buf[idx] = IINCHIP_SpiSendData(0x00);
         buf[idx] = SPI_I2S_ReceiveData();
@@ -13389,7 +13389,7 @@ uint16 wiz_read_buf(uint32 addrbsb, uint8* buf,uint16 len)
     num = altera_avalon_fifo_read_level(SPIRD_FIFO_IN_CSR_BASE);  // 清空数据
     while(num > 0)
    484c4:	e0bffb8b 	ldhu	r2,-18(fp)
-   484c8:	103ff41e 	bne	r2,zero,4849c <__alt_mem_epcs_flash+0xfffc749c>
+   484c8:	103ff41e 	bne	r2,zero,4849c <__reset+0xfffc749c>
     {
         num = altera_avalon_fifo_read_level(SPIRD_FIFO_IN_CSR_BASE);
         idx = altera_avalon_fifo_read_fifo(SPIRD_FIFO_OUT_BASE, SPIRD_FIFO_IN_CSR_BASE);
@@ -13741,7 +13741,7 @@ void sysinit( uint8 * tx_size, uint8 * rx_size  )
    488ac:	e0bffb15 	stw	r2,-20(fp)
    488b0:	e0bffb17 	ldw	r2,-20(fp)
    488b4:	10800210 	cmplti	r2,r2,8
-   488b8:	103f221e 	bne	r2,zero,48544 <__alt_mem_epcs_flash+0xfffc7544>
+   488b8:	103f221e 	bne	r2,zero,48544 <__reset+0xfffc7544>
             }
         }
         ssum += SSIZE[i];
@@ -14292,7 +14292,7 @@ uint16 getSn_TX_FSR(SOCKET s)
     } while (val != val1);
    48e5c:	e0fffd0b 	ldhu	r3,-12(fp)
    48e60:	e0bffd8b 	ldhu	r2,-10(fp)
-   48e64:	18bfd71e 	bne	r3,r2,48dc4 <__alt_mem_epcs_flash+0xfffc7dc4>
+   48e64:	18bfd71e 	bne	r3,r2,48dc4 <__reset+0xfffc7dc4>
     return val;
    48e68:	e0bffd0b 	ldhu	r2,-12(fp)
 }
@@ -14370,7 +14370,7 @@ uint16 getSn_RX_RSR(SOCKET s)                                                   
     } while (val != val1);                                                                                                                                // 判断val与val1是否相等，若不等，重新返回do循环，若相等，跳出循环
    48f40:	e0fffd0b 	ldhu	r3,-12(fp)
    48f44:	e0bffd8b 	ldhu	r2,-10(fp)
-   48f48:	18bfd71e 	bne	r3,r2,48ea8 <__alt_mem_epcs_flash+0xfffc7ea8>
+   48f48:	18bfd71e 	bne	r3,r2,48ea8 <__reset+0xfffc7ea8>
     return val;                                                                                                                                                                  // 将val的值返回给getSn_RX_RSR
    48f4c:	e0bffd0b 	ldhu	r2,-12(fp)
 }
@@ -14651,7 +14651,7 @@ void setSn_IR(uint8 s, uint8 val)
    49244:	294b883a 	add	r5,r5,r5
    49248:	10bfffc4 	addi	r2,r2,-1
    4924c:	18c7883a 	add	r3,r3,r3
-   49250:	293ffb36 	bltu	r5,r4,49240 <__alt_mem_epcs_flash+0xfffc8240>
+   49250:	293ffb36 	bltu	r5,r4,49240 <__reset+0xfffc8240>
    49254:	0005883a 	mov	r2,zero
    49258:	18000726 	beq	r3,zero,49278 <__divsi3+0x58>
    4925c:	0005883a 	mov	r2,zero
@@ -14660,18 +14660,18 @@ void setSn_IR(uint8 s, uint8 val)
    49268:	10c4b03a 	or	r2,r2,r3
    4926c:	1806d07a 	srli	r3,r3,1
    49270:	280ad07a 	srli	r5,r5,1
-   49274:	183ffa1e 	bne	r3,zero,49260 <__alt_mem_epcs_flash+0xfffc8260>
+   49274:	183ffa1e 	bne	r3,zero,49260 <__reset+0xfffc8260>
    49278:	38000126 	beq	r7,zero,49280 <__divsi3+0x60>
    4927c:	0085c83a 	sub	r2,zero,r2
    49280:	f800283a 	ret
    49284:	014bc83a 	sub	r5,zero,r5
    49288:	39c0005c 	xori	r7,r7,1
-   4928c:	003fe706 	br	4922c <__alt_mem_epcs_flash+0xfffc822c>
+   4928c:	003fe706 	br	4922c <__reset+0xfffc822c>
    49290:	0109c83a 	sub	r4,zero,r4
    49294:	01c00044 	movi	r7,1
-   49298:	003fe306 	br	49228 <__alt_mem_epcs_flash+0xfffc8228>
+   49298:	003fe306 	br	49228 <__reset+0xfffc8228>
    4929c:	00c00044 	movi	r3,1
-   492a0:	003fee06 	br	4925c <__alt_mem_epcs_flash+0xfffc825c>
+   492a0:	003fee06 	br	4925c <__reset+0xfffc825c>
 
 000492a4 <__modsi3>:
    492a4:	20001716 	blt	r4,zero,49304 <__modsi3+0x60>
@@ -14686,23 +14686,23 @@ void setSn_IR(uint8 s, uint8 val)
    492c8:	294b883a 	add	r5,r5,r5
    492cc:	31bfffc4 	addi	r6,r6,-1
    492d0:	18c7883a 	add	r3,r3,r3
-   492d4:	293ffb36 	bltu	r5,r4,492c4 <__alt_mem_epcs_flash+0xfffc82c4>
+   492d4:	293ffb36 	bltu	r5,r4,492c4 <__reset+0xfffc82c4>
    492d8:	18000526 	beq	r3,zero,492f0 <__modsi3+0x4c>
    492dc:	1806d07a 	srli	r3,r3,1
    492e0:	11400136 	bltu	r2,r5,492e8 <__modsi3+0x44>
    492e4:	1145c83a 	sub	r2,r2,r5
    492e8:	280ad07a 	srli	r5,r5,1
-   492ec:	183ffb1e 	bne	r3,zero,492dc <__alt_mem_epcs_flash+0xfffc82dc>
+   492ec:	183ffb1e 	bne	r3,zero,492dc <__reset+0xfffc82dc>
    492f0:	38000126 	beq	r7,zero,492f8 <__modsi3+0x54>
    492f4:	0085c83a 	sub	r2,zero,r2
    492f8:	f800283a 	ret
    492fc:	014bc83a 	sub	r5,zero,r5
-   49300:	003fec06 	br	492b4 <__alt_mem_epcs_flash+0xfffc82b4>
+   49300:	003fec06 	br	492b4 <__reset+0xfffc82b4>
    49304:	0109c83a 	sub	r4,zero,r4
    49308:	01c00044 	movi	r7,1
-   4930c:	003fe706 	br	492ac <__alt_mem_epcs_flash+0xfffc82ac>
+   4930c:	003fe706 	br	492ac <__reset+0xfffc82ac>
    49310:	00c00044 	movi	r3,1
-   49314:	003ff106 	br	492dc <__alt_mem_epcs_flash+0xfffc82dc>
+   49314:	003ff106 	br	492dc <__reset+0xfffc82dc>
 
 00049318 <__udivsi3>:
    49318:	200d883a 	mov	r6,r4
@@ -14716,7 +14716,7 @@ void setSn_IR(uint8 s, uint8 val)
    49338:	294b883a 	add	r5,r5,r5
    4933c:	10bfffc4 	addi	r2,r2,-1
    49340:	18c7883a 	add	r3,r3,r3
-   49344:	293ffa36 	bltu	r5,r4,49330 <__alt_mem_epcs_flash+0xfffc8330>
+   49344:	293ffa36 	bltu	r5,r4,49330 <__reset+0xfffc8330>
    49348:	18000826 	beq	r3,zero,4936c <__udivsi3+0x54>
    4934c:	0005883a 	mov	r2,zero
    49350:	31400236 	bltu	r6,r5,4935c <__udivsi3+0x44>
@@ -14724,12 +14724,12 @@ void setSn_IR(uint8 s, uint8 val)
    49358:	10c4b03a 	or	r2,r2,r3
    4935c:	1806d07a 	srli	r3,r3,1
    49360:	280ad07a 	srli	r5,r5,1
-   49364:	183ffa1e 	bne	r3,zero,49350 <__alt_mem_epcs_flash+0xfffc8350>
+   49364:	183ffa1e 	bne	r3,zero,49350 <__reset+0xfffc8350>
    49368:	f800283a 	ret
    4936c:	0005883a 	mov	r2,zero
    49370:	f800283a 	ret
    49374:	00c00044 	movi	r3,1
-   49378:	003ff406 	br	4934c <__alt_mem_epcs_flash+0xfffc834c>
+   49378:	003ff406 	br	4934c <__reset+0xfffc834c>
 
 0004937c <__umodsi3>:
    4937c:	2005883a 	mov	r2,r4
@@ -14743,17 +14743,17 @@ void setSn_IR(uint8 s, uint8 val)
    4939c:	294b883a 	add	r5,r5,r5
    493a0:	31bfffc4 	addi	r6,r6,-1
    493a4:	18c7883a 	add	r3,r3,r3
-   493a8:	293ffa36 	bltu	r5,r4,49394 <__alt_mem_epcs_flash+0xfffc8394>
+   493a8:	293ffa36 	bltu	r5,r4,49394 <__reset+0xfffc8394>
    493ac:	18000626 	beq	r3,zero,493c8 <__umodsi3+0x4c>
    493b0:	1806d07a 	srli	r3,r3,1
    493b4:	11400136 	bltu	r2,r5,493bc <__umodsi3+0x40>
    493b8:	1145c83a 	sub	r2,r2,r5
    493bc:	280ad07a 	srli	r5,r5,1
-   493c0:	183ffb1e 	bne	r3,zero,493b0 <__alt_mem_epcs_flash+0xfffc83b0>
+   493c0:	183ffb1e 	bne	r3,zero,493b0 <__reset+0xfffc83b0>
    493c4:	f800283a 	ret
    493c8:	f800283a 	ret
    493cc:	00c00044 	movi	r3,1
-   493d0:	003ff706 	br	493b0 <__alt_mem_epcs_flash+0xfffc83b0>
+   493d0:	003ff706 	br	493b0 <__reset+0xfffc83b0>
 
 000493d4 <memcpy>:
    493d4:	defffd04 	addi	sp,sp,-12
@@ -14795,7 +14795,7 @@ void setSn_IR(uint8 s, uint8 val)
    49464:	5ac00404 	addi	r11,r11,16
    49468:	52800404 	addi	r10,r10,16
    4946c:	4a400404 	addi	r9,r9,16
-   49470:	1c3fef1e 	bne	r3,r16,49430 <__alt_mem_epcs_flash+0xfffc8430>
+   49470:	1c3fef1e 	bne	r3,r16,49430 <__reset+0xfffc8430>
    49474:	89c00044 	addi	r7,r17,1
    49478:	380e913a 	slli	r7,r7,4
    4947c:	310003cc 	andi	r4,r6,15
@@ -14811,7 +14811,7 @@ void setSn_IR(uint8 s, uint8 val)
    494a4:	39ffff04 	addi	r7,r7,-4
    494a8:	4abfff15 	stw	r10,-4(r9)
    494ac:	42000104 	addi	r8,r8,4
-   494b0:	59fffa36 	bltu	r11,r7,4949c <__alt_mem_epcs_flash+0xfffc849c>
+   494b0:	59fffa36 	bltu	r11,r7,4949c <__reset+0xfffc849c>
    494b4:	213fff04 	addi	r4,r4,-4
    494b8:	2008d0ba 	srli	r4,r4,2
    494bc:	318000cc 	andi	r6,r6,3
@@ -14826,18 +14826,18 @@ void setSn_IR(uint8 s, uint8 val)
    494e0:	18c00044 	addi	r3,r3,1
    494e4:	29400044 	addi	r5,r5,1
    494e8:	19ffffc5 	stb	r7,-1(r3)
-   494ec:	19bffb1e 	bne	r3,r6,494dc <__alt_mem_epcs_flash+0xfffc84dc>
+   494ec:	19bffb1e 	bne	r3,r6,494dc <__reset+0xfffc84dc>
    494f0:	dfc00217 	ldw	ra,8(sp)
    494f4:	dc400117 	ldw	r17,4(sp)
    494f8:	dc000017 	ldw	r16,0(sp)
    494fc:	dec00304 	addi	sp,sp,12
    49500:	f800283a 	ret
    49504:	2007883a 	mov	r3,r4
-   49508:	003ff206 	br	494d4 <__alt_mem_epcs_flash+0xfffc84d4>
+   49508:	003ff206 	br	494d4 <__reset+0xfffc84d4>
    4950c:	2007883a 	mov	r3,r4
-   49510:	003ff106 	br	494d8 <__alt_mem_epcs_flash+0xfffc84d8>
+   49510:	003ff106 	br	494d8 <__reset+0xfffc84d8>
    49514:	200d883a 	mov	r6,r4
-   49518:	003fee06 	br	494d4 <__alt_mem_epcs_flash+0xfffc84d4>
+   49518:	003fee06 	br	494d4 <__reset+0xfffc84d4>
 
 0004951c <memset>:
    4951c:	20c000cc 	andi	r3,r4,3
@@ -14856,7 +14856,7 @@ void setSn_IR(uint8 s, uint8 val)
    49550:	18c00044 	addi	r3,r3,1
    49554:	32400005 	stb	r9,0(r6)
    49558:	1a0000cc 	andi	r8,r3,3
-   4955c:	403ff81e 	bne	r8,zero,49540 <__alt_mem_epcs_flash+0xfffc8540>
+   4955c:	403ff81e 	bne	r8,zero,49540 <__reset+0xfffc8540>
    49560:	010000c4 	movi	r4,3
    49564:	21c02d2e 	bgeu	r4,r7,4961c <memset+0x100>
    49568:	29003fcc 	andi	r4,r5,255
@@ -14883,7 +14883,7 @@ void setSn_IR(uint8 s, uint8 val)
    495bc:	4a400404 	addi	r9,r9,16
    495c0:	5ac00404 	addi	r11,r11,16
    495c4:	52800404 	addi	r10,r10,16
-   495c8:	413ff71e 	bne	r8,r4,495a8 <__alt_mem_epcs_flash+0xfffc85a8>
+   495c8:	413ff71e 	bne	r8,r4,495a8 <__reset+0xfffc85a8>
    495cc:	63000044 	addi	r12,r12,1
    495d0:	6018913a 	slli	r12,r12,4
    495d4:	39c003cc 	andi	r7,r7,15
@@ -14896,7 +14896,7 @@ void setSn_IR(uint8 s, uint8 val)
    495f0:	49800015 	stw	r6,0(r9)
    495f4:	423fff04 	addi	r8,r8,-4
    495f8:	4a400104 	addi	r9,r9,4
-   495fc:	223ffc36 	bltu	r4,r8,495f0 <__alt_mem_epcs_flash+0xfffc85f0>
+   495fc:	223ffc36 	bltu	r4,r8,495f0 <__reset+0xfffc85f0>
    49600:	393fff04 	addi	r4,r7,-4
    49604:	2008d0ba 	srli	r4,r4,2
    49608:	39c000cc 	andi	r7,r7,3
@@ -14908,12 +14908,12 @@ void setSn_IR(uint8 s, uint8 val)
    49620:	19cf883a 	add	r7,r3,r7
    49624:	19400005 	stb	r5,0(r3)
    49628:	18c00044 	addi	r3,r3,1
-   4962c:	38fffd1e 	bne	r7,r3,49624 <__alt_mem_epcs_flash+0xfffc8624>
+   4962c:	38fffd1e 	bne	r7,r3,49624 <__reset+0xfffc8624>
    49630:	f800283a 	ret
    49634:	f800283a 	ret
    49638:	2007883a 	mov	r3,r4
    4963c:	300f883a 	mov	r7,r6
-   49640:	003fc706 	br	49560 <__alt_mem_epcs_flash+0xfffc8560>
+   49640:	003fc706 	br	49560 <__reset+0xfffc8560>
 
 00049644 <strcmp>:
    49644:	2144b03a 	or	r2,r4,r5
@@ -14941,7 +14941,7 @@ void setSn_IR(uint8 s, uint8 val)
    4969c:	00c4303a 	nor	r2,zero,r3
    496a0:	3884703a 	and	r2,r7,r2
    496a4:	1204703a 	and	r2,r2,r8
-   496a8:	19bff626 	beq	r3,r6,49684 <__alt_mem_epcs_flash+0xfffc8684>
+   496a8:	19bff626 	beq	r3,r6,49684 <__reset+0xfffc8684>
    496ac:	20800003 	ldbu	r2,0(r4)
    496b0:	10c03fcc 	andi	r3,r2,255
    496b4:	18c0201c 	xori	r3,r3,128
@@ -14958,7 +14958,7 @@ void setSn_IR(uint8 s, uint8 val)
    496e0:	18803fcc 	andi	r2,r3,255
    496e4:	1080201c 	xori	r2,r2,128
    496e8:	10bfe004 	addi	r2,r2,-128
-   496ec:	103ff71e 	bne	r2,zero,496cc <__alt_mem_epcs_flash+0xfffc86cc>
+   496ec:	103ff71e 	bne	r2,zero,496cc <__reset+0xfffc86cc>
    496f0:	0007883a 	mov	r3,zero
    496f4:	28800003 	ldbu	r2,0(r5)
    496f8:	1885c83a 	sub	r2,r3,r2
@@ -14970,7 +14970,7 @@ void setSn_IR(uint8 s, uint8 val)
    49710:	0005883a 	mov	r2,zero
    49714:	f800283a 	ret
    49718:	10c03fcc 	andi	r3,r2,255
-   4971c:	003ff506 	br	496f4 <__alt_mem_epcs_flash+0xfffc86f4>
+   4971c:	003ff506 	br	496f4 <__reset+0xfffc86f4>
 
 00049720 <strlen>:
    49720:	208000cc 	andi	r2,r4,3
@@ -14983,7 +14983,7 @@ void setSn_IR(uint8 s, uint8 val)
    4973c:	18001826 	beq	r3,zero,497a0 <strlen+0x80>
    49740:	10800044 	addi	r2,r2,1
    49744:	10c000cc 	andi	r3,r2,3
-   49748:	183ffb1e 	bne	r3,zero,49738 <__alt_mem_epcs_flash+0xfffc8738>
+   49748:	183ffb1e 	bne	r3,zero,49738 <__reset+0xfffc8738>
    4974c:	10c00017 	ldw	r3,0(r2)
    49750:	01ffbff4 	movhi	r7,65279
    49754:	39ffbfc4 	addi	r7,r7,-257
@@ -15000,15 +15000,15 @@ void setSn_IR(uint8 s, uint8 val)
    49780:	00c6303a 	nor	r3,zero,r3
    49784:	28c6703a 	and	r3,r5,r3
    49788:	1986703a 	and	r3,r3,r6
-   4978c:	183ff926 	beq	r3,zero,49774 <__alt_mem_epcs_flash+0xfffc8774>
+   4978c:	183ff926 	beq	r3,zero,49774 <__reset+0xfffc8774>
    49790:	00000106 	br	49798 <strlen+0x78>
    49794:	10800044 	addi	r2,r2,1
    49798:	10c00007 	ldb	r3,0(r2)
-   4979c:	183ffd1e 	bne	r3,zero,49794 <__alt_mem_epcs_flash+0xfffc8794>
+   4979c:	183ffd1e 	bne	r3,zero,49794 <__reset+0xfffc8794>
    497a0:	1105c83a 	sub	r2,r2,r4
    497a4:	f800283a 	ret
    497a8:	2005883a 	mov	r2,r4
-   497ac:	003fe706 	br	4974c <__alt_mem_epcs_flash+0xfffc874c>
+   497ac:	003fe706 	br	4974c <__reset+0xfffc874c>
    497b0:	0005883a 	mov	r2,zero
    497b4:	f800283a 	ret
 
@@ -15046,7 +15046,7 @@ void setSn_IR(uint8 s, uint8 val)
    49830:	1000131e 	bne	r2,zero,49880 <strncmp+0xc8>
    49834:	21000104 	addi	r4,r4,4
    49838:	29400104 	addi	r5,r5,4
-   4983c:	49bff336 	bltu	r9,r6,4980c <__alt_mem_epcs_flash+0xfffc880c>
+   4983c:	49bff336 	bltu	r9,r6,4980c <__reset+0xfffc880c>
    49840:	28800007 	ldb	r2,0(r5)
    49844:	20c00007 	ldb	r3,0(r4)
    49848:	31bfffc4 	addi	r6,r6,-1
@@ -15058,7 +15058,7 @@ void setSn_IR(uint8 s, uint8 val)
    49860:	20800007 	ldb	r2,0(r4)
    49864:	28c00007 	ldb	r3,0(r5)
    49868:	31bfffc4 	addi	r6,r6,-1
-   4986c:	10fff826 	beq	r2,r3,49850 <__alt_mem_epcs_flash+0xfffc8850>
+   4986c:	10fff826 	beq	r2,r3,49850 <__reset+0xfffc8850>
    49870:	20800003 	ldbu	r2,0(r4)
    49874:	28c00003 	ldbu	r3,0(r5)
    49878:	10c5c83a 	sub	r2,r2,r3
@@ -15495,7 +15495,7 @@ static void ALT_INLINE alt_load_section (alt_u32* from,
     while( to != end )
    49c2c:	e0fffe17 	ldw	r3,-8(fp)
    49c30:	e0bfff17 	ldw	r2,-4(fp)
-   49c34:	18bff51e 	bne	r3,r2,49c0c <__alt_mem_epcs_flash+0xfffc8c0c>
+   49c34:	18bff51e 	bne	r3,r2,49c0c <__reset+0xfffc8c0c>
     {
       *to++ = *from++;
     }
@@ -16374,7 +16374,7 @@ static int alt_epcs_flash_query(alt_flash_epcs_dev* flash)
 
   while (n > 0)
    4a414:	e0bfff17 	ldw	r2,-4(fp)
-   4a418:	103fd71e 	bne	r2,zero,4a378 <__alt_mem_epcs_flash+0xfffc9378>
+   4a418:	103fd71e 	bne	r2,zero,4a378 <__reset+0xfffc9378>
   }
 
   /*
@@ -16617,7 +16617,7 @@ int alt_epcs_flash_write(alt_flash_dev* flash_info, int offset,
    4a650:	10800f04 	addi	r2,r2,60
    4a654:	10800017 	ldw	r2,0(r2)
    4a658:	e0fff917 	ldw	r3,-28(fp)
-   4a65c:	18bfa016 	blt	r3,r2,4a4e0 <__alt_mem_epcs_flash+0xfffc94e0>
+   4a65c:	18bfa016 	blt	r3,r2,4a4e0 <__reset+0xfffc94e0>
   int         current_offset;
 
   /*
@@ -16630,7 +16630,7 @@ int alt_epcs_flash_write(alt_flash_dev* flash_info, int offset,
    4a66c:	e0bffc17 	ldw	r2,-16(fp)
    4a670:	10800c17 	ldw	r2,48(r2)
    4a674:	e0fff817 	ldw	r3,-32(fp)
-   4a678:	18bf7916 	blt	r3,r2,4a460 <__alt_mem_epcs_flash+0xfffc9460>
+   4a678:	18bf7916 	blt	r3,r2,4a460 <__reset+0xfffc9460>
       }
     }
   }
@@ -16940,7 +16940,7 @@ int alt_epcs_flash_write_block(alt_flash_dev* flash_info, int block_offset,
      */
     while (length)
    4a90c:	e0800217 	ldw	r2,8(fp)
-   4a910:	103fd81e 	bne	r2,zero,4a874 <__alt_mem_epcs_flash+0xfffc9874>
+   4a910:	103fd81e 	bne	r2,zero,4a874 <__reset+0xfffc9874>
       length -= length_of_current_write;
       buffer_offset += length_of_current_write;
       data_offset = next_page_start;
@@ -17862,7 +17862,7 @@ static void altera_avalon_jtag_uart_irq(void* context, alt_u32 id)
         /* Post an event to notify jtag_uart_read that a character has been read */
         ALT_FLAG_POST (sp->events, ALT_JTAG_UART_READ_RDY, OS_FLAG_SET);
       }
-   4b1b4:	003fe206 	br	4b140 <__alt_mem_epcs_flash+0xfffca140>
+   4b1b4:	003fe206 	br	4b140 <__reset+0xfffca140>
         /* Check whether there is space in the buffer.  If not then we must not
          * read any characters from the buffer as they will be lost.
          */
@@ -17917,7 +17917,7 @@ static void altera_avalon_jtag_uart_irq(void* context, alt_u32 id)
     if (control & ALTERA_AVALON_JTAG_UART_CONTROL_WI_MSK)
    4b20c:	e0bffd17 	ldw	r2,-12(fp)
    4b210:	1080800c 	andi	r2,r2,512
-   4b214:	103fbe26 	beq	r2,zero,4b110 <__alt_mem_epcs_flash+0xfffca110>
+   4b214:	103fbe26 	beq	r2,zero,4b110 <__reset+0xfffca110>
     {
       /* process a write irq */
       unsigned int space = (control & ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_MSK) >> ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_OFST;
@@ -17968,7 +17968,7 @@ static void altera_avalon_jtag_uart_irq(void* context, alt_u32 id)
    4b284:	10c00d17 	ldw	r3,52(r2)
    4b288:	e0bffb17 	ldw	r2,-20(fp)
    4b28c:	10800c17 	ldw	r2,48(r2)
-   4b290:	18bfe51e 	bne	r3,r2,4b228 <__alt_mem_epcs_flash+0xfffca228>
+   4b290:	18bfe51e 	bne	r3,r2,4b228 <__reset+0xfffca228>
         ALT_FLAG_POST (sp->events, ALT_JTAG_UART_WRITE_RDY, OS_FLAG_SET);
 
         space--;
@@ -17976,7 +17976,7 @@ static void altera_avalon_jtag_uart_irq(void* context, alt_u32 id)
 
       if (space > 0)
    4b294:	e0bffa17 	ldw	r2,-24(fp)
-   4b298:	103f9d26 	beq	r2,zero,4b110 <__alt_mem_epcs_flash+0xfffca110>
+   4b298:	103f9d26 	beq	r2,zero,4b110 <__reset+0xfffca110>
       {
         /* If we don't have any more data available then turn off the TX interrupt */
         sp->irq_enable &= ~ALTERA_AVALON_JTAG_UART_CONTROL_WE_MSK;
@@ -18003,7 +18003,7 @@ static void altera_avalon_jtag_uart_irq(void* context, alt_u32 id)
       }
     }
   }
-   4b2dc:	003f8c06 	br	4b110 <__alt_mem_epcs_flash+0xfffca110>
+   4b2dc:	003f8c06 	br	4b110 <__reset+0xfffca110>
   {
     unsigned int control = IORD_ALTERA_AVALON_JTAG_UART_CONTROL(base);
 
@@ -18128,7 +18128,7 @@ int altera_avalon_jtag_uart_close(altera_avalon_jtag_uart_state* sp, int flags)
    4b3dc:	10c00917 	ldw	r3,36(r2)
    4b3e0:	e0bffe17 	ldw	r2,-8(fp)
    4b3e4:	10800117 	ldw	r2,4(r2)
-   4b3e8:	18bff136 	bltu	r3,r2,4b3b0 <__alt_mem_epcs_flash+0xfffca3b0>
+   4b3e8:	18bff136 	bltu	r3,r2,4b3b0 <__reset+0xfffca3b0>
     if (flags & O_NONBLOCK) {
       return -EWOULDBLOCK; 
     }
@@ -18358,7 +18358,7 @@ altera_avalon_jtag_uart_read(altera_avalon_jtag_uart_state* sp,
     }
     while (space > 0);
    4b5d8:	e0bffe17 	ldw	r2,-8(fp)
-   4b5dc:	00bfcf16 	blt	zero,r2,4b51c <__alt_mem_epcs_flash+0xfffca51c>
+   4b5dc:	00bfcf16 	blt	zero,r2,4b51c <__reset+0xfffca51c>
    4b5e0:	00000106 	br	4b5e8 <altera_avalon_jtag_uart_read+0xf8>
         n = in - out;
       else
@@ -18398,7 +18398,7 @@ altera_avalon_jtag_uart_read(altera_avalon_jtag_uart_state* sp,
    4b618:	10c00917 	ldw	r3,36(r2)
    4b61c:	e0bffc17 	ldw	r2,-16(fp)
    4b620:	10800117 	ldw	r2,4(r2)
-   4b624:	18bff736 	bltu	r3,r2,4b604 <__alt_mem_epcs_flash+0xfffca604>
+   4b624:	18bff736 	bltu	r3,r2,4b604 <__reset+0xfffca604>
       ;
 #endif /* __ucosii__ */
 
@@ -18414,7 +18414,7 @@ altera_avalon_jtag_uart_read(altera_avalon_jtag_uart_state* sp,
 
   while (space > 0)
    4b638:	e0bffe17 	ldw	r2,-8(fp)
-   4b63c:	00bfb716 	blt	zero,r2,4b51c <__alt_mem_epcs_flash+0xfffca51c>
+   4b63c:	00bfb716 	blt	zero,r2,4b51c <__reset+0xfffca51c>
    4b640:	00000506 	br	4b658 <altera_avalon_jtag_uart_read+0x168>
     }
     while (space > 0);
@@ -18636,7 +18636,7 @@ altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp,
     /* Copy as much as we can into the transmit buffer */
     while (count > 0)
    4b818:	e0bffe17 	ldw	r2,-8(fp)
-   4b81c:	00bfc716 	blt	zero,r2,4b73c <__alt_mem_epcs_flash+0xfffca73c>
+   4b81c:	00bfc716 	blt	zero,r2,4b73c <__reset+0xfffca73c>
    4b820:	00000106 	br	4b828 <altera_avalon_jtag_uart_write+0x11c>
         n = ALTERA_AVALON_JTAG_UART_BUF_LEN - in;
       else
@@ -18721,7 +18721,7 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
    4b8b4:	10c00917 	ldw	r3,36(r2)
    4b8b8:	e0bffc17 	ldw	r2,-16(fp)
    4b8bc:	10800117 	ldw	r2,4(r2)
-   4b8c0:	18bff736 	bltu	r3,r2,4b8a0 <__alt_mem_epcs_flash+0xfffca8a0>
+   4b8c0:	18bff736 	bltu	r3,r2,4b8a0 <__reset+0xfffca8a0>
         ;
 #endif /* __ucosii__ */
 
@@ -18734,7 +18734,7 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
   }
   while (count > 0);
    4b8d0:	e0bffe17 	ldw	r2,-8(fp)
-   4b8d4:	00bfd016 	blt	zero,r2,4b818 <__alt_mem_epcs_flash+0xfffca818>
+   4b8d4:	00bfd016 	blt	zero,r2,4b818 <__reset+0xfffca818>
    4b8d8:	00000306 	br	4b8e8 <altera_avalon_jtag_uart_write+0x1dc>
      */
     /* consider: test whether there is anything there while doing this and delay for at most 2s. */
@@ -18999,7 +18999,7 @@ static ALT_INLINE void epcs_await_wip_released(alt_u32 base)
    4bacc:	0001883a 	nop
    4bad0:	e13fff17 	ldw	r4,-4(fp)
    4bad4:	004ba800 	call	4ba80 <epcs_test_wip>
-   4bad8:	103ffd1e 	bne	r2,zero,4bad0 <__alt_mem_epcs_flash+0xfffcaad0>
+   4bad8:	103ffd1e 	bne	r2,zero,4bad0 <__reset+0xfffcaad0>
   {
   }
 }
@@ -20056,7 +20056,7 @@ void _do_ctors(void)
    4c3fc:	e0ffff17 	ldw	r3,-4(fp)
    4c400:	00800174 	movhi	r2,5
    4c404:	10b4dc04 	addi	r2,r2,-11408
-   4c408:	18bff62e 	bgeu	r3,r2,4c3e4 <__alt_mem_epcs_flash+0xfffcb3e4>
+   4c408:	18bff62e 	bgeu	r3,r2,4c3e4 <__reset+0xfffcb3e4>
         (*ctor) (); 
 }
    4c40c:	0001883a 	nop
@@ -20100,7 +20100,7 @@ void _do_dtors(void)
    4c45c:	e0ffff17 	ldw	r3,-4(fp)
    4c460:	00800174 	movhi	r2,5
    4c464:	10b4dc04 	addi	r2,r2,-11408
-   4c468:	18bff62e 	bgeu	r3,r2,4c444 <__alt_mem_epcs_flash+0xfffcb444>
+   4c468:	18bff62e 	bgeu	r3,r2,4c444 <__reset+0xfffcb444>
         (*dtor) (); 
 }
    4c46c:	0001883a 	nop
@@ -20174,7 +20174,7 @@ alt_dev* alt_find_dev(const char* name, alt_llist* llist)
   while (next != (alt_dev*) llist)
    4c4f0:	e0fffc17 	ldw	r3,-16(fp)
    4c4f4:	e0bfff17 	ldw	r2,-4(fp)
-   4c4f8:	18bff01e 	bne	r3,r2,4c4bc <__alt_mem_epcs_flash+0xfffcb4bc>
+   4c4f8:	18bff01e 	bne	r3,r2,4c4bc <__reset+0xfffcb4bc>
     next = (alt_dev*) next->llist.next;
   }
   
@@ -20505,7 +20505,7 @@ static int alt_file_locked (alt_fd* fd)
    4c800:	d0a00d17 	ldw	r2,-32716(gp)
    4c804:	1007883a 	mov	r3,r2
    4c808:	e0bffe17 	ldw	r2,-8(fp)
-   4c80c:	18bfdf2e 	bgeu	r3,r2,4c78c <__alt_mem_epcs_flash+0xfffcb78c>
+   4c80c:	18bfdf2e 	bgeu	r3,r2,4c78c <__reset+0xfffcb78c>
     }
   }
   
@@ -20917,7 +20917,7 @@ void alt_tick (void)
   while (alarm != (alt_alarm*) &alt_alarm_list)
    4cb58:	e0fffd17 	ldw	r3,-12(fp)
    4cb5c:	d0a00f04 	addi	r2,gp,-32708
-   4cb60:	18bfcf1e 	bne	r3,r2,4caa0 <__alt_mem_epcs_flash+0xfffcbaa0>
+   4cb60:	18bfcf1e 	bne	r3,r2,4caa0 <__reset+0xfffcbaa0>
 
   /* 
    * Update the operating system specific timer facilities.
@@ -21057,7 +21057,7 @@ int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
       status = IORD_ALTERA_AVALON_SPI_STATUS(base);
     }
     while (((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) == 0 || credits == 0) &&
-   4cc68:	103ff426 	beq	r2,zero,4cc3c <__alt_mem_epcs_flash+0xfffcbc3c>
+   4cc68:	103ff426 	beq	r2,zero,4cc3c <__reset+0xfffcbc3c>
             (status & ALTERA_AVALON_SPI_STATUS_RRDY_MSK) == 0);
 
     if ((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) != 0 && credits > 0)
@@ -21111,7 +21111,7 @@ int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
     if ((status & ALTERA_AVALON_SPI_STATUS_RRDY_MSK) != 0)
    4ccf0:	e0bffa17 	ldw	r2,-24(fp)
    4ccf4:	1080200c 	andi	r2,r2,128
-   4ccf8:	103fd026 	beq	r2,zero,4cc3c <__alt_mem_epcs_flash+0xfffcbc3c>
+   4ccf8:	103fd026 	beq	r2,zero,4cc3c <__reset+0xfffcbc3c>
     {
       alt_u32 rxdata = IORD_ALTERA_AVALON_SPI_RXDATA(base);
    4ccfc:	e0bffc17 	ldw	r2,-16(fp)
@@ -21140,10 +21140,10 @@ int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
 
       if (read_ignore == 0 && read_data == read_end)
    4cd40:	e0bff617 	ldw	r2,-40(fp)
-   4cd44:	103fbd1e 	bne	r2,zero,4cc3c <__alt_mem_epcs_flash+0xfffcbc3c>
+   4cd44:	103fbd1e 	bne	r2,zero,4cc3c <__reset+0xfffcbc3c>
    4cd48:	e0c00217 	ldw	r3,8(fp)
    4cd4c:	e0bff917 	ldw	r2,-28(fp)
-   4cd50:	18bfba1e 	bne	r3,r2,4cc3c <__alt_mem_epcs_flash+0xfffcbc3c>
+   4cd50:	18bfba1e 	bne	r3,r2,4cc3c <__reset+0xfffcbc3c>
   }
 
   /* Wait until the interface has finished transmitting */
@@ -21158,7 +21158,7 @@ int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
   while ((status & ALTERA_AVALON_SPI_STATUS_TMT_MSK) == 0);
    4cd64:	e0bffa17 	ldw	r2,-24(fp)
    4cd68:	1080080c 	andi	r2,r2,32
-   4cd6c:	103ff926 	beq	r2,zero,4cd54 <__alt_mem_epcs_flash+0xfffcbd54>
+   4cd6c:	103ff926 	beq	r2,zero,4cd54 <__reset+0xfffcbd54>
 
   /* Clear SSO (release chipselect) unless the caller is going to
    * keep using this chip
@@ -21283,7 +21283,7 @@ alt_dev* alt_find_file (const char* name)
   while (next != (alt_dev*) &alt_fs_list)
    4ce84:	e0fffd17 	ldw	r3,-12(fp)
    4ce88:	d0a00904 	addi	r2,gp,-32732
-   4ce8c:	18bfcc1e 	bne	r3,r2,4cdc0 <__alt_mem_epcs_flash+0xfffcbdc0>
+   4ce8c:	18bfcc1e 	bne	r3,r2,4cdc0 <__reset+0xfffcbdc0>
     next = (alt_dev*) next->llist.next;
   }
   
@@ -21364,7 +21364,7 @@ int alt_get_fd (alt_dev* dev)
    4cf28:	e0bffd15 	stw	r2,-12(fp)
    4cf2c:	e0bffd17 	ldw	r2,-12(fp)
    4cf30:	10800810 	cmplti	r2,r2,32
-   4cf34:	103fe41e 	bne	r2,zero,4cec8 <__alt_mem_epcs_flash+0xfffcbec8>
+   4cf34:	103fe41e 	bne	r2,zero,4cec8 <__reset+0xfffcbec8>
    * file descriptor pool.
    */
 
@@ -21430,7 +21430,7 @@ void alt_icache_flush (void* start, alt_u32 len)
    4cfa0:	e0bffc15 	stw	r2,-16(fp)
    4cfa4:	e0fffc17 	ldw	r3,-16(fp)
    4cfa8:	e0bffd17 	ldw	r2,-12(fp)
-   4cfac:	18bff836 	bltu	r3,r2,4cf90 <__alt_mem_epcs_flash+0xfffcbf90>
+   4cfac:	18bff836 	bltu	r3,r2,4cf90 <__reset+0xfffcbf90>
    * For an unaligned flush request, we've got one more line left.
    * Note that this is dependent on NIOS2_ICACHE_LINE_SIZE to be a 
    * multiple of 2 (which it always is).
@@ -21501,18 +21501,18 @@ void alt_icache_flush (void* start, alt_u32 len)
    4d060:	10c00e1e 	bne	r2,r3,4d09c <memcmp+0x74>
    4d064:	21000044 	addi	r4,r4,1
    4d068:	29400044 	addi	r5,r5,1
-   4d06c:	31fff91e 	bne	r6,r7,4d054 <__alt_mem_epcs_flash+0xfffcc054>
+   4d06c:	31fff91e 	bne	r6,r7,4d054 <__reset+0xfffcc054>
    4d070:	0005883a 	mov	r2,zero
    4d074:	f800283a 	ret
    4d078:	20c00017 	ldw	r3,0(r4)
    4d07c:	28800017 	ldw	r2,0(r5)
-   4d080:	18bfee1e 	bne	r3,r2,4d03c <__alt_mem_epcs_flash+0xfffcc03c>
+   4d080:	18bfee1e 	bne	r3,r2,4d03c <__reset+0xfffcc03c>
    4d084:	31bfff04 	addi	r6,r6,-4
    4d088:	21000104 	addi	r4,r4,4
    4d08c:	29400104 	addi	r5,r5,4
-   4d090:	39bff936 	bltu	r7,r6,4d078 <__alt_mem_epcs_flash+0xfffcc078>
-   4d094:	303fe91e 	bne	r6,zero,4d03c <__alt_mem_epcs_flash+0xfffcc03c>
-   4d098:	003ff506 	br	4d070 <__alt_mem_epcs_flash+0xfffcc070>
+   4d090:	39bff936 	bltu	r7,r6,4d078 <__reset+0xfffcc078>
+   4d094:	303fe91e 	bne	r6,zero,4d03c <__reset+0xfffcc03c>
+   4d098:	003ff506 	br	4d070 <__reset+0xfffcc070>
    4d09c:	10c5c83a 	sub	r2,r2,r3
    4d0a0:	f800283a 	ret
 
@@ -21565,7 +21565,7 @@ void alt_icache_flush (void* start, alt_u32 len)
    4d158:	20805215 	stw	r2,328(r4)
    4d15c:	10006215 	stw	zero,392(r2)
    4d160:	10006315 	stw	zero,396(r2)
-   4d164:	883fde26 	beq	r17,zero,4d0e0 <__alt_mem_epcs_flash+0xfffcc0e0>
+   4d164:	883fde26 	beq	r17,zero,4d0e0 <__reset+0xfffcc0e0>
    4d168:	18c9883a 	add	r4,r3,r3
    4d16c:	2109883a 	add	r4,r4,r4
    4d170:	1109883a 	add	r4,r2,r4
@@ -21577,16 +21577,16 @@ void alt_icache_flush (void* start, alt_u32 len)
    4d188:	12406215 	stw	r9,392(r2)
    4d18c:	21c04215 	stw	r7,264(r4)
    4d190:	01000084 	movi	r4,2
-   4d194:	893fd21e 	bne	r17,r4,4d0e0 <__alt_mem_epcs_flash+0xfffcc0e0>
+   4d194:	893fd21e 	bne	r17,r4,4d0e0 <__reset+0xfffcc0e0>
    4d198:	11006317 	ldw	r4,396(r2)
    4d19c:	218cb03a 	or	r6,r4,r6
    4d1a0:	11806315 	stw	r6,396(r2)
-   4d1a4:	003fce06 	br	4d0e0 <__alt_mem_epcs_flash+0xfffcc0e0>
+   4d1a4:	003fce06 	br	4d0e0 <__reset+0xfffcc0e0>
    4d1a8:	18805304 	addi	r2,r3,332
    4d1ac:	18805215 	stw	r2,328(r3)
-   4d1b0:	003fc606 	br	4d0cc <__alt_mem_epcs_flash+0xfffcc0cc>
+   4d1b0:	003fc606 	br	4d0cc <__reset+0xfffcc0cc>
    4d1b4:	00bfffc4 	movi	r2,-1
-   4d1b8:	003fd006 	br	4d0fc <__alt_mem_epcs_flash+0xfffcc0fc>
+   4d1b8:	003fd006 	br	4d0fc <__reset+0xfffcc0fc>
 
 0004d1bc <__call_exitprocs>:
    4d1bc:	defff504 	addi	sp,sp,-44
@@ -21625,7 +21625,7 @@ void alt_icache_flush (void* start, alt_u32 len)
    4d240:	bdffffc4 	addi	r23,r23,-1
    4d244:	843fff04 	addi	r16,r16,-4
    4d248:	8c7fff04 	addi	r17,r17,-4
-   4d24c:	bd7ff91e 	bne	r23,r21,4d234 <__alt_mem_epcs_flash+0xfffcc234>
+   4d24c:	bd7ff91e 	bne	r23,r21,4d234 <__reset+0xfffcc234>
    4d250:	00800034 	movhi	r2,0
    4d254:	10800004 	addi	r2,r2,0
    4d258:	10000926 	beq	r2,zero,4d280 <__call_exitprocs+0xc4>
@@ -21637,7 +21637,7 @@ void alt_icache_flush (void* start, alt_u32 len)
    4d270:	98800015 	stw	r2,0(r19)
    4d274:	00000000 	call	0 <__alt_mem_onchip_memory-0x40000>
    4d278:	9d000017 	ldw	r20,0(r19)
-   4d27c:	a03fe41e 	bne	r20,zero,4d210 <__alt_mem_epcs_flash+0xfffcc210>
+   4d27c:	a03fe41e 	bne	r20,zero,4d210 <__reset+0xfffcc210>
    4d280:	dfc00a17 	ldw	ra,40(sp)
    4d284:	df000917 	ldw	fp,36(sp)
    4d288:	ddc00817 	ldw	r23,32(sp)
@@ -21655,7 +21655,7 @@ void alt_icache_flush (void* start, alt_u32 len)
    4d2b8:	10bfffc4 	addi	r2,r2,-1
    4d2bc:	15c01426 	beq	r2,r23,4d310 <__call_exitprocs+0x154>
    4d2c0:	80000015 	stw	zero,0(r16)
-   4d2c4:	183fde26 	beq	r3,zero,4d240 <__alt_mem_epcs_flash+0xfffcc240>
+   4d2c4:	183fde26 	beq	r3,zero,4d240 <__reset+0xfffcc240>
    4d2c8:	95c8983a 	sll	r4,r18,r23
    4d2cc:	a0806217 	ldw	r2,392(r20)
    4d2d0:	a5800117 	ldw	r22,4(r20)
@@ -21668,23 +21668,23 @@ void alt_icache_flush (void* start, alt_u32 len)
    4d2ec:	d9000017 	ldw	r4,0(sp)
    4d2f0:	183ee83a 	callr	r3
    4d2f4:	a0800117 	ldw	r2,4(r20)
-   4d2f8:	15bfbf1e 	bne	r2,r22,4d1f8 <__alt_mem_epcs_flash+0xfffcc1f8>
+   4d2f8:	15bfbf1e 	bne	r2,r22,4d1f8 <__reset+0xfffcc1f8>
    4d2fc:	98800017 	ldw	r2,0(r19)
-   4d300:	153fcf26 	beq	r2,r20,4d240 <__alt_mem_epcs_flash+0xfffcc240>
-   4d304:	003fbc06 	br	4d1f8 <__alt_mem_epcs_flash+0xfffcc1f8>
+   4d300:	153fcf26 	beq	r2,r20,4d240 <__reset+0xfffcc240>
+   4d304:	003fbc06 	br	4d1f8 <__reset+0xfffcc1f8>
    4d308:	183ee83a 	callr	r3
-   4d30c:	003ff906 	br	4d2f4 <__alt_mem_epcs_flash+0xfffcc2f4>
+   4d30c:	003ff906 	br	4d2f4 <__reset+0xfffcc2f4>
    4d310:	a5c00115 	stw	r23,4(r20)
-   4d314:	003feb06 	br	4d2c4 <__alt_mem_epcs_flash+0xfffcc2c4>
+   4d314:	003feb06 	br	4d2c4 <__reset+0xfffcc2c4>
    4d318:	89000017 	ldw	r4,0(r17)
    4d31c:	183ee83a 	callr	r3
-   4d320:	003ff406 	br	4d2f4 <__alt_mem_epcs_flash+0xfffcc2f4>
+   4d320:	003ff406 	br	4d2f4 <__reset+0xfffcc2f4>
    4d324:	a0800017 	ldw	r2,0(r20)
    4d328:	a027883a 	mov	r19,r20
    4d32c:	1029883a 	mov	r20,r2
-   4d330:	003fb606 	br	4d20c <__alt_mem_epcs_flash+0xfffcc20c>
+   4d330:	003fb606 	br	4d20c <__reset+0xfffcc20c>
    4d334:	0005883a 	mov	r2,zero
-   4d338:	003ffb06 	br	4d328 <__alt_mem_epcs_flash+0xfffcc328>
+   4d338:	003ffb06 	br	4d328 <__reset+0xfffcc328>
 
 0004d33c <_exit>:
  *
@@ -21732,4 +21732,4 @@ static ALT_INLINE ALT_ALWAYS_INLINE void alt_sim_halt(int exit_code)
 
   ALT_LOG_PRINT_BOOT("[alt_exit.c] Spinning forever.\r\n");
   while (1);
-   4d36c:	003fff06 	br	4d36c <__alt_mem_epcs_flash+0xfffcc36c>
+   4d36c:	003fff06 	br	4d36c <__reset+0xfffcc36c>
