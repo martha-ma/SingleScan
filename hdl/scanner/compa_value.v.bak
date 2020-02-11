@@ -15,7 +15,7 @@ module compa_value(
    input  wire [89:00]        da_cycle_para,
    output reg  [15:0]         dac_value,
 	input  wire [7:00]         CHANGE_TH_2,
-	input  wire                laser_enable,
+//	input  wire                b_set_flag,
 	output wire [9:0]          dac_max,
 	output wire [9:0]          dac_min,
    output reg                 dac_set
@@ -71,7 +71,7 @@ reg            [31:0]   cnt;
 reg            [9:0]    state;
 wire                    dac_set_1;
 wire                    dac_set_fall;
-wire                    dac_set_rise/* synthesis keep */;
+wire                    dac_set_rise;
 reg            [1:0]    dac_set_r;
 
 wire           [9:0]    da_cycle_para9 /* synthesis keep */;
@@ -149,14 +149,13 @@ begin
       dac_value<={1'b0,3'd0,8'd123,4'd0};
    else
    begin
-      if(dac_set_rise && laser_enable)
+      if(dac_set_rise)
          dac_value<={1'b0,3'd0,dac_reg[7:0],4'd0};//{1'b1,3'd0,dac_reg[9:0],2'd0}
-		else if(dac_set_rise && (~laser_enable))
-		   dac_value<=16'd0;
 		else if(b_cnt==16'd870)
 			dac_value<={1'b1,3'd0,8'd155,4'd0};
 		else if(b_set_flag)
 			dac_value<={1'b1,3'd0,CHANGE_TH_2,4'd0};
+		
    end   
 end
 

@@ -261,7 +261,6 @@ Ranging_distance Ranging_distanceEx01
     .da_cycle_para          (    da_cycle_para          ),
     .send_en                (    send_en                ),
     .rx_dataout             (    rx_dataout             ),
-	 .laser_enable           (    laser_enable           ),
     .distance_para          (    distance_para          ),
     .sys_temp               (    sys_temp               ),
     .target_valid           (    target_1us_valid       ),

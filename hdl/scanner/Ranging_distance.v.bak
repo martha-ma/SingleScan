@@ -110,7 +110,7 @@ calc_distance calc_distanceEx01                                 //距离测量�
    .clk                  (    clk                         ),
    .rst_n                (    rst_n                       ),
    .send_en              (    send_en                     ),
-	.dac_value            (    dac_value                   ),
+	.dac_value_adjust     (    dac_value                   ),
    .rx_dataout           (    rx_dataout                  ),
 	.DELAY_CNT            (    DELAY_CNT                   ),
 	.ABSOLUTE_CNT         (    ABSOLUTE_CNT                ),

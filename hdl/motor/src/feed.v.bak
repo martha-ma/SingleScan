@@ -83,7 +83,7 @@ always @ (posedge clk or negedge rst_n)
 begin
     if(~rst_n)
     begin
-        duty_cnt <= 460;
+        duty_cnt <= 480;
         expect_speed <= 8300000;
     end
     else
@@ -143,7 +143,7 @@ always @ (posedge clk or negedge rst_n)
 begin
     if(~rst_n)
     begin
-        high_cnt <= 400;
+        high_cnt <= 460;
     end
     else if(timeout_flag)
     begin
@@ -154,7 +154,7 @@ begin
          */
         if(cycle_cnt == 0)
         begin
-            if(high_cnt <= 470)        // 最大占空比不超过40%
+            if(high_cnt <= 480)        // 最大占空比不超过40%
                 high_cnt <= high_cnt + UNIT_VALUE;
         end
         /*
@@ -167,7 +167,7 @@ begin
                 if( ((expect_speed - cycle_cnt)>>14) > duty_cnt)  // 计算出来结果大于duty_cnt
                     high_cnt <= 100;
                 else
-                    high_cnt <= duty_cnt - ((expect_speed - cycle_cnt)>>14);   // 比例系数1/
+                    high_cnt <= high_cnt - ((expect_speed - cycle_cnt)>>14);   // 比例系数1/
             end
             /*
             * 如果实际间隙计数值 大于 设定值，说明转动速度小于设定值
@@ -175,9 +175,9 @@ begin
             else if(cycle_cnt > expect_speed )  // 电机需要加速
             begin
                 if( ((cycle_cnt - expect_speed)>>14) > duty_cnt)  // 计算出来结果大于duty_cnt
-                    high_cnt <= 550;  // 最大PWM宽度
+                    high_cnt <= 620;  // 最大PWM宽度
                 else
-                    high_cnt <= duty_cnt + ((cycle_cnt - expect_speed)>>14);
+                    high_cnt <= high_cnt + ((cycle_cnt - expect_speed)>>14);
             end
         end
     end

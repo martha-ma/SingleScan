@@ -13,7 +13,6 @@ module recv_module(
     input wire                              clk,
     input wire                              rst,
     input wire                              send_en,
-	 input wire                              laser_enable,
     input wire              [15:0]          rx_dataout,
     input wire              [7:0]           DELAY_CNT,
     output reg              [399:0]         total_data,               //总共400个点
@@ -60,7 +59,7 @@ begin
                 begin
                     cnt <= cnt + 1'b1;
                 end
-                else if(laser_enable)
+                else
                 begin
                     state <= state + 1'b1;
                     recv_en <= 1'b1;

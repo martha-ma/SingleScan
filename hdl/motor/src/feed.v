@@ -175,7 +175,7 @@ begin
             else if(cycle_cnt > expect_speed )  // 电机需要加速
             begin
                 if( ((cycle_cnt - expect_speed)>>14) > duty_cnt)  // 计算出来结果大于duty_cnt
-                    high_cnt <= 620;  // 最大PWM宽度
+                    high_cnt <= 550;  // 最大PWM宽度
                 else
                     high_cnt <= high_cnt + ((cycle_cnt - expect_speed)>>14);
             end

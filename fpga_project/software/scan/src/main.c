@@ -157,6 +157,7 @@ int main()
              led_status_light(LED_ON);
              set_laser_paramter(&Nios2FPGA_pck, LASER_FREQ,
             		 sys_warn.motor_low_speed_alarm | sys_warn.ld_not_work_alarm | sys_warn.temp_out_alarm | sys_warn.window_dust_alarm);
+             set_laser_paramter(&Nios2FPGA_pck, LASER_ENABLE, 0x00000000);
         }
         else if(sys_warn.window_dust_alarm)
         {

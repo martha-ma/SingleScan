@@ -21,6 +21,7 @@ module calc_distance
 
     input   wire                         send_en,                //高速收发器发送有效数据的使能信号
     input   wire         [15:00]         rx_dataout,
+	 input   wire                         laser_enable,
     /*
     * [7:0]                             NOISE_CNT             4    //初步噪声过滤脉冲宽度下限值
     * [15:8]                            WINDOW_CNT            50  //最小显示距离范围
@@ -82,6 +83,7 @@ recv_module recv_moduleEx01(                                    //接收数据�
 
     .clk             (    clk                   ),
     .rst             (    rst_n                 ),
+	 .laser_enable    (    laser_enable          ),
     .DELAY_CNT       (    DELAY_CNT             ),
     .send_en         (    send_en               ),
     .rx_dataout      (    rx_dataout            ),

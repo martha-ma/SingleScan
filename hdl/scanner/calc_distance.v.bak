@@ -47,7 +47,7 @@ module calc_distance
     input   wire         [15:0]          tem_count,   
 	 
     input   wire                         set_en,           
-    input   wire         [15:0]          dac_value,
+    input   wire         [15:0]          dac_value_adjust,
     input   wire         [7:0]           DELAY_CNT, 
     input   wire         [15:0]          ABSOLUTE_CNT, 	
     input   wire         [7:0]           CORRECT_CNT_B,
@@ -95,7 +95,7 @@ final_diatance final_diatanceEx01(                       //计算1us一次原始
     .rst             (    rst_n                 ),
     .tola_en         (    tola_en               ),
     .total_data      (    total_data            ),
-    .dac_value       (    dac_value             ),
+    .dac_value       (    dac_value_adjust      ),
     .ABSOLUTE_CNT    (    ABSOLUTE_CNT          ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B         ),
     .CORRECT_CNT_M   (    CORRECT_CNT_M         ),

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2' in SOPC Builder design 'kernel'
  * SOPC Builder design path: ../../kernel.sopcinfo
  *
- * Generated: Thu Dec 12 14:47:40 CST 2019
+ * Generated: Fri Jan 17 14:30:27 CST 2020
  */
 
 /*
@@ -85,14 +85,6 @@
 #define ALT_RODATA_DEVICE ONCHIP_MEMORY
 #define ALT_RWDATA_DEVICE ONCHIP_MEMORY
 #define ALT_TEXT_DEVICE ONCHIP_MEMORY
-
-
-/*
- * Initialization code at the reset address is allowed (e.g. no external bootloader).
- *
- */
-
-#define ALT_ALLOW_CODE_AT_RESET
 
 
 /*

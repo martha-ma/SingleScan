@@ -13,21 +13,16 @@ module da_adjust(
 //localparam                       LOW_DA = 310;
 //localparam                       k_DA = 2;
 wire [9:0]     dac_real;
-reg  [9:0]     dac_change/* synthesis keep */;
+wire [9:0]     dac_change/* synthesis keep */;
 wire [15:0]    after_distance/* synthesis keep */;
-reg  [9:0]     dac_base/* synthesis keep */;
+wire [9:0]     dac_base/* synthesis keep */;
 wire [15:0]    k_DA/* synthesis keep */;
 
-//assign dac_base=dac_max-dac_min;
+assign dac_base=dac_max-dac_min;
 
 
-//assign dac_real=dac_value[11:4];
-//assign dac_change=dac_value[11:4]-dac_min;
-always@(posedge clk )
-begin
-    dac_change=dac_value[11:4]-dac_min;
-	 dac_base=dac_max-dac_min;
-end
+assign dac_real=dac_value[11:4];
+assign dac_change=dac_real-dac_min;
 
 always@(posedge clk or negedge rst)
 begin
