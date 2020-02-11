@@ -54,10 +54,10 @@ cycle_ctrlEx01
 
 send_data       send_dataEx01
 (
-    .clk             (    clk_125m        ),
+    .clk             (    clk_250m_r0     ),
     .rst_n           (    rst_n           ),
     .send_en         (    send_en         ),
-    .send_data       (    send_data       )
+    .send_data       (    send_data      )
 );
 
 //send_data       send_dataEx02

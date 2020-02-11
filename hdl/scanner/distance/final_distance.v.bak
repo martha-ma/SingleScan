@@ -42,10 +42,10 @@ module final_diatance(                                                          
     );
 //      reg             [17:0]                          distance;
         //分别给4个模块的回波值
-//        reg             [399:0]                         total_data_1;
-//        reg             [399:0]                         total_data_2;
-//        reg             [399:0]                         total_data_3;
-//        reg             [399:0]                         total_data_4;
+        reg             [399:0]                         total_data_1;
+        reg             [399:0]                         total_data_2;
+        reg             [399:0]                         total_data_3;
+        reg             [399:0]                         total_data_4;
 
         reg             [1:0]                           sel;                    //400个点输入选择依据
         reg             [1:0]                           state;                  //距离读取选择依据
@@ -78,297 +78,154 @@ module final_diatance(                                                          
 
         wire                                            valid_m;
 
-		  
-localparam              IDLE        = 0;
-localparam              START1      = 1; //开始ping-pong操作，第一模块分布
-localparam              START2      = 2; //第二模块分布
-localparam              START3      = 3; //第三模块分布
-localparam              START4      = 4; //第四模块分布
-localparam              OVER        = 5;
-(* KEEP = "TRUE" *)reg     [OVER:00]       cs = 'd1, ns = 'd1;
-reg     [15:00]         state_cnt, state_cnt_n;
 
-
-always @(posedge clk or negedge rst)
+always@(posedge clk or negedge rst)                                     //选择数
 begin
-    if(~rst)
-        cs <= 'd1;
+    if(!rst)
+    begin
+        sel<=2'd0;
+    end
     else
-        cs <= ns;
+    begin
+        if(tola_en)
+        begin
+            sel<=sel+1'b1;
+            if(sel>2'd3)
+            sel<=2'd0;
+        end
+    end
 end
 
-/*
-* 1. 等待tola_en启动状态机
-* 2. 平均分配四模块计算数值，进行4次ping-pong操作
-*/
-always @(*)
+always@(posedge clk)                                                      //接收数据分模块处理
 begin
-    ns = 'd0;
-    case(1'b1)
-        cs[IDLE]:
-        begin
-            if(tola_en)
-                ns[START1] = 1'b1;
-            else
-                ns[IDLE] = 1'b1;
-        end
-        cs[START1]:            //第一模块
-        begin
-            if(tola_en)
-                ns[START2] = 1'b1;
-            else
-                ns[START1] = 1'b1;
-        end
-        cs[START2]:
-        begin
-            if(tola_en)         // 第二模块
-                ns[START3] = 1'b1;
-            else
-                ns[START2] = 1'b1;
-        end
-        cs[START3]:             //第三模块
-        begin
-            if(tola_en)
-                ns[START4] = 1'b1;
-            else
-                ns[START3] = 1'b1;
-        end 
-        cs[START4]:             //第四模块
-        begin
-            if(state_cnt == 12)
-                ns[OVER] = 1'b1;
-            else
-                ns[START4] = 1'b1;
-        end
-        cs[OVER]:
-        begin
-            ns[OVER] = 1'b1;
-        end
-        default:
-            ns[IDLE] = 1'b1;
+    case(sel)
+        2'd0:
+            begin
+                if(tola_en_4)
+                begin
+                    total_data_4 <= total_data;
+                end
+                else if(valid_m)
+                begin
+                    mult_pluse <= mult_pluse_1;
+					mult_distance<=mult_distance_1;
+						  
+                end
+            end
+        2'd1:
+            begin
+                if(tola_en_1)
+                begin
+                    total_data_1 <= total_data;
+                end
+                else if(valid_m)
+                begin
+                    mult_pluse <= mult_pluse_2;
+                    mult_distance <= mult_distance_2;
+                end
+
+            end
+        2'd2:
+            begin
+                if(tola_en_2)
+                begin
+                    total_data_2 <= total_data;
+                end
+                else if(valid_m)
+                begin
+                    mult_pluse <= mult_pluse_3;
+                    mult_distance <= mult_distance_3;
+                end
+
+            end
+        2'd3:
+            begin
+                if(tola_en_3)
+                begin
+                    total_data_3 <= total_data;
+                end
+                else if(valid_m)
+                begin
+                    mult_pluse <= mult_pluse_4;
+                    mult_distance <= mult_distance_4;
+                end
+            end
+        default:;
     endcase
 end
-
-
-always @ (posedge clk or negedge rst)
+always@(posedge clk or negedge rst)
 begin
-    if(~rst)
-        state_cnt <= 0;
+    if(!rst)
+    begin
+        tola_en_1<=1'b0;
+        tola_en_2<=1'b0;
+        tola_en_3<=1'b0;
+        tola_en_4<=1'b0;
+        state<=2'd0;
+    end
     else
-        state_cnt <= state_cnt_n;
+    begin
+    case(state)
+    2'd0:
+        begin
+            if(tola_en)
+            begin
+                tola_en_1<=1'b1;
+                state<=state+1'b1;
+            end
+            else
+            begin
+                tola_en_1<=1'b0;
+                state<=2'd0;
+                tola_en_4<=1'b0;
+            end
+        end
+    2'd1:
+        begin
+            if(tola_en)
+            begin
+                tola_en_2<=1'b1;
+                state<=state+1'b1;
+            end
+            else
+            begin
+                tola_en_2<=1'b0;
+                tola_en_1<=1'b0;
+                state<=2'd1;
+            end
+        end
+    2'd2:
+        begin
+            if(tola_en)
+            begin
+                tola_en_3<=1'b1;
+                state<=state+1'b1;
+            end
+            else
+            begin
+                tola_en_3<=1'b0;
+                tola_en_2<=1'b0;
+                state<=2'd2;
+            end
+        end
+    2'd3:
+        begin
+            if(tola_en)
+            begin
+                tola_en_4<=1'b1;
+                state<=2'd0;
+            end
+            else
+            begin
+                tola_en_4<=1'b0;
+                tola_en_3<=1'b0;
+                state<=2'd3;
+            end
+        end
+    default:;
+    endcase
+    end
 end
-
-always @ (*)
-begin
-    if(~rst)
-        state_cnt_n <= 0;
-    else if (cs != ns)
-        state_cnt_n <= 0;
-    else
-        state_cnt_n <= state_cnt + 1'b1;
-end		  
-		  
-		  
-always @ (posedge clk or negedge rst) //赋值接收使能信号
-begin
-    if(~rst)
-	 begin
-	    tola_en_1<=1'b0;
-	    tola_en_2<=1'b0;
-       tola_en_3<=1'b0;
-	    tola_en_4<=1'b0;
-	 end
-	 else
-	 begin
-	    tola_en_1 <= (ns[START1] & cs[START1]);
-		 tola_en_2 <= (ns[START2] & cs[START2]);
-	    tola_en_3 <= (ns[START3] & cs[START3]);
-	    tola_en_4 <= (ns[START4] & cs[START4]);
-	 end
-end
-
-always @ (posedge clk or negedge rst)
-begin
-    if(~rst)
-	 begin
-	     mult_pluse <= 40'd0;
-		  mult_distance<=80'd0;
-	 end
-	 else
-	 begin
-	    if(cs[START1] && valid_m)
-		 begin
-		    mult_pluse <= mult_pluse_2;
-		    mult_distance <= mult_distance_2;
-		 end
-		 if(cs[START2])
-		 begin
-		    mult_pluse <= mult_pluse_3;
-		    mult_distance <= mult_distance_3;
-		 end
-		 if(cs[START3])
-		 begin
-		    mult_pluse <= mult_pluse_4;
-		    mult_distance <= mult_distance_4;
-		 end
-		 if(cs[START4])
-		 begin
-		    mult_pluse <= mult_pluse_1;
-		    mult_distance <= mult_distance_1;
-		 end
-	 end
-end
-
-		    
-		  
-
-//always@(posedge clk or negedge rst)                                     //选择数
-//begin
-//    if(!rst)
-//    begin
-//        sel<=2'd0;
-//    end
-//    else
-//    begin
-//        if(tola_en)
-//        begin
-//            sel<=sel+1'b1;
-//            if(sel>2'd3)
-//            sel<=2'd0;
-//        end
-//    end
-//end
-//
-//always@(posedge clk)                                                      //接收数据分模块处理
-//begin
-//    case(sel)
-//        2'd0:
-//            begin
-//                if(tola_en_4)
-//                begin
-//                    total_data_4 <= total_data;
-//                end
-//                else if(valid_m)
-//                begin
-//                    mult_pluse <= mult_pluse_1;
-//					mult_distance<=mult_distance_1;
-//						  
-//                end
-//            end
-//        2'd1:
-//            begin
-//                if(tola_en_1)
-//                begin
-//                    total_data_1 <= total_data;
-//                end
-//                else if(valid_m)
-//                begin
-//                    mult_pluse <= mult_pluse_2;
-//                    mult_distance <= mult_distance_2;
-//                end
-//
-//            end
-//        2'd2:
-//            begin
-//                if(tola_en_2)
-//                begin
-//                    total_data_2 <= total_data;
-//                end
-//                else if(valid_m)
-//                begin
-//                    mult_pluse <= mult_pluse_3;
-//                    mult_distance <= mult_distance_3;
-//                end
-//
-//            end
-//        2'd3:
-//            begin
-//                if(tola_en_3)
-//                begin
-//                    total_data_3 <= total_data;
-//                end
-//                else if(valid_m)
-//                begin
-//                    mult_pluse <= mult_pluse_4;
-//                    mult_distance <= mult_distance_4;
-//                end
-//            end
-//        default:;
-//    endcase
-//end
-//always@(posedge clk or negedge rst)
-//begin
-//    if(!rst)
-//    begin
-//        tola_en_1<=1'b0;
-//        tola_en_2<=1'b0;
-//        tola_en_3<=1'b0;
-//        tola_en_4<=1'b0;
-//        state<=2'd0;
-//    end
-//    else
-//    begin
-//    case(state)
-//    2'd0:
-//        begin
-//            if(tola_en)
-//            begin
-//                tola_en_1<=1'b1;
-//                state<=state+1'b1;
-//            end
-//            else
-//            begin
-//                tola_en_1<=1'b0;
-//                state<=2'd0;
-//                tola_en_4<=1'b0;
-//            end
-//        end
-//    2'd1:
-//        begin
-//            if(tola_en)
-//            begin
-//                tola_en_2<=1'b1;
-//                state<=state+1'b1;
-//            end
-//            else
-//            begin
-//                tola_en_2<=1'b0;
-//                tola_en_1<=1'b0;
-//                state<=2'd1;
-//            end
-//        end
-//    2'd2:
-//        begin
-//            if(tola_en)
-//            begin
-//                tola_en_3<=1'b1;
-//                state<=state+1'b1;
-//            end
-//            else
-//            begin
-//                tola_en_3<=1'b0;
-//                tola_en_2<=1'b0;
-//                state<=2'd2;
-//            end
-//        end
-//    2'd3:
-//        begin
-//            if(tola_en)
-//            begin
-//                tola_en_4<=1'b1;
-//                state<=2'd0;
-//            end
-//            else
-//            begin
-//                tola_en_4<=1'b0;
-//                tola_en_3<=1'b0;
-//                state<=2'd3;
-//            end
-//        end
-//    default:;
-//    endcase
-//    end
-//end
 
 
 
@@ -381,7 +238,7 @@ distance_module distance_moduleEx01(
     .clk             (    clk               ),
     .rst             (    rst               ),
     .tola_en         (    tola_en_1         ),
-    .total_data      (    total_data        ),
+    .total_data      (    total_data_1      ),
     .NOISE_CNT       (    NOISE_CNT         ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
@@ -410,7 +267,7 @@ distance_module distance_moduleEx02(
     .clk             (    clk               ),
     .rst             (    rst               ),
     .tola_en         (    tola_en_2         ),
-    .total_data      (    total_data        ),
+    .total_data      (    total_data_2      ),
     .NOISE_CNT       (    NOISE_CNT         ),
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
@@ -439,7 +296,7 @@ distance_module distance_moduleEx03(
     .clk             (    clk               ),
     .rst             (    rst               ),
     .tola_en         (    tola_en_3         ),
-    .total_data      (    total_data        ),
+    .total_data      (    total_data_3      ),
     .NOISE_CNT       (    NOISE_CNT         ),
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
@@ -468,7 +325,7 @@ distance_module distance_moduleEx04(
     .clk             (    clk               ),
     .rst             (    rst               ),
     .tola_en         (    tola_en_4         ),
-    .total_data      (    total_data        ),
+    .total_data      (    total_data_4      ),
     .NOISE_CNT       (    NOISE_CNT         ),
     .CORRECT_CNT_N   (    CORRECT_CNT_N     ),
     .CORRECT_CNT_B   (    CORRECT_CNT_B     ),
