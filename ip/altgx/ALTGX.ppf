@@ -13,12 +13,12 @@
 <pin name="rx_digitalreset[0..0]" direction="input" scope="external"  />
 <pin name="rx_locktodata[0..0]" direction="input" scope="external"  />
 <pin name="rx_locktorefclk[0..0]" direction="input" scope="external"  />
-<pin name="tx_datain[15..0]" direction="input" scope="external"  />
+<pin name="tx_datain[7..0]" direction="input" scope="external"  />
 <pin name="tx_digitalreset[0..0]" direction="input" scope="external"  />
 <pin name="pll_locked[0..0]" direction="output" scope="external"  />
 <pin name="reconfig_fromgxb[4..0]" direction="output" scope="external"  />
 <pin name="rx_clkout[0..0]" direction="output" scope="external"  />
-<pin name="rx_dataout[15..0]" direction="output" scope="external"  />
+<pin name="rx_dataout[7..0]" direction="output" scope="external"  />
 <pin name="rx_freqlocked[0..0]" direction="output" scope="external"  />
 <pin name="tx_clkout[0..0]" direction="output" scope="external"  />
 <pin name="tx_dataout[0..0]" direction="output" scope="external"  />

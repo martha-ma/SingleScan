@@ -243,13 +243,13 @@ end
 mul_z mul_zEx01(  
     .clock                  ( clk                       ),              //测量距离  单位：毫米  使用测距方程(t1*75+t2*75)/2
     .dataa                  ( time_1                    ),                              
-    .datab                  ( 20'd300                   ),
+    .datab                  ( 20'd75                    ),
     .result                 ( tar_dis_1                 )
 );      
 mul_z mul_zEx02(                                                        //测量距离
     .clock                  ( clk                       ),
     .dataa                  ( time_2                    ),                              
-    .datab                  ( 20'd300                   ),
+    .datab                  ( 20'd75                    ),
     .result                 ( tar_dis_2                 )
 );
 

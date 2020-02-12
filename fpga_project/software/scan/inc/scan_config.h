@@ -13,7 +13,7 @@
 #define PNP (0x02)
 
 #define EEPROM_PAGE_SIZE (256)
-#define FPGA_VERSION "4.12"
+#define FPGA_VERSION "4.13"
 #define NIOS_VERSION FPGA_VERSION
 
 #define DEV_TYPE "SCA01-011331525P"

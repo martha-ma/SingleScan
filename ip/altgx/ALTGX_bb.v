@@ -64,12 +64,12 @@ module ALTGX (
 	input	[0:0]  rx_digitalreset;
 	input	[0:0]  rx_locktodata;
 	input	[0:0]  rx_locktorefclk;
-	input	[15:0]  tx_datain;
+	input	[7:0]  tx_datain;
 	input	[0:0]  tx_digitalreset;
 	output	[0:0]  pll_locked;
 	output	[4:0]  reconfig_fromgxb;
 	output	[0:0]  rx_clkout;
-	output	[15:0]  rx_dataout;
+	output	[7:0]  rx_dataout;
 	output	[0:0]  rx_freqlocked;
 	output	[0:0]  tx_clkout;
 	output	[0:0]  tx_dataout;
@@ -88,16 +88,16 @@ endmodule
 // Retrieval info: PRIVATE: RECONFIG_SUBPROTOCOL STRING "none"
 // Retrieval info: PRIVATE: RX_ENABLE_DC_COUPLING STRING "false"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
-// Retrieval info: PRIVATE: WIZ_BASE_DATA_RATE STRING "2000"
+// Retrieval info: PRIVATE: WIZ_BASE_DATA_RATE STRING "1000"
 // Retrieval info: PRIVATE: WIZ_BASE_DATA_RATE_ENABLE STRING "0"
-// Retrieval info: PRIVATE: WIZ_DATA_RATE STRING "2000"
+// Retrieval info: PRIVATE: WIZ_DATA_RATE STRING "1000"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INCLK_FREQ_ARRAY STRING "100"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_A STRING "2000"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_A_UNIT STRING "Mbps"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_B STRING "100"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_B_UNIT STRING "MHz"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_SELECTION NUMERIC "0"
-// Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK0_FREQ STRING "125.0"
+// Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK0_FREQ STRING "50.0"
 // Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK0_PROTOCOL STRING "Basic"
 // Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK1_FREQ STRING "250"
 // Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK1_PROTOCOL STRING "Basic"
@@ -115,8 +115,8 @@ endmodule
 // Retrieval info: PRIVATE: WIZ_EQUALIZER_CTRL_SETTING NUMERIC "0"
 // Retrieval info: PRIVATE: WIZ_FORCE_DEFAULT_SETTINGS NUMERIC "0"
 // Retrieval info: PRIVATE: WIZ_INCLK_FREQ STRING "50.0"
-// Retrieval info: PRIVATE: WIZ_INCLK_FREQ_ARRAY STRING "50.0 51.282051 52.631578 54.054054 55.555555 57.142857 58.823529 60.60606 62.5 64.516129 66.666666 68.965517 71.428571 74.074074 75.0 76.923076 78.947368 80.0 81.081081 83.333333"
-// Retrieval info: PRIVATE: WIZ_INPUT_A STRING "2000"
+// Retrieval info: PRIVATE: WIZ_INCLK_FREQ_ARRAY STRING "50.0 51.282051 51.724137 52.631578 53.571428 54.054054 55.555555 57.142857 57.692307 58.823529 60.0 60.60606 62.5 64.102564 64.516129 65.217391 65.789473 66.666666 67.567567 68.181818"
+// Retrieval info: PRIVATE: WIZ_INPUT_A STRING "1000"
 // Retrieval info: PRIVATE: WIZ_INPUT_A_UNIT STRING "Mbps"
 // Retrieval info: PRIVATE: WIZ_INPUT_B STRING "50.0"
 // Retrieval info: PRIVATE: WIZ_INPUT_B_UNIT STRING "MHz"
@@ -125,7 +125,7 @@ endmodule
 // Retrieval info: PRIVATE: WIZ_SUBPROTOCOL STRING "None"
 // Retrieval info: PRIVATE: WIZ_WORD_ALIGN_FLIP_PATTERN STRING "0"
 // Retrieval info: PARAMETER: STARTING_CHANNEL_NUMBER NUMERIC "0"
-// Retrieval info: CONSTANT: EFFECTIVE_DATA_RATE STRING "2000 Mbps"
+// Retrieval info: CONSTANT: EFFECTIVE_DATA_RATE STRING "1000 Mbps"
 // Retrieval info: CONSTANT: ENABLE_LC_TX_PLL STRING "false"
 // Retrieval info: CONSTANT: ENABLE_PLL_INCLK_ALT_DRIVE_RX_CRU STRING "true"
 // Retrieval info: CONSTANT: ENABLE_PLL_INCLK_DRIVE_RX_CRU STRING "true"
@@ -153,12 +153,12 @@ endmodule
 // Retrieval info: CONSTANT: RX_ALLOW_PIPE_POLARITY_INVERSION STRING "false"
 // Retrieval info: CONSTANT: RX_BITSLIP_ENABLE STRING "true"
 // Retrieval info: CONSTANT: RX_BYTE_ORDERING_MODE STRING "NONE"
-// Retrieval info: CONSTANT: RX_CHANNEL_WIDTH NUMERIC "16"
+// Retrieval info: CONSTANT: RX_CHANNEL_WIDTH NUMERIC "8"
 // Retrieval info: CONSTANT: RX_COMMON_MODE STRING "0.82v"
 // Retrieval info: CONSTANT: RX_CRU_INCLOCK0_PERIOD NUMERIC "20000"
 // Retrieval info: CONSTANT: RX_DATAPATH_LOW_LATENCY_MODE STRING "true"
 // Retrieval info: CONSTANT: RX_DATAPATH_PROTOCOL STRING "basic"
-// Retrieval info: CONSTANT: RX_DATA_RATE NUMERIC "2000"
+// Retrieval info: CONSTANT: RX_DATA_RATE NUMERIC "1000"
 // Retrieval info: CONSTANT: RX_DATA_RATE_REMAINDER NUMERIC "0"
 // Retrieval info: CONSTANT: RX_DIGITALRESET_PORT_WIDTH NUMERIC "1"
 // Retrieval info: CONSTANT: RX_ENABLE_BIT_REVERSAL STRING "false"
@@ -178,15 +178,15 @@ endmodule
 // Retrieval info: CONSTANT: RX_USE_CORECLK STRING "false"
 // Retrieval info: CONSTANT: RX_USE_DESERIALIZER_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: RX_USE_DESKEW_FIFO STRING "false"
-// Retrieval info: CONSTANT: RX_USE_DOUBLE_DATA_MODE STRING "true"
+// Retrieval info: CONSTANT: RX_USE_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: TRANSMITTER_TERMINATION STRING "oct_100_ohms"
 // Retrieval info: CONSTANT: TX_8B_10B_MODE STRING "none"
 // Retrieval info: CONSTANT: TX_ALLOW_POLARITY_INVERSION STRING "false"
-// Retrieval info: CONSTANT: TX_CHANNEL_WIDTH NUMERIC "16"
+// Retrieval info: CONSTANT: TX_CHANNEL_WIDTH NUMERIC "8"
 // Retrieval info: CONSTANT: TX_CLKOUT_WIDTH NUMERIC "1"
 // Retrieval info: CONSTANT: TX_COMMON_MODE STRING "0.65v"
 // Retrieval info: CONSTANT: TX_DATAPATH_LOW_LATENCY_MODE STRING "true"
-// Retrieval info: CONSTANT: TX_DATA_RATE NUMERIC "2000"
+// Retrieval info: CONSTANT: TX_DATA_RATE NUMERIC "1000"
 // Retrieval info: CONSTANT: TX_DATA_RATE_REMAINDER NUMERIC "0"
 // Retrieval info: CONSTANT: TX_DIGITALRESET_PORT_WIDTH NUMERIC "1"
 // Retrieval info: CONSTANT: TX_ENABLE_BIT_REVERSAL STRING "false"
@@ -198,7 +198,7 @@ endmodule
 // Retrieval info: CONSTANT: TX_SLEW_RATE STRING "low"
 // Retrieval info: CONSTANT: TX_TRANSMIT_PROTOCOL STRING "basic"
 // Retrieval info: CONSTANT: TX_USE_CORECLK STRING "false"
-// Retrieval info: CONSTANT: TX_USE_DOUBLE_DATA_MODE STRING "true"
+// Retrieval info: CONSTANT: TX_USE_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: TX_USE_SERIALIZER_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: USE_CALIBRATION_BLOCK STRING "true"
 // Retrieval info: CONSTANT: VOD_CTRL_SETTING NUMERIC "6"
@@ -207,13 +207,13 @@ endmodule
 // Retrieval info: CONSTANT: iqtxrxclk_allowed STRING ""
 // Retrieval info: CONSTANT: number_of_quads NUMERIC "1"
 // Retrieval info: CONSTANT: pll_divide_by STRING "1"
-// Retrieval info: CONSTANT: pll_multiply_by STRING "20"
+// Retrieval info: CONSTANT: pll_multiply_by STRING "10"
 // Retrieval info: CONSTANT: reconfig_calibration STRING "true"
 // Retrieval info: CONSTANT: reconfig_fromgxb_port_width NUMERIC "5"
 // Retrieval info: CONSTANT: reconfig_pll_control_width NUMERIC "1"
 // Retrieval info: CONSTANT: reconfig_togxb_port_width NUMERIC "4"
 // Retrieval info: CONSTANT: rx_deskew_pattern STRING "0"
-// Retrieval info: CONSTANT: rx_dwidth_factor NUMERIC "2"
+// Retrieval info: CONSTANT: rx_dwidth_factor NUMERIC "1"
 // Retrieval info: CONSTANT: rx_enable_second_order_loop STRING "false"
 // Retrieval info: CONSTANT: rx_loop_1_digital_filter NUMERIC "8"
 // Retrieval info: CONSTANT: rx_signal_detect_loss_threshold STRING "14"
@@ -222,7 +222,7 @@ endmodule
 // Retrieval info: CONSTANT: rx_word_aligner_num_byte NUMERIC "1"
 // Retrieval info: CONSTANT: top_module_name STRING "ALTGX"
 // Retrieval info: CONSTANT: tx_bitslip_enable STRING "FALSE"
-// Retrieval info: CONSTANT: tx_dwidth_factor NUMERIC "2"
+// Retrieval info: CONSTANT: tx_dwidth_factor NUMERIC "1"
 // Retrieval info: CONSTANT: tx_use_external_termination STRING "false"
 // Retrieval info: USED_PORT: cal_blk_clk 0 0 0 0 INPUT NODEFVAL "cal_blk_clk"
 // Retrieval info: USED_PORT: gxb_powerdown 0 0 1 0 INPUT NODEFVAL "gxb_powerdown[0..0]"
@@ -235,13 +235,13 @@ endmodule
 // Retrieval info: USED_PORT: rx_analogreset 0 0 1 0 INPUT NODEFVAL "rx_analogreset[0..0]"
 // Retrieval info: USED_PORT: rx_clkout 0 0 1 0 OUTPUT NODEFVAL "rx_clkout[0..0]"
 // Retrieval info: USED_PORT: rx_datain 0 0 1 0 INPUT NODEFVAL "rx_datain[0..0]"
-// Retrieval info: USED_PORT: rx_dataout 0 0 16 0 OUTPUT NODEFVAL "rx_dataout[15..0]"
+// Retrieval info: USED_PORT: rx_dataout 0 0 8 0 OUTPUT NODEFVAL "rx_dataout[7..0]"
 // Retrieval info: USED_PORT: rx_digitalreset 0 0 1 0 INPUT NODEFVAL "rx_digitalreset[0..0]"
 // Retrieval info: USED_PORT: rx_freqlocked 0 0 1 0 OUTPUT NODEFVAL "rx_freqlocked[0..0]"
 // Retrieval info: USED_PORT: rx_locktodata 0 0 1 0 INPUT NODEFVAL "rx_locktodata[0..0]"
 // Retrieval info: USED_PORT: rx_locktorefclk 0 0 1 0 INPUT NODEFVAL "rx_locktorefclk[0..0]"
 // Retrieval info: USED_PORT: tx_clkout 0 0 1 0 OUTPUT NODEFVAL "tx_clkout[0..0]"
-// Retrieval info: USED_PORT: tx_datain 0 0 16 0 INPUT NODEFVAL "tx_datain[15..0]"
+// Retrieval info: USED_PORT: tx_datain 0 0 8 0 INPUT NODEFVAL "tx_datain[7..0]"
 // Retrieval info: USED_PORT: tx_dataout 0 0 1 0 OUTPUT NODEFVAL "tx_dataout[0..0]"
 // Retrieval info: USED_PORT: tx_digitalreset 0 0 1 0 INPUT NODEFVAL "tx_digitalreset[0..0]"
 // Retrieval info: CONNECT: @cal_blk_clk 0 0 0 0 cal_blk_clk 0 0 0 0
@@ -255,12 +255,12 @@ endmodule
 // Retrieval info: CONNECT: @rx_digitalreset 0 0 1 0 rx_digitalreset 0 0 1 0
 // Retrieval info: CONNECT: @rx_locktodata 0 0 1 0 rx_locktodata 0 0 1 0
 // Retrieval info: CONNECT: @rx_locktorefclk 0 0 1 0 rx_locktorefclk 0 0 1 0
-// Retrieval info: CONNECT: @tx_datain 0 0 16 0 tx_datain 0 0 16 0
+// Retrieval info: CONNECT: @tx_datain 0 0 8 0 tx_datain 0 0 8 0
 // Retrieval info: CONNECT: @tx_digitalreset 0 0 1 0 tx_digitalreset 0 0 1 0
 // Retrieval info: CONNECT: pll_locked 0 0 1 0 @pll_locked 0 0 1 0
 // Retrieval info: CONNECT: reconfig_fromgxb 0 0 5 0 @reconfig_fromgxb 0 0 5 0
 // Retrieval info: CONNECT: rx_clkout 0 0 1 0 @rx_clkout 0 0 1 0
-// Retrieval info: CONNECT: rx_dataout 0 0 16 0 @rx_dataout 0 0 16 0
+// Retrieval info: CONNECT: rx_dataout 0 0 8 0 @rx_dataout 0 0 8 0
 // Retrieval info: CONNECT: rx_freqlocked 0 0 1 0 @rx_freqlocked 0 0 1 0
 // Retrieval info: CONNECT: tx_clkout 0 0 1 0 @tx_clkout 0 0 1 0
 // Retrieval info: CONNECT: tx_dataout 0 0 1 0 @tx_dataout 0 0 1 0

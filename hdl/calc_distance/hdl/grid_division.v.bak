@@ -38,7 +38,7 @@ module grid_division
     input       [47:00]         tannis2_left_rddata
 );
 
-localparam              MAX_VALUE_ADDR  = 160;
+localparam              MAX_VALUE_ADDR  = 80;
 localparam              PHY_ZERO_CNT    = 34;
 localparam              END_STEP_CNT    = 43 ; // 最后一个8度数据不写入，后续不好处理
 localparam              DEGREE08_NUM    = 24;

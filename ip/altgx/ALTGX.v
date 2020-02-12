@@ -33,7 +33,7 @@
 //refer to the applicable agreement for further details.
 
 
-//alt_c3gxb CBX_AUTO_BLACKBOX="ALL" device_family="Cyclone IV GX" effective_data_rate="2000 Mbps" equalization_setting=1 equalizer_dcgain_setting=0 gxb_powerdown_width=1 loopback_mode="none" number_of_channels=1 number_of_quads=1 operation_mode="duplex" pll_bandwidth_type="auto" pll_control_width=1 pll_divide_by="1" pll_inclk_period=20000 pll_multiply_by="20" pll_pfd_fb_mode="internal" preemphasis_ctrl_1stposttap_setting=0 protocol="basic" receiver_termination="OCT_100_OHMS" reconfig_calibration="true" reconfig_dprio_mode=0 reconfig_pll_control_width=1 rx_8b_10b_mode="none" rx_allow_align_polarity_inversion="false" rx_allow_pipe_polarity_inversion="false" rx_bitslip_enable="true" rx_byte_ordering_mode="none" rx_channel_width=16 rx_common_mode="0.82v" rx_datapath_low_latency_mode="true" rx_datapath_protocol="basic" rx_deskew_pattern="0" rx_digitalreset_port_width=1 rx_dwidth_factor=2 rx_enable_bit_reversal="false" rx_enable_lock_to_data_sig="true" rx_enable_lock_to_refclk_sig="true" rx_enable_second_order_loop="false" rx_enable_self_test_mode="false" rx_flip_rx_out="false" rx_force_signal_detect="true" rx_loop_1_digital_filter=8 rx_phfiforegmode="false" rx_ppmselect=8 rx_rate_match_fifo_mode="none" rx_run_length=40 rx_run_length_enable="true" rx_signal_detect_loss_threshold=14 rx_signal_detect_threshold=8 rx_signal_detect_valid_threshold=1 rx_use_clkout="true" rx_use_coreclk="false" rx_use_deskew_fifo="false" rx_use_double_data_mode="true" rx_use_external_termination="false" rx_word_aligner_num_byte=1 starting_channel_number=0 top_module_name="ALTGX" transmitter_termination="OCT_100_OHMS" tx_8b_10b_mode="none" tx_allow_polarity_inversion="false" tx_bitslip_enable="false" tx_channel_width=16 tx_clkout_width=1 tx_common_mode="0.65v" tx_datapath_low_latency_mode="true" tx_digitalreset_port_width=1 tx_dwidth_factor=2 tx_enable_bit_reversal="false" tx_enable_self_test_mode="false" tx_flip_tx_in="false" tx_slew_rate="low" tx_transmit_protocol="basic" tx_use_coreclk="false" tx_use_double_data_mode="true" tx_use_external_termination="false" use_calibration_block="true" vod_ctrl_setting=6 cal_blk_clk gxb_powerdown pll_areset pll_inclk pll_locked reconfig_clk reconfig_fromgxb reconfig_togxb rx_analogreset rx_clkout rx_datain rx_dataout rx_digitalreset rx_freqlocked rx_locktodata rx_locktorefclk tx_clkout tx_datain tx_dataout tx_digitalreset intended_device_family="Cyclone IV GX"
+//alt_c3gxb CBX_AUTO_BLACKBOX="ALL" device_family="Cyclone IV GX" effective_data_rate="1000 Mbps" equalization_setting=1 equalizer_dcgain_setting=0 gxb_powerdown_width=1 loopback_mode="none" number_of_channels=1 number_of_quads=1 operation_mode="duplex" pll_bandwidth_type="auto" pll_control_width=1 pll_divide_by="1" pll_inclk_period=20000 pll_multiply_by="10" pll_pfd_fb_mode="internal" preemphasis_ctrl_1stposttap_setting=0 protocol="basic" receiver_termination="OCT_100_OHMS" reconfig_calibration="true" reconfig_dprio_mode=0 reconfig_pll_control_width=1 rx_8b_10b_mode="none" rx_allow_align_polarity_inversion="false" rx_allow_pipe_polarity_inversion="false" rx_bitslip_enable="true" rx_byte_ordering_mode="none" rx_channel_width=8 rx_common_mode="0.82v" rx_datapath_low_latency_mode="true" rx_datapath_protocol="basic" rx_deskew_pattern="0" rx_digitalreset_port_width=1 rx_dwidth_factor=1 rx_enable_bit_reversal="false" rx_enable_lock_to_data_sig="true" rx_enable_lock_to_refclk_sig="true" rx_enable_second_order_loop="false" rx_enable_self_test_mode="false" rx_flip_rx_out="false" rx_force_signal_detect="true" rx_loop_1_digital_filter=8 rx_phfiforegmode="false" rx_ppmselect=8 rx_rate_match_fifo_mode="none" rx_run_length=40 rx_run_length_enable="true" rx_signal_detect_loss_threshold=14 rx_signal_detect_threshold=8 rx_signal_detect_valid_threshold=1 rx_use_clkout="true" rx_use_coreclk="false" rx_use_deskew_fifo="false" rx_use_double_data_mode="false" rx_use_external_termination="false" rx_word_aligner_num_byte=1 starting_channel_number=0 top_module_name="ALTGX" transmitter_termination="OCT_100_OHMS" tx_8b_10b_mode="none" tx_allow_polarity_inversion="false" tx_bitslip_enable="false" tx_channel_width=8 tx_clkout_width=1 tx_common_mode="0.65v" tx_datapath_low_latency_mode="true" tx_digitalreset_port_width=1 tx_dwidth_factor=1 tx_enable_bit_reversal="false" tx_enable_self_test_mode="false" tx_flip_tx_in="false" tx_slew_rate="low" tx_transmit_protocol="basic" tx_use_coreclk="false" tx_use_double_data_mode="false" tx_use_external_termination="false" use_calibration_block="true" vod_ctrl_setting=6 cal_blk_clk gxb_powerdown pll_areset pll_inclk pll_locked reconfig_clk reconfig_fromgxb reconfig_togxb rx_analogreset rx_clkout rx_datain rx_dataout rx_digitalreset rx_freqlocked rx_locktodata rx_locktorefclk tx_clkout tx_datain tx_dataout tx_digitalreset intended_device_family="Cyclone IV GX"
 //VERSION_BEGIN 18.0 cbx_alt_c3gxb 2018:04:24:18:04:18:SJ cbx_altclkbuf 2018:04:24:18:04:18:SJ cbx_altiobuf_bidir 2018:04:24:18:04:18:SJ cbx_altiobuf_in 2018:04:24:18:04:18:SJ cbx_altiobuf_out 2018:04:24:18:04:18:SJ cbx_altpll 2018:04:24:18:04:18:SJ cbx_cycloneii 2018:04:24:18:04:18:SJ cbx_lpm_add_sub 2018:04:24:18:04:18:SJ cbx_lpm_compare 2018:04:24:18:04:18:SJ cbx_lpm_counter 2018:04:24:18:04:18:SJ cbx_lpm_decode 2018:04:24:18:04:18:SJ cbx_lpm_mux 2018:04:24:18:04:18:SJ cbx_mgl 2018:04:24:18:08:49:SJ cbx_nadder 2018:04:24:18:04:18:SJ cbx_stingray 2018:04:24:18:04:18:SJ cbx_stratix 2018:04:24:18:04:18:SJ cbx_stratixii 2018:04:24:18:04:18:SJ cbx_stratixiii 2018:04:24:18:04:18:SJ cbx_stratixv 2018:04:24:18:04:18:SJ cbx_util_mgl 2018:04:24:18:04:18:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -76,13 +76,13 @@ module  ALTGX_alt_c3gxb
 	input   [0:0]  rx_analogreset;
 	output   [0:0]  rx_clkout;
 	input   [0:0]  rx_datain;
-	output   [15:0]  rx_dataout;
+	output   [7:0]  rx_dataout;
 	input   [0:0]  rx_digitalreset;
 	output   [0:0]  rx_freqlocked;
 	input   [0:0]  rx_locktodata;
 	input   [0:0]  rx_locktorefclk;
 	output   [0:0]  tx_clkout;
-	input   [15:0]  tx_datain;
+	input   [7:0]  tx_datain;
 	output   [0:0]  tx_dataout;
 	input   [0:0]  tx_digitalreset;
 `ifndef ALTERA_RESERVED_QIS
@@ -96,7 +96,7 @@ module  ALTGX_alt_c3gxb
 	tri0   [0:0]  rx_digitalreset;
 	tri0   [0:0]  rx_locktodata;
 	tri0   [0:0]  rx_locktorefclk;
-	tri0   [15:0]  tx_datain;
+	tri0   [7:0]  tx_datain;
 	tri0   [0:0]  tx_digitalreset;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
@@ -180,7 +180,7 @@ module  ALTGX_alt_c3gxb
 	wire  [3:0]  rx_digitalreset_out;
 	wire [0:0]  rx_enapatternalign;
 	wire  [0:0]  rx_locktorefclk_wire;
-	wire  [15:0]  rx_out_wire;
+	wire  [7:0]  rx_out_wire;
 	wire  [1599:0]  rx_pcsdprioin_wire;
 	wire  [1599:0]  rx_pcsdprioout;
 	wire [0:0]  rx_phfifordenable;
@@ -201,8 +201,8 @@ module  ALTGX_alt_c3gxb
 	wire  [0:0]  tx_clkout_int_wire;
 	wire  [0:0]  tx_core_clkout_wire;
 	wire  [0:0]  tx_coreclk_in;
-	wire [1:0]  tx_ctrlenable;
-	wire  [15:0]  tx_datain_wire;
+	wire [0:0]  tx_ctrlenable;
+	wire  [7:0]  tx_datain_wire;
 	wire  [9:0]  tx_dataout_pcs_to_pma;
 	wire  [0:0]  tx_diagnosticlpbkin;
 	wire  [3:0]  tx_digitalreset_in;
@@ -271,14 +271,14 @@ module  ALTGX_alt_c3gxb
 	defparam
 		pll0.bandwidth_type = "AUTO",
 		pll0.clk0_divide_by = 1,
-		pll0.clk0_multiply_by = 20,
+		pll0.clk0_multiply_by = 10,
 		pll0.clk1_divide_by = 4,
-		pll0.clk1_multiply_by = 20,
+		pll0.clk1_multiply_by = 10,
 		pll0.clk2_divide_by = 4,
 		pll0.clk2_duty_cycle = 25,
-		pll0.clk2_multiply_by = 20,
+		pll0.clk2_multiply_by = 10,
 		pll0.dpa_divide_by = 1,
-		pll0.dpa_multiply_by = 20,
+		pll0.dpa_multiply_by = 10,
 		pll0.inclk0_input_frequency = 20000,
 		pll0.operation_mode = "no_compensation",
 		pll0.intended_device_family = "Cyclone IV GX",
@@ -399,11 +399,11 @@ module  ALTGX_alt_c3gxb
 		cent_unit0.rx0_rd_clk_mux_select = "core clock",
 		cent_unit0.rx0_recovered_clk_mux_select = "recovered clock",
 		cent_unit0.rx0_reset_clock_output_during_digital_reset = "false",
-		cent_unit0.rx0_use_double_data_mode = "true",
+		cent_unit0.rx0_use_double_data_mode = "false",
 		cent_unit0.tx0_channel_bonding = "none",
 		cent_unit0.tx0_rd_clk_mux_select = "central",
 		cent_unit0.tx0_reset_clock_output_during_digital_reset = "false",
-		cent_unit0.tx0_use_double_data_mode = "true",
+		cent_unit0.tx0_use_double_data_mode = "false",
 		cent_unit0.tx0_wr_clk_mux_select = "core_clk",
 		cent_unit0.use_coreclk_out_post_divider = "false",
 		cent_unit0.use_deskew_fifo = "false",
@@ -551,7 +551,7 @@ module  ALTGX_alt_c3gxb
 		receive_pcs0.cdrctrl_rxvalid_mask = "false",
 		receive_pcs0.channel_bonding = "none",
 		receive_pcs0.channel_number = ((starting_channel_number + 0) % 4),
-		receive_pcs0.channel_width = 16,
+		receive_pcs0.channel_width = 8,
 		receive_pcs0.clk1_mux_select = "recovered clock",
 		receive_pcs0.clk2_mux_select = "recovered clock",
 		receive_pcs0.core_clock_0ppm = "false",
@@ -602,7 +602,7 @@ module  ALTGX_alt_c3gxb
 		receive_pcs0.self_test_mode = "incremental",
 		receive_pcs0.use_alignment_state_machine = "false",
 		receive_pcs0.use_deskew_fifo = "false",
-		receive_pcs0.use_double_data_mode = "true",
+		receive_pcs0.use_double_data_mode = "false",
 		receive_pcs0.use_parallel_loopback = "false",
 		receive_pcs0.lpm_type = "cycloneiv_hssi_rx_pcs";
 	cycloneiv_hssi_rx_pma   receive_pma0
@@ -644,7 +644,7 @@ module  ALTGX_alt_c3gxb
 		receive_pma0.common_mode = "0.82V",
 		receive_pma0.deserialization_factor = 8,
 		receive_pma0.dprio_config_mode = 8'h01,
-		receive_pma0.effective_data_rate = "2000 Mbps",
+		receive_pma0.effective_data_rate = "1000 Mbps",
 		receive_pma0.enable_local_divider = "false",
 		receive_pma0.enable_ltd = "true",
 		receive_pma0.enable_ltr = "true",
@@ -670,8 +670,8 @@ module  ALTGX_alt_c3gxb
 	.clkout(wire_transmit_pcs0_clkout),
 	.coreclk(tx_coreclk_in[0]),
 	.coreclkout(),
-	.ctrlenable({tx_ctrlenable[1:0]}),
-	.datain({{4{1'b0}}, tx_datain_wire[15:0]}),
+	.ctrlenable({{1{1'b0}}, tx_ctrlenable[0]}),
+	.datain({{12{1'b0}}, tx_datain_wire[7:0]}),
 	.datainfull({22{1'b0}}),
 	.dataout(wire_transmit_pcs0_dataout),
 	.detectrxloop(1'b0),
@@ -680,7 +680,7 @@ module  ALTGX_alt_c3gxb
 	.dprioin(tx_dprioin_wire[149:0]),
 	.dprioout(wire_transmit_pcs0_dprioout),
 	.enrevparallellpbk(1'b0),
-	.forcedisp({{2{1'b0}}}),
+	.forcedisp({{1{1'b0}}, 1'b0}),
 	.forceelecidleout(),
 	.grayelecidleinferselout(),
 	.hiptxclkout(),
@@ -737,7 +737,7 @@ module  ALTGX_alt_c3gxb
 		transmit_pcs0.bitslip_enable = "false",
 		transmit_pcs0.channel_bonding = "none",
 		transmit_pcs0.channel_number = ((starting_channel_number + 0) % 4),
-		transmit_pcs0.channel_width = 16,
+		transmit_pcs0.channel_width = 8,
 		transmit_pcs0.core_clock_0ppm = "false",
 		transmit_pcs0.datapath_low_latency_mode = "true",
 		transmit_pcs0.datapath_protocol = "basic",
@@ -757,7 +757,7 @@ module  ALTGX_alt_c3gxb
 		transmit_pcs0.protocol_hint = "basic",
 		transmit_pcs0.refclk_select = "local",
 		transmit_pcs0.self_test_mode = "incremental",
-		transmit_pcs0.use_double_data_mode = "true",
+		transmit_pcs0.use_double_data_mode = "false",
 		transmit_pcs0.wr_clk_mux_select = "core_clk",
 		transmit_pcs0.lpm_type = "cycloneiv_hssi_tx_pcs";
 	cycloneiv_hssi_tx_pma   transmit_pma0
@@ -795,7 +795,7 @@ module  ALTGX_alt_c3gxb
 		transmit_pma0.channel_number = ((starting_channel_number + 0) % 4),
 		transmit_pma0.common_mode = "0.65V",
 		transmit_pma0.dprio_config_mode = 8'h01,
-		transmit_pma0.effective_data_rate = "2000 Mbps",
+		transmit_pma0.effective_data_rate = "1000 Mbps",
 		transmit_pma0.enable_diagnostic_loopback = "false",
 		transmit_pma0.enable_reverse_serial_loopback = "false",
 		transmit_pma0.logical_channel_address = (starting_channel_number + 0),
@@ -840,14 +840,14 @@ module  ALTGX_alt_c3gxb
 		rx_clkout = {rx_clkout_wire[0]},
 		rx_clkout_wire = {wire_receive_pcs0_clkout},
 		rx_coreclk_in = {rx_clkout_wire[0]},
-		rx_dataout = {rx_out_wire[15:0]},
+		rx_dataout = {rx_out_wire[7:0]},
 		rx_deserclock_in = {wire_pll0_icdrclk},
 		rx_digitalreset_in = {{3{1'b0}}, rx_digitalreset[0]},
 		rx_digitalreset_out = {wire_cent_unit0_rxdigitalresetout[3:0]},
 		rx_enapatternalign = 1'b0,
 		rx_freqlocked = {(wire_receive_pma0_freqlocked & (~ rx_analogreset[0]))},
 		rx_locktorefclk_wire = {wire_receive_pcs0_cdrctrllocktorefclkout},
-		rx_out_wire = {wire_receive_pcs0_dataout[15:0]},
+		rx_out_wire = {wire_receive_pcs0_dataout[7:0]},
 		rx_pcsdprioin_wire = {{1200{1'b0}}, cent_unit_rxpcsdprioout[399:0]},
 		rx_pcsdprioout = {{1200{1'b0}}, wire_receive_pcs0_dprioout},
 		rx_phfifordenable = 1'b1,
@@ -869,8 +869,8 @@ module  ALTGX_alt_c3gxb
 		tx_clkout_int_wire = {wire_transmit_pcs0_clkout},
 		tx_core_clkout_wire = {tx_clkout_int_wire[0]},
 		tx_coreclk_in = {tx_clkout_int_wire[0]},
-		tx_ctrlenable = {2{1'b0}},
-		tx_datain_wire = {tx_datain[15:0]},
+		tx_ctrlenable = 1'b0,
+		tx_datain_wire = {tx_datain[7:0]},
 		tx_dataout = {txdataout[0]},
 		tx_dataout_pcs_to_pma = {wire_transmit_pcs0_dataout[9:0]},
 		tx_diagnosticlpbkin = {wire_receive_pma0_diagnosticlpbkout},
@@ -930,12 +930,12 @@ module ALTGX (
 	input	[0:0]  rx_digitalreset;
 	input	[0:0]  rx_locktodata;
 	input	[0:0]  rx_locktorefclk;
-	input	[15:0]  tx_datain;
+	input	[7:0]  tx_datain;
 	input	[0:0]  tx_digitalreset;
 	output	[0:0]  pll_locked;
 	output	[4:0]  reconfig_fromgxb;
 	output	[0:0]  rx_clkout;
-	output	[15:0]  rx_dataout;
+	output	[7:0]  rx_dataout;
 	output	[0:0]  rx_freqlocked;
 	output	[0:0]  tx_clkout;
 	output	[0:0]  tx_dataout;
@@ -946,14 +946,14 @@ module ALTGX (
 	wire [0:0] sub_wire0;
 	wire [4:0] sub_wire1;
 	wire [0:0] sub_wire2;
-	wire [15:0] sub_wire3;
+	wire [7:0] sub_wire3;
 	wire [0:0] sub_wire4;
 	wire [0:0] sub_wire5;
 	wire [0:0] sub_wire6;
 	wire [0:0] pll_locked = sub_wire0[0:0];
 	wire [4:0] reconfig_fromgxb = sub_wire1[4:0];
 	wire [0:0] rx_clkout = sub_wire2[0:0];
-	wire [15:0] rx_dataout = sub_wire3[15:0];
+	wire [7:0] rx_dataout = sub_wire3[7:0];
 	wire [0:0] rx_freqlocked = sub_wire4[0:0];
 	wire [0:0] tx_clkout = sub_wire5[0:0];
 	wire [0:0] tx_dataout = sub_wire6[0:0];
@@ -994,16 +994,16 @@ endmodule
 // Retrieval info: PRIVATE: RECONFIG_SUBPROTOCOL STRING "none"
 // Retrieval info: PRIVATE: RX_ENABLE_DC_COUPLING STRING "false"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
-// Retrieval info: PRIVATE: WIZ_BASE_DATA_RATE STRING "2000"
+// Retrieval info: PRIVATE: WIZ_BASE_DATA_RATE STRING "1000"
 // Retrieval info: PRIVATE: WIZ_BASE_DATA_RATE_ENABLE STRING "0"
-// Retrieval info: PRIVATE: WIZ_DATA_RATE STRING "2000"
+// Retrieval info: PRIVATE: WIZ_DATA_RATE STRING "1000"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INCLK_FREQ_ARRAY STRING "100"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_A STRING "2000"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_A_UNIT STRING "Mbps"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_B STRING "100"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_B_UNIT STRING "MHz"
 // Retrieval info: PRIVATE: WIZ_DPRIO_INPUT_SELECTION NUMERIC "0"
-// Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK0_FREQ STRING "125.0"
+// Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK0_FREQ STRING "50.0"
 // Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK0_PROTOCOL STRING "Basic"
 // Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK1_FREQ STRING "250"
 // Retrieval info: PRIVATE: WIZ_DPRIO_REF_CLK1_PROTOCOL STRING "Basic"
@@ -1021,8 +1021,8 @@ endmodule
 // Retrieval info: PRIVATE: WIZ_EQUALIZER_CTRL_SETTING NUMERIC "0"
 // Retrieval info: PRIVATE: WIZ_FORCE_DEFAULT_SETTINGS NUMERIC "0"
 // Retrieval info: PRIVATE: WIZ_INCLK_FREQ STRING "50.0"
-// Retrieval info: PRIVATE: WIZ_INCLK_FREQ_ARRAY STRING "50.0 51.282051 52.631578 54.054054 55.555555 57.142857 58.823529 60.60606 62.5 64.516129 66.666666 68.965517 71.428571 74.074074 75.0 76.923076 78.947368 80.0 81.081081 83.333333"
-// Retrieval info: PRIVATE: WIZ_INPUT_A STRING "2000"
+// Retrieval info: PRIVATE: WIZ_INCLK_FREQ_ARRAY STRING "50.0 51.282051 51.724137 52.631578 53.571428 54.054054 55.555555 57.142857 57.692307 58.823529 60.0 60.60606 62.5 64.102564 64.516129 65.217391 65.789473 66.666666 67.567567 68.181818"
+// Retrieval info: PRIVATE: WIZ_INPUT_A STRING "1000"
 // Retrieval info: PRIVATE: WIZ_INPUT_A_UNIT STRING "Mbps"
 // Retrieval info: PRIVATE: WIZ_INPUT_B STRING "50.0"
 // Retrieval info: PRIVATE: WIZ_INPUT_B_UNIT STRING "MHz"
@@ -1031,7 +1031,7 @@ endmodule
 // Retrieval info: PRIVATE: WIZ_SUBPROTOCOL STRING "None"
 // Retrieval info: PRIVATE: WIZ_WORD_ALIGN_FLIP_PATTERN STRING "0"
 // Retrieval info: PARAMETER: STARTING_CHANNEL_NUMBER NUMERIC "0"
-// Retrieval info: CONSTANT: EFFECTIVE_DATA_RATE STRING "2000 Mbps"
+// Retrieval info: CONSTANT: EFFECTIVE_DATA_RATE STRING "1000 Mbps"
 // Retrieval info: CONSTANT: ENABLE_LC_TX_PLL STRING "false"
 // Retrieval info: CONSTANT: ENABLE_PLL_INCLK_ALT_DRIVE_RX_CRU STRING "true"
 // Retrieval info: CONSTANT: ENABLE_PLL_INCLK_DRIVE_RX_CRU STRING "true"
@@ -1059,12 +1059,12 @@ endmodule
 // Retrieval info: CONSTANT: RX_ALLOW_PIPE_POLARITY_INVERSION STRING "false"
 // Retrieval info: CONSTANT: RX_BITSLIP_ENABLE STRING "true"
 // Retrieval info: CONSTANT: RX_BYTE_ORDERING_MODE STRING "NONE"
-// Retrieval info: CONSTANT: RX_CHANNEL_WIDTH NUMERIC "16"
+// Retrieval info: CONSTANT: RX_CHANNEL_WIDTH NUMERIC "8"
 // Retrieval info: CONSTANT: RX_COMMON_MODE STRING "0.82v"
 // Retrieval info: CONSTANT: RX_CRU_INCLOCK0_PERIOD NUMERIC "20000"
 // Retrieval info: CONSTANT: RX_DATAPATH_LOW_LATENCY_MODE STRING "true"
 // Retrieval info: CONSTANT: RX_DATAPATH_PROTOCOL STRING "basic"
-// Retrieval info: CONSTANT: RX_DATA_RATE NUMERIC "2000"
+// Retrieval info: CONSTANT: RX_DATA_RATE NUMERIC "1000"
 // Retrieval info: CONSTANT: RX_DATA_RATE_REMAINDER NUMERIC "0"
 // Retrieval info: CONSTANT: RX_DIGITALRESET_PORT_WIDTH NUMERIC "1"
 // Retrieval info: CONSTANT: RX_ENABLE_BIT_REVERSAL STRING "false"
@@ -1084,15 +1084,15 @@ endmodule
 // Retrieval info: CONSTANT: RX_USE_CORECLK STRING "false"
 // Retrieval info: CONSTANT: RX_USE_DESERIALIZER_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: RX_USE_DESKEW_FIFO STRING "false"
-// Retrieval info: CONSTANT: RX_USE_DOUBLE_DATA_MODE STRING "true"
+// Retrieval info: CONSTANT: RX_USE_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: TRANSMITTER_TERMINATION STRING "oct_100_ohms"
 // Retrieval info: CONSTANT: TX_8B_10B_MODE STRING "none"
 // Retrieval info: CONSTANT: TX_ALLOW_POLARITY_INVERSION STRING "false"
-// Retrieval info: CONSTANT: TX_CHANNEL_WIDTH NUMERIC "16"
+// Retrieval info: CONSTANT: TX_CHANNEL_WIDTH NUMERIC "8"
 // Retrieval info: CONSTANT: TX_CLKOUT_WIDTH NUMERIC "1"
 // Retrieval info: CONSTANT: TX_COMMON_MODE STRING "0.65v"
 // Retrieval info: CONSTANT: TX_DATAPATH_LOW_LATENCY_MODE STRING "true"
-// Retrieval info: CONSTANT: TX_DATA_RATE NUMERIC "2000"
+// Retrieval info: CONSTANT: TX_DATA_RATE NUMERIC "1000"
 // Retrieval info: CONSTANT: TX_DATA_RATE_REMAINDER NUMERIC "0"
 // Retrieval info: CONSTANT: TX_DIGITALRESET_PORT_WIDTH NUMERIC "1"
 // Retrieval info: CONSTANT: TX_ENABLE_BIT_REVERSAL STRING "false"
@@ -1104,7 +1104,7 @@ endmodule
 // Retrieval info: CONSTANT: TX_SLEW_RATE STRING "low"
 // Retrieval info: CONSTANT: TX_TRANSMIT_PROTOCOL STRING "basic"
 // Retrieval info: CONSTANT: TX_USE_CORECLK STRING "false"
-// Retrieval info: CONSTANT: TX_USE_DOUBLE_DATA_MODE STRING "true"
+// Retrieval info: CONSTANT: TX_USE_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: TX_USE_SERIALIZER_DOUBLE_DATA_MODE STRING "false"
 // Retrieval info: CONSTANT: USE_CALIBRATION_BLOCK STRING "true"
 // Retrieval info: CONSTANT: VOD_CTRL_SETTING NUMERIC "6"
@@ -1113,13 +1113,13 @@ endmodule
 // Retrieval info: CONSTANT: iqtxrxclk_allowed STRING ""
 // Retrieval info: CONSTANT: number_of_quads NUMERIC "1"
 // Retrieval info: CONSTANT: pll_divide_by STRING "1"
-// Retrieval info: CONSTANT: pll_multiply_by STRING "20"
+// Retrieval info: CONSTANT: pll_multiply_by STRING "10"
 // Retrieval info: CONSTANT: reconfig_calibration STRING "true"
 // Retrieval info: CONSTANT: reconfig_fromgxb_port_width NUMERIC "5"
 // Retrieval info: CONSTANT: reconfig_pll_control_width NUMERIC "1"
 // Retrieval info: CONSTANT: reconfig_togxb_port_width NUMERIC "4"
 // Retrieval info: CONSTANT: rx_deskew_pattern STRING "0"
-// Retrieval info: CONSTANT: rx_dwidth_factor NUMERIC "2"
+// Retrieval info: CONSTANT: rx_dwidth_factor NUMERIC "1"
 // Retrieval info: CONSTANT: rx_enable_second_order_loop STRING "false"
 // Retrieval info: CONSTANT: rx_loop_1_digital_filter NUMERIC "8"
 // Retrieval info: CONSTANT: rx_signal_detect_loss_threshold STRING "14"
@@ -1128,7 +1128,7 @@ endmodule
 // Retrieval info: CONSTANT: rx_word_aligner_num_byte NUMERIC "1"
 // Retrieval info: CONSTANT: top_module_name STRING "ALTGX"
 // Retrieval info: CONSTANT: tx_bitslip_enable STRING "FALSE"
-// Retrieval info: CONSTANT: tx_dwidth_factor NUMERIC "2"
+// Retrieval info: CONSTANT: tx_dwidth_factor NUMERIC "1"
 // Retrieval info: CONSTANT: tx_use_external_termination STRING "false"
 // Retrieval info: USED_PORT: cal_blk_clk 0 0 0 0 INPUT NODEFVAL "cal_blk_clk"
 // Retrieval info: USED_PORT: gxb_powerdown 0 0 1 0 INPUT NODEFVAL "gxb_powerdown[0..0]"
@@ -1141,13 +1141,13 @@ endmodule
 // Retrieval info: USED_PORT: rx_analogreset 0 0 1 0 INPUT NODEFVAL "rx_analogreset[0..0]"
 // Retrieval info: USED_PORT: rx_clkout 0 0 1 0 OUTPUT NODEFVAL "rx_clkout[0..0]"
 // Retrieval info: USED_PORT: rx_datain 0 0 1 0 INPUT NODEFVAL "rx_datain[0..0]"
-// Retrieval info: USED_PORT: rx_dataout 0 0 16 0 OUTPUT NODEFVAL "rx_dataout[15..0]"
+// Retrieval info: USED_PORT: rx_dataout 0 0 8 0 OUTPUT NODEFVAL "rx_dataout[7..0]"
 // Retrieval info: USED_PORT: rx_digitalreset 0 0 1 0 INPUT NODEFVAL "rx_digitalreset[0..0]"
 // Retrieval info: USED_PORT: rx_freqlocked 0 0 1 0 OUTPUT NODEFVAL "rx_freqlocked[0..0]"
 // Retrieval info: USED_PORT: rx_locktodata 0 0 1 0 INPUT NODEFVAL "rx_locktodata[0..0]"
 // Retrieval info: USED_PORT: rx_locktorefclk 0 0 1 0 INPUT NODEFVAL "rx_locktorefclk[0..0]"
 // Retrieval info: USED_PORT: tx_clkout 0 0 1 0 OUTPUT NODEFVAL "tx_clkout[0..0]"
-// Retrieval info: USED_PORT: tx_datain 0 0 16 0 INPUT NODEFVAL "tx_datain[15..0]"
+// Retrieval info: USED_PORT: tx_datain 0 0 8 0 INPUT NODEFVAL "tx_datain[7..0]"
 // Retrieval info: USED_PORT: tx_dataout 0 0 1 0 OUTPUT NODEFVAL "tx_dataout[0..0]"
 // Retrieval info: USED_PORT: tx_digitalreset 0 0 1 0 INPUT NODEFVAL "tx_digitalreset[0..0]"
 // Retrieval info: CONNECT: @cal_blk_clk 0 0 0 0 cal_blk_clk 0 0 0 0
@@ -1161,12 +1161,12 @@ endmodule
 // Retrieval info: CONNECT: @rx_digitalreset 0 0 1 0 rx_digitalreset 0 0 1 0
 // Retrieval info: CONNECT: @rx_locktodata 0 0 1 0 rx_locktodata 0 0 1 0
 // Retrieval info: CONNECT: @rx_locktorefclk 0 0 1 0 rx_locktorefclk 0 0 1 0
-// Retrieval info: CONNECT: @tx_datain 0 0 16 0 tx_datain 0 0 16 0
+// Retrieval info: CONNECT: @tx_datain 0 0 8 0 tx_datain 0 0 8 0
 // Retrieval info: CONNECT: @tx_digitalreset 0 0 1 0 tx_digitalreset 0 0 1 0
 // Retrieval info: CONNECT: pll_locked 0 0 1 0 @pll_locked 0 0 1 0
 // Retrieval info: CONNECT: reconfig_fromgxb 0 0 5 0 @reconfig_fromgxb 0 0 5 0
 // Retrieval info: CONNECT: rx_clkout 0 0 1 0 @rx_clkout 0 0 1 0
-// Retrieval info: CONNECT: rx_dataout 0 0 16 0 @rx_dataout 0 0 16 0
+// Retrieval info: CONNECT: rx_dataout 0 0 8 0 @rx_dataout 0 0 8 0
 // Retrieval info: CONNECT: rx_freqlocked 0 0 1 0 @rx_freqlocked 0 0 1 0
 // Retrieval info: CONNECT: tx_clkout 0 0 1 0 @tx_clkout 0 0 1 0
 // Retrieval info: CONNECT: tx_dataout 0 0 1 0 @tx_dataout 0 0 1 0

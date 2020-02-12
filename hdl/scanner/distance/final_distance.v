@@ -52,7 +52,7 @@ module final_diatance(                                                          
         reg             [39:0]                          mult_pluse;
         reg             [79:0]                          mult_distance;
 
-        //四个模块的输出距离值(保留三回波)
+        //四个模块的输出距离值(保留五回波)
         wire            [39:0]                          mult_pluse_1;
         wire            [39:0]                          mult_pluse_2;
         wire            [39:0]                          mult_pluse_3;

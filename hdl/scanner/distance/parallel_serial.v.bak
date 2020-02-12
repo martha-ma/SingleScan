@@ -11,7 +11,7 @@ module parallel_serial(                                                         
 );      
 
     reg                         [399:0]             mid_data;
-    reg                         [9:0]               cnt;
+    reg                         [8:0]               cnt;
     reg                         [2:0]               state;
     
 
@@ -22,7 +22,7 @@ begin
     begin
         mid_data<=400'd0;
         state<=3'd0;
-        cnt<=10'd0;
+        cnt<=9'd0;
         data_en<=1'b0;
         
     end
@@ -31,7 +31,7 @@ begin
         case(state)
             3'd0:
                 begin
-                    cnt<=10'd0;
+                    cnt<=9'd0;
                     
                     if(tola_en)
                     begin
@@ -62,7 +62,7 @@ begin
                         serial_data<=1'b0;
                         data_en<=1'b0;
                         state<=3'd0;
-                        cnt<=10'd0;
+                        cnt<=9'd0;
                         
                     end             
                 end
