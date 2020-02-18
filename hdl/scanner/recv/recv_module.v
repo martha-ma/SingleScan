@@ -103,8 +103,8 @@ begin
     end
     else
     begin
-        if(cnt_1<50)
-            total_data_1<={rx_dataout[7:0],total_data_1[399:8]};
+        if(cnt_1<25)
+            total_data_1<={rx_dataout[15:0],total_data_1[399:16]};
         else
             total_data<=total_data_1;
     end
@@ -119,7 +119,7 @@ begin
     end
     else if(tola_en_state==2'd1)
     begin    
-        if(cnt_1==50)
+        if(cnt_1==25)
             tola_en<=1'b1;
         else
             tola_en<=1'b0;

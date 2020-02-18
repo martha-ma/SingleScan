@@ -27,7 +27,7 @@ module grid_statistical
     output  reg  [15:00]        target_pos
 );
 
-localparam              MAX_VALUE_ADDR  = 160;
+localparam              MAX_VALUE_ADDR  = 80;
 
 reg    [1:0]            tannis_change_r;
 wire                    tannis_change_rise;

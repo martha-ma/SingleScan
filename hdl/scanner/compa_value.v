@@ -24,9 +24,9 @@ module compa_value(
 wire                        cycle_set_flag;
 reg     [89:00]             da_cycle_para_r0;
 reg     [89:00]             da_cycle_para_r1;
-wire       						 b_set_flag_fall;                           //查找数据使能上升沿
+wire       						 b_set_flag_fall/* synthesis keep */;                           //查找数据使能上升沿
 reg  	  [1:0]               b_set_flag_r;
-wire                        b_set_flag;	
+wire                        b_set_flag/* synthesis keep */;	
 reg     [7:0]               da_bvalue1;
 reg     [7:0]               da_bvalue2;		  
 		  
@@ -120,9 +120,9 @@ always@(posedge clk or negedge rst)
 begin
 	if(!rst)
 		b_cnt<=16'd0;
-	else if(b_cnt==16'd1000)
-		b_cnt<=16'd1001;
-	else
+	else if(b_cnt>=16'd1000)
+	   b_cnt<=16'd1001;
+	else 
 		b_cnt<=b_cnt+1'b1;
 end
 

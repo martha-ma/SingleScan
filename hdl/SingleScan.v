@@ -172,6 +172,8 @@ wire                        dac_set_flag;
 wire                        light_dac_set_flag;
 
 wire                        clk_100m  /* synthesis keep */;
+wire                        laser_enable_test /* synthesis keep */;
+//assign laser_enable_test=((step_cnt <= 40)&&(step_cnt >= 20))?1'b0:1'b1;
 
 pll_100m pll_100mEx01(
     .inclk0                 (    clk                    ),
